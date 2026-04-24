@@ -77,9 +77,9 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.97 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.9, delay: 0.6, ease: 'easeOut' }}
-            className="relative hidden lg:block"
+            className="relative hidden lg:block ml-auto -mr-16 xl:-mr-24 w-[500px] xl:w-[560px]"
           >
-            <div className="relative aspect-[3/4] max-w-md mx-auto border border-gold-400/30">
+            <div className="relative aspect-[4/3] w-full border border-gold-400/30">
               <div className="absolute inset-0 bg-charcoal-800/40 flex flex-col items-center justify-center gap-3">
                 <div className="w-12 h-0.5 bg-gold-400/60" />
                 <span className="font-serif text-cream-100/50 text-sm italic">Tu foto aquí</span>
