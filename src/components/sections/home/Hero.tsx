@@ -17,12 +17,12 @@ export default function Hero() {
       {/* Decorative arc — z-0, el contenido va en z-10 */}
       <div
         className="absolute -right-32 top-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none z-0"
-        style={{ border: '1px solid rgba(201, 169, 110, 0.25)' }}
+        style={{ border: '2px solid rgba(201, 169, 110, 0.25)', filter: 'blur(3px)' }}
         aria-hidden="true"
       />
       <div
         className="absolute -right-20 top-1/2 -translate-y-1/2 w-[420px] h-[420px] rounded-full pointer-events-none z-0"
-        style={{ border: '1px solid rgba(201, 169, 110, 0.18)' }}
+        style={{ border: '2px solid rgba(201, 169, 110, 0.18)', filter: 'blur(2px)' }}
         aria-hidden="true"
       />
       {/* Noise texture overlay */}
