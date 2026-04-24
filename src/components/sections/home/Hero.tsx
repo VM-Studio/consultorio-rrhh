@@ -14,19 +14,19 @@ const fadeUp = (delay = 0) => ({
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-hero">
-      {/* Decorative arc */}
+      {/* Decorative arc — z-0 para quedar debajo de todo el contenido */}
       <div
-        className="absolute -right-32 top-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-gold-400/10 pointer-events-none"
+        className="absolute -right-32 top-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-gold-400/10 pointer-events-none z-0"
         aria-hidden="true"
       />
       <div
-        className="absolute -right-20 top-1/2 -translate-y-1/2 w-[420px] h-[420px] rounded-full border border-gold-400/8 pointer-events-none"
+        className="absolute -right-20 top-1/2 -translate-y-1/2 w-[420px] h-[420px] rounded-full border border-gold-400/8 pointer-events-none z-0"
         aria-hidden="true"
       />
       {/* Noise texture overlay */}
-      <div className="absolute inset-0 opacity-[0.03] bg-[url('/images/hero/noise.png')] pointer-events-none" aria-hidden="true" />
+      <div className="absolute inset-0 opacity-[0.03] bg-[url('/images/hero/noise.png')] pointer-events-none z-0" aria-hidden="true" />
 
-      <div className="container-max section-padding w-full pt-32">
+      <div className="relative z-10 container-max section-padding w-full pt-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
           {/* LEFT — Text */}

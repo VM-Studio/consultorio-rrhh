@@ -11,7 +11,6 @@ const navLinks = [
   { href: '/servicios', label: 'Servicios' },
   { href: '/equipo', label: 'Equipo' },
   { href: '/trabaja-con-nosotros', label: 'Trabaja con Nosotros' },
-  { href: '/contacto', label: 'Contacto' },
 ]
 
 function LogoImage({ scrolled, menuOpen }: { scrolled: boolean; menuOpen: boolean }) {
@@ -68,53 +67,51 @@ export default function Navbar() {
       >
         <div className="container-max px-6 md:px-12 lg:px-24">
           <div className="flex items-center justify-between h-20">
-            {/* Logo */}
+            {/* Logo — izquierda */}
             <Link href="/" className="flex items-center flex-shrink-0">
               <LogoImage scrolled={scrolled} menuOpen={menuOpen} />
             </Link>
 
-            {/* Desktop Nav */}
-            <nav className="hidden lg:flex items-center gap-8" role="navigation" aria-label="Navegación principal">
-              {navLinks.map((link) => {
-                const isActive = pathname === link.href
-                return (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className={`relative text-sm font-medium tracking-wide transition-colors duration-200 group ${
-                      scrolled
-                        ? isActive
-                          ? 'text-charcoal-800'
-                          : 'text-charcoal-800/70 hover:text-charcoal-800'
-                        : isActive
-                        ? 'text-cream-50'
-                        : 'text-cream-50/80 hover:text-cream-50'
-                    }`}
-                  >
-                    {link.label}
-                    {/* Gold dot / underline for active */}
-                    <span
-                      className={`absolute -bottom-1 left-0 h-0.5 bg-gold-400 transition-all duration-300 ${
-                        isActive ? 'w-full' : 'w-0 group-hover:w-full'
+            {/* Desktop Nav + CTA — todo a la derecha */}
+            <div className="hidden lg:flex items-center gap-8">
+              <nav className="flex items-center gap-8" role="navigation" aria-label="Navegación principal">
+                {navLinks.map((link) => {
+                  const isActive = pathname === link.href
+                  return (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className={`relative text-sm font-medium tracking-wide transition-colors duration-200 group ${
+                        scrolled
+                          ? isActive
+                            ? 'text-charcoal-800'
+                            : 'text-charcoal-800/70 hover:text-charcoal-800'
+                          : isActive
+                          ? 'text-cream-50'
+                          : 'text-cream-50/80 hover:text-cream-50'
                       }`}
-                    />
-                  </Link>
-                )
-              })}
-            </nav>
-
-            {/* CTA + Hamburger */}
-            <div className="flex items-center gap-4">
+                    >
+                      {link.label}
+                      <span
+                        className={`absolute -bottom-1 left-0 h-0.5 bg-gold-400 transition-all duration-300 ${
+                          isActive ? 'w-full' : 'w-0 group-hover:w-full'
+                        }`}
+                      />
+                    </Link>
+                  )
+                })}
+              </nav>
               <Link
                 href="/contacto"
-                className={`hidden lg:inline-flex btn-primary text-xs ${
+                className={`btn-primary text-xs ${
                   !scrolled ? 'bg-cream-50 !text-charcoal-800 hover:bg-cream-100' : ''
                 }`}
               >
                 Contactanos
               </Link>
+            </div>
 
-              {/* Hamburger */}
+            {/* Hamburger — solo mobile */}
               <button
                 onClick={() => setMenuOpen((v) => !v)}
                 aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
@@ -140,7 +137,6 @@ export default function Navbar() {
                   className="block w-6 h-0.5 bg-current origin-center"
                 />
               </button>
-            </div>
           </div>
         </div>
       </motion.header>
