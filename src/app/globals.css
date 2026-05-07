@@ -17,7 +17,7 @@
   }
   /* Focus-visible global: ring dorado para navegación por teclado */
   :focus-visible {
-    outline: 2px solid #C9A96E;
+    outline: 2px solid #1A7A83;
     outline-offset: 3px;
   }
   /* Quitar outline por defecto en mouse-click (solo teclado) */
@@ -34,7 +34,7 @@
     @apply max-w-7xl mx-auto;
   }
   .text-gradient-gold {
-    background: linear-gradient(135deg, #C9A96E 0%, #9A7A3A 100%);
+    background: linear-gradient(135deg, #1E8C96 0%, #156470 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -47,7 +47,7 @@
   }
   .btn-gold {
     @apply inline-flex items-center gap-2 px-8 py-3.5 font-sans font-medium text-sm tracking-wide rounded-none transition-all duration-300;
-    background: linear-gradient(135deg, #C9A96E 0%, #9A7A3A 100%);
-    color: #FAFAF7;
+    background: linear-gradient(135deg, #1E8C96 0%, #156470 100%);
+    color: #EEF7F8;
   }
 }

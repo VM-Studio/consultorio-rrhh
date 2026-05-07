@@ -60,19 +60,19 @@ export default function NosotrosPage() {
       <section className="bg-gradient-hero min-h-[60vh] flex items-end pt-32 pb-20 section-padding">
         <div className="container-max w-full">
           <AnimatedSection>
-            <p className="text-xs font-sans font-semibold tracking-widest uppercase text-gold-400 mb-4">
-              <Link href="/" className="hover:text-gold-300 transition-colors">Inicio</Link>
-              <span className="mx-2 text-white/30">/</span>
+            <p className="text-xs font-sans font-semibold tracking-widest uppercase text-gold-600 mb-4">
+              <Link href="/" className="hover:text-gold-500 transition-colors">Inicio</Link>
+              <span className="mx-2 text-charcoal-800/30">/</span>
               Nosotros
             </p>
           </AnimatedSection>
           <AnimatedSection delay={0.1}>
-            <h1 className="font-serif text-5xl md:text-6xl text-cream-50 leading-tight max-w-2xl">
+            <h1 className="font-serif text-5xl md:text-6xl text-charcoal-800 leading-tight max-w-2xl">
               Quiénes <em>somos</em>
             </h1>
           </AnimatedSection>
           <AnimatedSection delay={0.2}>
-            <p className="mt-6 font-sans text-lg text-cream-100/70 max-w-xl">
+            <p className="mt-6 font-sans text-lg text-charcoal-800/70 max-w-xl">
               Una consultora boutique con alma argentina, enfoque personalizado y
               más de una década de experiencia en el mercado del talento.
             </p>

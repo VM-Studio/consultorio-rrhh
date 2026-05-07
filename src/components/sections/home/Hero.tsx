@@ -14,15 +14,33 @@ const fadeUp = (delay = 0) => ({
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-hero">
-      {/* Decorative arc — z-0, el contenido va en z-10 */}
+      {/* Glow blanco suave — ilumina centro */}
+      <div
+        className="absolute inset-0 pointer-events-none z-0"
+        style={{ background: 'radial-gradient(ellipse at 40% 50%, rgba(255,255,255,0.45) 0%, transparent 60%)' }}
+        aria-hidden="true"
+      />
+      {/* Teal profundo — esquina superior derecha */}
+      <div
+        className="absolute -top-40 -right-40 w-[700px] h-[700px] rounded-full pointer-events-none z-0"
+        style={{ background: 'radial-gradient(circle, rgba(26,122,131,0.20) 0%, transparent 70%)' }}
+        aria-hidden="true"
+      />
+      {/* Teal profundo — inferior izquierda */}
+      <div
+        className="absolute -bottom-32 -left-32 w-[500px] h-[500px] rounded-full pointer-events-none z-0"
+        style={{ background: 'radial-gradient(circle, rgba(26,122,131,0.15) 0%, transparent 70%)' }}
+        aria-hidden="true"
+      />
+      {/* Decorative rings */}
       <div
         className="absolute -right-32 top-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none z-0"
-        style={{ border: '2px solid rgba(201, 169, 110, 0.25)', filter: 'blur(3px)' }}
+        style={{ border: '1px solid rgba(26,122,131,0.25)', filter: 'blur(1px)' }}
         aria-hidden="true"
       />
       <div
         className="absolute -right-20 top-1/2 -translate-y-1/2 w-[420px] h-[420px] rounded-full pointer-events-none z-0"
-        style={{ border: '2px solid rgba(201, 169, 110, 0.18)', filter: 'blur(2px)' }}
+        style={{ border: '1px solid rgba(26,122,131,0.20)' }}
         aria-hidden="true"
       />
       {/* Noise texture overlay */}
@@ -35,39 +53,39 @@ export default function Hero() {
           <div className="flex flex-col gap-8">
             <motion.span
               {...fadeUp(0.1)}
-              className="text-xs font-sans font-semibold tracking-widest uppercase text-gold-400"
+              className="text-xs font-sans font-semibold tracking-widest uppercase text-gold-600"
             >
               Consultoría de Recursos Humanos
             </motion.span>
 
             <motion.h1
               {...fadeUp(0.25)}
-              className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[1.1] text-cream-50"
+              className="font-serif text-5xl md:text-6xl lg:text-7xl leading-[1.1] text-charcoal-800"
             >
               Conectamos{' '}
-              <em className="text-gold-400">el talento</em>
+              <em className="text-gold-500">el talento</em>
               <br />
               con las{' '}
               <em>oportunidades</em>
             </motion.h1>
 
-            <motion.p {...fadeUp(0.4)} className="font-sans text-lg leading-relaxed text-cream-100/70 max-w-lg">
+            <motion.p {...fadeUp(0.4)} className="font-sans text-lg leading-relaxed text-charcoal-800/70 max-w-lg">
               Somos una consultora boutique especializada en búsqueda y selección de
               talentos, headhunting ejecutivo y asesoramiento estratégico en gestión
               de personas. Buenos Aires, Argentina.
             </motion.p>
 
-            <motion.div {...fadeUp(0.55)} className="flex flex-wrap gap-4">
-              <Link href="/servicios" className="btn-gold">
+            <motion.div {...fadeUp(0.55)} className="flex flex-row gap-4 items-center">
+              <Link href="/servicios" className="btn-gold whitespace-nowrap">
                 Conocé nuestros servicios
               </Link>
               <a
                 href="https://wa.me/5491100000000?text=Hola%2C%20me%20contacto%20desde%20su%20web"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-3.5 border border-cream-50/40 text-cream-50 font-sans font-medium text-sm tracking-wide rounded-none transition-all duration-300 hover:border-cream-50 hover:bg-cream-50/10"
+                className="inline-flex items-center gap-2 px-6 py-3.5 border border-charcoal-800/40 text-charcoal-800 font-sans font-medium text-sm tracking-wide rounded-none transition-all duration-300 hover:border-charcoal-800 hover:bg-charcoal-800/10 whitespace-nowrap"
               >
-                Hablanos por WhatsApp
+                WhatsApp
               </a>
             </motion.div>
           </div>
@@ -95,7 +113,7 @@ export default function Hero() {
 
       {/* Scroll indicator */}
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-cream-100/40"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-charcoal-800/40"
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.2, duration: 0.5 }}

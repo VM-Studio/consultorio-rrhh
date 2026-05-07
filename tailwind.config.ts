@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+import forms from '@tailwindcss/forms'
 
 const config: Config = {
   content: [
@@ -10,18 +11,18 @@ const config: Config = {
     extend: {
       colors: {
         cream: {
-          50: '#FAFAF7',
-          100: '#F5F4EF',
-          200: '#EEEBD8',
+          50: '#EEF7F8',
+          100: '#D9EFF1',
+          200: '#B3DFE3',
         },
         charcoal: {
           800: '#1C1C1C',
           900: '#111111',
         },
         gold: {
-          400: '#C9A96E',
-          500: '#B8924A',
-          600: '#9A7A3A',
+          400: '#1E8C96',
+          500: '#1A7A83',
+          600: '#156470',
         },
         warm: {
           gray: '#8A8680',
@@ -32,10 +33,10 @@ const config: Config = {
         sans: ['DM Sans', 'system-ui', 'sans-serif'],
       },
       backgroundImage: {
-        'gradient-hero': 'linear-gradient(135deg, #1C1C1C 0%, #2D2A24 50%, #1C1C1C 100%)',
-        'gradient-section': 'linear-gradient(180deg, #FAFAF7 0%, #F5F4EF 100%)',
-        'gradient-gold': 'linear-gradient(135deg, #C9A96E 0%, #9A7A3A 100%)',
-        'gradient-subtle': 'linear-gradient(135deg, #F5F4EF 0%, #EEEBD8 100%)',
+        'gradient-hero': 'linear-gradient(135deg, #c8e9ec 0%, #b2dee2 50%, #c2e5e8 100%)',
+        'gradient-section': 'linear-gradient(180deg, #EEF7F8 0%, #D9EFF1 100%)',
+        'gradient-gold': 'linear-gradient(135deg, #1E8C96 0%, #156470 100%)',
+        'gradient-subtle': 'linear-gradient(135deg, #D9EFF1 0%, #B3DFE3 100%)',
       },
       animation: {
         'fade-up': 'fadeUp 0.7s ease-out forwards',
@@ -64,7 +65,7 @@ const config: Config = {
     },
   },
   // eslint-disable-next-line @typescript-eslint/no-require-imports
-  plugins: [require('@tailwindcss/forms')],
+  plugins: [forms],
 }
 
 export default config

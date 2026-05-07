@@ -37,7 +37,7 @@ function buildCVEmailHtml(fields: Record<string, string>): string {
     .join('')
 
   const presentacion = fields.presentacion
-    ? `<div style="margin:24px 0 0;padding:24px;background:#f5f4ef;border-left:3px solid #c9a96e;">
+    ? `<div style="margin:24px 0 0;padding:24px;background:#D9EFF1;border-left:3px solid #1A7A83;">
         <p style="margin:0 0 8px;font-size:11px;color:#8a8680;text-transform:uppercase;letter-spacing:1.5px;">Carta de presentación</p>
         <p style="margin:0;font-size:15px;color:#1c1c1c;line-height:1.7;white-space:pre-wrap;">${escHtml(fields.presentacion)}</p>
       </div>`
@@ -46,14 +46,14 @@ function buildCVEmailHtml(fields: Record<string, string>): string {
   return `<!DOCTYPE html>
 <html lang="es">
 <head><meta charset="UTF-8"></head>
-<body style="margin:0;padding:0;background:#f5f4ef;font-family:'DM Sans',Arial,sans-serif;">
-  <table width="100%" cellpadding="0" cellspacing="0" style="background:#f5f4ef;padding:40px 20px;">
+<body style="margin:0;padding:0;background:#D9EFF1;font-family:'DM Sans',Arial,sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background:#D9EFF1;padding:40px 20px;">
     <tr><td align="center">
       <table width="600" cellpadding="0" cellspacing="0" style="background:#ffffff;max-width:600px;width:100%;">
         <tr>
           <td style="background:#1c1c1c;padding:32px 40px;">
             <p style="margin:0;font-family:Georgia,serif;font-size:22px;color:#fafaf7;">HR Consultora</p>
-            <p style="margin:6px 0 0;font-size:12px;color:#c9a96e;letter-spacing:2px;text-transform:uppercase;">Nueva postulación espontánea</p>
+            <p style="margin:6px 0 0;font-size:12px;color:#1A7A83;letter-spacing:2px;text-transform:uppercase;">Nueva postulación espontánea</p>
           </td>
         </tr>
         <tr>

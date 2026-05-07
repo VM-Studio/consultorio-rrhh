@@ -36,8 +36,8 @@ function buildEmailHtml(data: {
 <!DOCTYPE html>
 <html lang="es">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"></head>
-<body style="margin:0;padding:0;background:#f5f4ef;font-family:'DM Sans',Arial,sans-serif;">
-  <table width="100%" cellpadding="0" cellspacing="0" style="background:#f5f4ef;padding:40px 20px;">
+<body style="margin:0;padding:0;background:#D9EFF1;font-family:'DM Sans',Arial,sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background:#D9EFF1;padding:40px 20px;">
     <tr><td align="center">
       <table width="600" cellpadding="0" cellspacing="0" style="background:#ffffff;max-width:600px;width:100%;">
         <!-- Header -->
@@ -46,7 +46,7 @@ function buildEmailHtml(data: {
             <p style="margin:0;font-family:Georgia,serif;font-size:22px;color:#fafaf7;letter-spacing:0.5px;">
               HR Consultora
             </p>
-            <p style="margin:6px 0 0;font-size:12px;color:#c9a96e;letter-spacing:2px;text-transform:uppercase;">
+            <p style="margin:6px 0 0;font-size:12px;color:#1A7A83;letter-spacing:2px;text-transform:uppercase;">
               Nuevo mensaje de contacto
             </p>
           </td>
@@ -59,12 +59,12 @@ function buildEmailHtml(data: {
             </p>
             <table width="100%" cellpadding="0" cellspacing="0">
               ${row('Nombre', data.nombre)}
-              ${row('Email', `<a href="mailto:${data.email}" style="color:#b8924a;">${data.email}</a>`)}
+              ${row('Email', `<a href="mailto:${data.email}" style="color:#1A7A83;">${data.email}</a>`)}
               ${data.telefono ? row('Teléfono', data.telefono) : ''}
               ${data.empresa ? row('Empresa', data.empresa) : ''}
               ${row('Motivo', getMotivoLabel(data.motivo))}
             </table>
-            <div style="margin:24px 0 0;padding:24px;background:#f5f4ef;border-left:3px solid #c9a96e;">
+            <div style="margin:24px 0 0;padding:24px;background:#D9EFF1;border-left:3px solid #1A7A83;">
               <p style="margin:0 0 8px;font-size:11px;color:#8a8680;text-transform:uppercase;letter-spacing:1.5px;">Mensaje</p>
               <p style="margin:0;font-size:15px;color:#1c1c1c;line-height:1.7;white-space:pre-wrap;">${escHtml(data.mensaje)}</p>
             </div>

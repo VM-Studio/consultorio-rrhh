@@ -28,9 +28,9 @@ function LogoImage({ scrolled, menuOpen }: { scrolled: boolean; menuOpen: boolea
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src="/images/logo/logo.png"
+      src="/motuslogo.png"
       alt="Logo"
-      className="h-10 w-auto object-contain"
+      className="h-14 w-auto object-contain"
       onError={() => setImgError(true)}
     />
   )
@@ -87,8 +87,8 @@ export default function Navbar() {
                             ? 'text-charcoal-800'
                             : 'text-charcoal-800/70 hover:text-charcoal-800'
                           : isActive
-                          ? 'text-cream-50'
-                          : 'text-cream-50/80 hover:text-cream-50'
+                          ? 'text-charcoal-800'
+                          : 'text-charcoal-800/70 hover:text-charcoal-800'
                       }`}
                     >
                       {link.label}
@@ -103,9 +103,7 @@ export default function Navbar() {
               </nav>
               <Link
                 href="/contacto"
-                className={`btn-primary text-xs ${
-                  !scrolled ? 'bg-cream-50 !text-charcoal-800 hover:bg-cream-100' : ''
-                }`}
+                className="btn-gold text-xs"
               >
                 Contactanos
               </Link>
@@ -118,7 +116,7 @@ export default function Navbar() {
                 aria-expanded={menuOpen}
                 aria-controls="mobile-menu"
                 className={`lg:hidden flex flex-col justify-center items-center w-8 h-8 gap-1.5 ${
-                  scrolled || menuOpen ? 'text-charcoal-800' : 'text-cream-50'
+                  scrolled || menuOpen ? 'text-charcoal-800' : 'text-charcoal-800'
                 }`}
               >
                 <motion.span
@@ -186,7 +184,7 @@ export default function Navbar() {
               transition={{ delay: 0.35 }}
               className="flex justify-center"
             >
-              <Link href="/contacto" className="btn-primary">
+              <Link href="/contacto" className="btn-gold">
                 Contactanos
               </Link>
             </motion.div>

@@ -36,7 +36,7 @@ export default function CTA() {
           <AnimatedSection delay={0.3} className="flex flex-wrap justify-center gap-4">
             <Link
               href="/contacto"
-              className="inline-flex items-center gap-2 px-8 py-3.5 bg-charcoal-900 text-cream-50 font-sans font-medium text-sm tracking-wide rounded-none transition-all duration-300 hover:bg-charcoal-800"
+              className="inline-flex items-center gap-2 px-8 py-3.5 bg-white text-gold-500 font-sans font-medium text-sm tracking-wide rounded-none transition-all duration-300 hover:bg-cream-50"
             >
               Contactanos
             </Link>

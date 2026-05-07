@@ -49,9 +49,12 @@ export default function Footer() {
           {/* Columna 1 — Logo + descripción */}
           <div className="flex flex-col gap-6">
             <Link href="/" className="inline-block">
-              <span className="font-serif text-2xl font-semibold text-cream-50">
-                HR Consultora
-              </span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/motuslogo.png"
+                alt="Motus Logo"
+                className="h-14 w-auto object-contain"
+              />
             </Link>
 
             <p className="font-serif italic text-gold-400 text-sm tracking-wide">
