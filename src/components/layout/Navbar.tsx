@@ -1,156 +1,136 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const navLinks = [
-  { href: '/', label: 'Inicio' },
-  { href: '/nosotros', label: 'Nosotros' },
-  { href: '/servicios', label: 'Servicios' },
-  { href: '/equipo', label: 'Equipo' },
-  { href: '/trabaja-con-nosotros', label: 'Trabaja con Nosotros' },
+  { href: '/', label: 'INICIO' },
+  { href: '/nosotros', label: 'NOSOTROS' },
+  { href: '/servicios', label: 'SERVICIOS' },
 ]
 
-function LogoImage({ scrolled, menuOpen }: { scrolled: boolean; menuOpen: boolean }) {
+function LogoImage() {
   const [imgError, setImgError] = useState(false)
-  const textColor = scrolled || menuOpen ? 'text-charcoal-800' : 'text-cream-50'
 
   if (imgError) {
     return (
-      <span className={`font-serif text-xl font-semibold tracking-tight ${textColor}`}>
-        HR Consultora
-      </span>
+      <div className="flex flex-col">
+        <span style={{ fontFamily: '"Libre Baskerville", Georgia, serif', color: '#09756C', fontSize: '28px', fontWeight: 400, lineHeight: 1 }}>
+          motus
+        </span>
+        <p style={{ fontFamily: 'Quicksand, system-ui, sans-serif', color: '#09756C', fontSize: '12px', fontStyle: 'italic', margin: 0 }}>
+          conexiones con impulso
+        </p>
+      </div>
     )
   }
 
   return (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
+    <Image
       src="/motuslogo.png"
-      alt="Logo"
-      className="h-14 w-auto object-contain"
+      width={140}
+      height={60}
+      alt="Motus"
+      className="object-contain"
       onError={() => setImgError(true)}
+      priority
     />
   )
 }
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const pathname = usePathname()
 
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50)
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  // Close mobile menu on route change
-  useEffect(() => {
-    const timer = setTimeout(() => setMenuOpen(false), 0)
-    return () => clearTimeout(timer)
-  }, [pathname])
-
   return (
     <>
-      <motion.header
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-          scrolled
-            ? 'bg-cream-50/95 backdrop-blur-md shadow-sm border-b border-cream-200'
-            : 'bg-transparent'
-        }`}
-      >
-        <div className="container-max px-6 md:px-12 lg:px-24">
-          <div className="flex items-center justify-between h-20">
-            {/* Logo — izquierda */}
-            <Link href="/" className="flex items-center flex-shrink-0">
-              <LogoImage scrolled={scrolled} menuOpen={menuOpen} />
-            </Link>
+      <header className="fixed top-0 left-0 right-0 z-50 bg-fondo-claro">
+        <div className="max-w-screen-xl mx-auto px-8 md:px-16 lg:px-24 py-4 flex items-center justify-between">
 
-            {/* Desktop Nav + CTA — todo a la derecha */}
-            <div className="hidden lg:flex items-center gap-8">
-              <nav className="flex items-center gap-8" role="navigation" aria-label="Navegación principal">
-                {navLinks.map((link) => {
-                  const isActive = pathname === link.href
-                  return (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      className={`relative text-sm font-medium tracking-wide transition-colors duration-200 group ${
-                        scrolled
-                          ? isActive
-                            ? 'text-charcoal-800'
-                            : 'text-charcoal-800/70 hover:text-charcoal-800'
-                          : isActive
-                          ? 'text-charcoal-800'
-                          : 'text-charcoal-800/70 hover:text-charcoal-800'
-                      }`}
-                    >
-                      {link.label}
-                      <span
-                        className={`absolute -bottom-1 left-0 h-0.5 bg-gold-400 transition-all duration-300 ${
-                          isActive ? 'w-full' : 'w-0 group-hover:w-full'
-                        }`}
-                      />
-                    </Link>
-                  )
-                })}
-              </nav>
-              <Link
-                href="/contacto"
-                className="btn-gold text-xs"
-              >
-                Contactanos
-              </Link>
-            </div>
+          {/* Logo */}
+          <Link href="/" className="flex-shrink-0" onClick={() => setMenuOpen(false)}>
+            <LogoImage />
+          </Link>
 
-            {/* Hamburger — solo mobile */}
-              <button
-                onClick={() => setMenuOpen((v) => !v)}
-                aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
-                aria-expanded={menuOpen}
-                aria-controls="mobile-menu"
-                className={`lg:hidden flex flex-col justify-center items-center w-8 h-8 gap-1.5 ${
-                  scrolled || menuOpen ? 'text-charcoal-800' : 'text-charcoal-800'
-                }`}
-              >
-                <motion.span
-                  animate={menuOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
-                  transition={{ duration: 0.2 }}
-                  className="block w-6 h-0.5 bg-current origin-center"
-                />
-                <motion.span
-                  animate={menuOpen ? { opacity: 0 } : { opacity: 1 }}
-                  transition={{ duration: 0.15 }}
-                  className="block w-6 h-0.5 bg-current"
-                />
-                <motion.span
-                  animate={menuOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
-                  transition={{ duration: 0.2 }}
-                  className="block w-6 h-0.5 bg-current origin-center"
-                />
-              </button>
-          </div>
+          {/* Desktop nav */}
+          <nav className="hidden md:flex items-center gap-10" role="navigation" aria-label="Navegación principal">
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`font-heading font-semibold text-sm uppercase tracking-widest transition-colors duration-200 ${
+                    isActive
+                      ? 'text-verde-matus border-b-2 border-verde-matus pb-0.5'
+                      : 'text-verde-oscuro hover:text-verde-matus'
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              )
+            })}
+          </nav>
+
+          {/* Botón Contacto — desktop */}
+          <Link href="/contacto" className="btn-pill-dark hidden md:inline-flex">
+            CONTACTO
+          </Link>
+
+          {/* Hamburger — mobile */}
+          <button
+            onClick={() => setMenuOpen((v) => !v)}
+            aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
+            className="md:hidden flex flex-col justify-center items-center w-8 h-8 gap-1.5 text-verde-oscuro"
+          >
+            <motion.span
+              animate={menuOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
+              transition={{ duration: 0.2 }}
+              className="block w-6 h-0.5 bg-current origin-center"
+            />
+            <motion.span
+              animate={menuOpen ? { opacity: 0 } : { opacity: 1 }}
+              transition={{ duration: 0.15 }}
+              className="block w-6 h-0.5 bg-current"
+            />
+            <motion.span
+              animate={menuOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
+              transition={{ duration: 0.2 }}
+              className="block w-6 h-0.5 bg-current origin-center"
+            />
+          </button>
         </div>
-      </motion.header>
+      </header>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile drawer */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
             id="mobile-menu"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
+            initial={{ x: '-100%', opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: '-100%', opacity: 0 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="fixed inset-0 z-30 bg-cream-50 flex flex-col pt-24 pb-10 px-8 lg:hidden"
+            className="fixed inset-0 z-40 bg-fondo-claro flex flex-col md:hidden"
           >
-            <nav className="flex flex-col items-center gap-2 flex-1 justify-center" role="navigation" aria-label="Menú móvil">
+            {/* Botón cerrar */}
+            <div className="flex justify-end px-8 py-5">
+              <button
+                onClick={() => setMenuOpen(false)}
+                aria-label="Cerrar menú"
+                className="text-verde-oscuro text-3xl leading-none font-light"
+              >
+                ✕
+              </button>
+            </div>
+
+            {/* Links */}
+            <nav className="flex flex-col items-center justify-center flex-1 gap-6" role="navigation" aria-label="Menú móvil">
               {navLinks.map((link, i) => {
                 const isActive = pathname === link.href
                 return (
@@ -158,34 +138,31 @@ export default function Navbar() {
                     key={link.href}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: i * 0.05, duration: 0.3 }}
+                    transition={{ delay: i * 0.07, duration: 0.3 }}
                   >
                     <Link
                       href={link.href}
-                      className={`block text-3xl font-serif text-center py-3 transition-colors duration-200 ${
-                        isActive
-                          ? 'text-charcoal-800'
-                          : 'text-charcoal-800/60 hover:text-charcoal-800'
+                      onClick={() => setMenuOpen(false)}
+                      className={`font-heading font-semibold text-3xl uppercase tracking-widest transition-colors duration-200 ${
+                        isActive ? 'text-verde-matus' : 'text-verde-oscuro hover:text-verde-matus'
                       }`}
                     >
                       {link.label}
-                      {isActive && (
-                        <span className="block w-6 h-0.5 bg-gold-400 mx-auto mt-1" />
-                      )}
                     </Link>
                   </motion.div>
                 )
               })}
             </nav>
 
+            {/* Botón contacto */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.35 }}
-              className="flex justify-center"
+              className="flex justify-center pb-12"
             >
-              <Link href="/contacto" className="btn-gold">
-                Contactanos
+              <Link href="/contacto" className="btn-pill-dark" onClick={() => setMenuOpen(false)}>
+                CONTACTO
               </Link>
             </motion.div>
           </motion.div>

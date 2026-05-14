@@ -10,33 +10,29 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        cream: {
-          50: '#EEF7F8',
-          100: '#D9EFF1',
-          200: '#B3DFE3',
+        verde: {
+          oscuro:  '#033D40',
+          matus:   '#09756C',
+          fuerte:  '#47C98C',
+          medio:   '#0E5357',
         },
-        charcoal: {
-          800: '#1C1C1C',
-          900: '#111111',
+        fondo: {
+          claro: '#E1DCCB',
         },
-        gold: {
-          400: '#1E8C96',
-          500: '#1A7A83',
-          600: '#156470',
+        tipo: {
+          clara: '#EEEAD6',
         },
-        warm: {
-          gray: '#8A8680',
-        }
       },
       fontFamily: {
-        serif: ['Playfair Display', 'Georgia', 'serif'],
-        sans: ['DM Sans', 'system-ui', 'sans-serif'],
+        serif: ['"Libre Baskerville"', 'Georgia', 'serif'],
+        sans: ['Quicksand', 'system-ui', 'sans-serif'],
+        heading: ['"Barlow Condensed"', 'system-ui', 'sans-serif'],
       },
       backgroundImage: {
-        'gradient-hero': 'linear-gradient(135deg, #c8e9ec 0%, #b2dee2 50%, #c2e5e8 100%)',
-        'gradient-section': 'linear-gradient(180deg, #EEF7F8 0%, #D9EFF1 100%)',
-        'gradient-gold': 'linear-gradient(135deg, #1E8C96 0%, #156470 100%)',
-        'gradient-subtle': 'linear-gradient(135deg, #D9EFF1 0%, #B3DFE3 100%)',
+        'gradient-hero': 'linear-gradient(to right, rgba(3,61,64,0.88) 0%, rgba(3,61,64,0.88) 55%, rgba(3,61,64,0.65) 100%)',
+        'gradient-section': 'linear-gradient(180deg, #E1DCCB 0%, #EEEAD6 100%)',
+        'gradient-gold': 'linear-gradient(135deg, #09756C 0%, #033D40 100%)',
+        'gradient-subtle': 'linear-gradient(135deg, #EEEAD6 0%, #E1DCCB 100%)',
       },
       animation: {
         'fade-up': 'fadeUp 0.7s ease-out forwards',

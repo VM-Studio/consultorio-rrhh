@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@300;400;500;600&family=Barlow+Condensed:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -9,7 +9,7 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply font-sans text-charcoal-800 bg-cream-50;
+    @apply font-sans text-verde-oscuro bg-fondo-claro;
     -webkit-font-smoothing: antialiased;
   }
   h1, h2, h3, h4 {
@@ -17,7 +17,7 @@
   }
   /* Focus-visible global: ring dorado para navegación por teclado */
   :focus-visible {
-    outline: 2px solid #1A7A83;
+    outline: 2px solid #09756C;
     outline-offset: 3px;
   }
   /* Quitar outline por defecto en mouse-click (solo teclado) */
@@ -34,20 +34,26 @@
     @apply max-w-7xl mx-auto;
   }
   .text-gradient-gold {
-    background: linear-gradient(135deg, #1E8C96 0%, #156470 100%);
+    background: linear-gradient(135deg, #09756C 0%, #033D40 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
   .btn-primary {
-    @apply inline-flex items-center gap-2 px-8 py-3.5 bg-charcoal-800 text-cream-50 font-sans font-medium text-sm tracking-wide rounded-none transition-all duration-300 hover:bg-charcoal-900 hover:-translate-y-0.5;
+    @apply inline-flex items-center gap-2 px-8 py-3.5 bg-verde-oscuro text-tipo-clara font-sans font-medium text-sm tracking-wide rounded-none transition-all duration-300 hover:bg-verde-medio hover:-translate-y-0.5;
   }
   .btn-outline {
-    @apply inline-flex items-center gap-2 px-8 py-3.5 border border-charcoal-800 text-charcoal-800 font-sans font-medium text-sm tracking-wide rounded-none transition-all duration-300 hover:bg-charcoal-800 hover:text-cream-50;
+    @apply inline-flex items-center gap-2 px-8 py-3.5 border border-verde-oscuro text-verde-oscuro font-sans font-medium text-sm tracking-wide rounded-none transition-all duration-300 hover:bg-verde-oscuro hover:text-tipo-clara;
   }
   .btn-gold {
     @apply inline-flex items-center gap-2 px-8 py-3.5 font-sans font-medium text-sm tracking-wide rounded-none transition-all duration-300;
-    background: linear-gradient(135deg, #1E8C96 0%, #156470 100%);
-    color: #EEF7F8;
+    background: linear-gradient(135deg, #09756C 0%, #033D40 100%);
+    color: #EEEAD6;
+  }
+  .btn-pill-dark {
+    @apply inline-flex items-center justify-center px-8 py-3.5 bg-verde-oscuro text-tipo-clara font-heading font-bold uppercase tracking-widest rounded-full transition-all duration-300 hover:bg-verde-matus hover:-translate-y-0.5 text-sm;
+  }
+  .btn-pill-light {
+    @apply inline-flex items-center justify-center px-10 py-4 bg-tipo-clara text-verde-oscuro font-heading font-bold uppercase tracking-widest rounded-full transition-all duration-300 hover:bg-fondo-claro hover:-translate-y-0.5 text-sm;
   }
 }
