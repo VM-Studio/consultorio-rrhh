@@ -4,7 +4,6 @@ import QuienesSomos from '@/components/sections/home/QuienesSomos'
 import ServiciosHome from '@/components/sections/home/ServiciosHome'
 import NosotrosHome from '@/components/sections/home/NosotrosHome'
 import ClientesHome from '@/components/sections/home/ClientesHome'
-import CTAHome from '@/components/sections/home/CTAHome'
 
 export const metadata: Metadata = {
   title: '[Nombre Empresa] | Consultoría de Recursos Humanos en Buenos Aires',
@@ -21,7 +20,6 @@ export default function HomePage() {
       <ServiciosHome />
       <NosotrosHome />
       <ClientesHome />
-      <CTAHome />
     </>
   )
 }

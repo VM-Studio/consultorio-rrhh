@@ -1,0 +1,418 @@
+'use client'
+
+import Image from 'next/image'
+import { motion } from 'framer-motion'
+
+const luciaData = {
+  nombre: 'Lucía',
+  apellido: 'Carrera',
+  rol: 'Facilitadora estratégica',
+  descripcion: [
+    'con más de 20 años de trayectoria acompañando a líderes, equipos y organizaciones en procesos de transformación, integración y desarrollo cultural.',
+    'Combina experiencia en grandes compañías y consultoría con una mirada cercana y humana, creando espacios de trabajo donde las personas puedan desarrollar su potencial, fortalecer vínculos y generar cambios sostenibles en contextos de evolución y crecimiento.',
+  ],
+  bullets: [
+    { bold: 'Licenciada en Relaciones Laborales', plain: ' - Universidad de Buenos Aires' },
+    { bold: 'Posgrado de Coaching & PNL', plain: ' - Universidad Austral' },
+  ],
+  linkedin: 'https://www.linkedin.com/in/lucia-carrera',
+  foto: '/lucia.png',
+}
+
+const federicoData = {
+  nombre: 'Federico',
+  apellido: 'Ambroggio',
+  rol: 'Consultor organizacional',
+  descripcion: [
+    'con más de 20 años de trayectoria en Recursos Humanos, Supply Chain y consultoría. Acompaña a líderes, equipos y empresas en procesos de cambio, diseño organizacional y evolución cultural.',
+    'Combina su recorrido en multinacionales, consultoría y docencia universitaria con un enfoque cercano, orientado a generar valor real a través de vínculos sólidos, equipos comprometidos y decisiones con impacto.',
+  ],
+  bullets: [
+    { bold: 'Master en Coaching y Cambio Organizacional', plain: ' - Universidad del Salvador' },
+    { bold: 'Posgrado en Conducción de Recursos Humanos', plain: ' - Universidad Católica Argentina' },
+    { bold: 'Licenciado en Administración de Empresas', plain: ' - Universidad Católica Argentina' },
+  ],
+  linkedin: 'https://www.linkedin.com/in/federico-ambroggio',
+  foto: '/federico.png',
+}
+
+function LinkedInButton({ href }: { href: string }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{
+        display: 'inline-flex',
+        alignItems: 'center',
+        gap: '10px',
+        backgroundColor: 'transparent',
+        borderRadius: '6px',
+        padding: '9px 22px',
+        textDecoration: 'none',
+        position: 'relative',
+      }}
+    >
+      {/* Gradient border */}
+      <span
+        style={{
+          position: 'absolute',
+          inset: 0,
+          borderRadius: '6px',
+          padding: '1.5px',
+          background: 'linear-gradient(to right, #0a403e, #eae9db)',
+          WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+          WebkitMaskComposite: 'xor',
+          maskComposite: 'exclude',
+          pointerEvents: 'none',
+        }}
+      />
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="#033D40" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+        <rect x="2" y="9" width="4" height="12" />
+        <circle cx="4" cy="4" r="2" />
+      </svg>
+      <span
+        style={{
+          fontFamily: '"Barlow Condensed", sans-serif',
+          fontWeight: 600,
+          fontSize: '12px',
+          color: '#033D40',
+          letterSpacing: '0.1em',
+          textTransform: 'uppercase',
+        }}
+      >
+        Ver perfil en LinkedIn
+      </span>
+    </a>
+  )
+}
+
+function CirclePhoto({ src, alt, size = 420 }: { src: string; alt: string; size?: number }) {
+  const gradId = `grad-${alt.replace(/\s/g, '')}`
+  return (
+    <div style={{ position: 'relative', width: size, height: size, flexShrink: 0 }}>
+      <svg
+        width={size}
+        height={size}
+        viewBox={`0 0 ${size} ${size}`}
+        style={{ position: 'absolute', inset: 0, zIndex: 2 }}
+      >
+        <defs>
+          <linearGradient id={gradId} x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#0a403e" />
+            <stop offset="100%" stopColor="#c8d0bb" />
+          </linearGradient>
+        </defs>
+        <circle
+          cx={size / 2}
+          cy={size / 2}
+          r={size / 2 - 5}
+          fill="none"
+          stroke={`url(#${gradId})`}
+          strokeWidth="5"
+        />
+      </svg>
+      <div
+        style={{
+          position: 'absolute',
+          inset: '10px',
+          borderRadius: '50%',
+          overflow: 'hidden',
+          zIndex: 1,
+        }}
+      >
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          sizes={`${size}px`}
+          style={{ objectFit: 'cover', objectPosition: 'center top' }}
+        />
+      </div>
+    </div>
+  )
+}
+
+export default function NosotrosPage() {
+  return (
+    <div style={{ width: '100%' }}>
+
+      {/* ── HEADER ── */}
+      <section
+        style={{
+          position: 'relative',
+          background: 'linear-gradient(to right, #c5cdb8 0%, #3a6f6b 60%, #054042 100%)',
+          paddingTop: '160px',
+          paddingBottom: '52px',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}
+      >
+        <motion.div
+          initial={{ opacity: 0, x: -60 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          style={{
+            position: 'absolute',
+            top: '110px',
+            left: 0,
+            width: '50%',
+            height: '32px',
+            background: 'linear-gradient(to right, #3a6f6b, #054042)',
+            borderRadius: '0 9999px 9999px 0',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <span
+            style={{
+              fontFamily: '"Barlow Condensed", sans-serif',
+              fontWeight: 700,
+              fontSize: '11px',
+              color: '#EEEAD6',
+              letterSpacing: '0.2em',
+              textTransform: 'uppercase',
+            }}
+          >
+            NOSOTROS
+          </span>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+          style={{ textAlign: 'center', maxWidth: '500px', padding: '0 24px' }}
+        >
+          <p
+            style={{
+              fontFamily: 'Quicksand, sans-serif',
+              fontSize: '16px',
+              color: '#e8e5d8',
+              lineHeight: 1.8,
+              margin: 0,
+            }}
+          >
+            Profesionales con{' '}
+            <strong style={{ fontWeight: 700, color: '#fff' }}>trayectoria sólida,</strong>
+            <br />
+            <strong style={{ fontWeight: 700, color: '#fff' }}>vocación de servicio</strong>{' '}
+            y la{' '}
+            <strong style={{ fontWeight: 700, color: '#fff' }}>pasión de conectar</strong>
+            <br />
+            personas con oportunidades.
+          </p>
+        </motion.div>
+      </section>
+
+      {/* ── LUCÍA ── */}
+      <section
+        style={{
+          background: 'linear-gradient(to right, #c5cdb8 0%, #3a6f6b 55%, #054042 100%)',
+          padding: '72px 0 64px',
+          overflow: 'hidden',
+        }}
+      >
+        {/* Fila principal: card pegada al borde izq + foto separada a la derecha */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: '48px',
+            paddingRight: '80px',
+          }}
+        >
+          {/* Card pegada al margen izquierdo */}
+          <div
+            style={{
+              width: '52%',
+              backgroundColor: '#cfd5c2',
+              borderRadius: '0 9999px 9999px 0',
+              padding: '80px 100px 80px 72px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '18px',
+              flexShrink: 0,
+            }}
+          >
+            <h2
+              style={{
+                fontFamily: '"Libre Baskerville", serif',
+                fontSize: '38px',
+                color: '#033D40',
+                fontWeight: 400,
+                lineHeight: 1.1,
+                margin: 0,
+              }}
+            >
+              {luciaData.nombre} {luciaData.apellido}
+            </h2>
+            <p
+              style={{
+                fontFamily: 'Quicksand, sans-serif',
+                fontSize: '14px',
+                color: '#033D40',
+                lineHeight: 1.75,
+                margin: 0,
+              }}
+            >
+              <strong style={{ fontWeight: 700 }}>{luciaData.rol}</strong>{' '}
+              {luciaData.descripcion[0]}
+            </p>
+            <p
+              style={{
+                fontFamily: 'Quicksand, sans-serif',
+                fontSize: '14px',
+                color: '#033D40',
+                lineHeight: 1.75,
+                margin: 0,
+              }}
+            >
+              {luciaData.descripcion[1]}
+            </p>
+          </div>
+
+          {/* Foto — completamente separada */}
+          <CirclePhoto src={luciaData.foto} alt="Lucía Carrera" size={500} />
+        </motion.div>
+
+        {/* Fila inferior */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.25 }}
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'flex-end',
+            marginTop: '36px',
+            padding: '0 80px 0 72px',
+          }}
+        >
+          <LinkedInButton href={luciaData.linkedin} />
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', textAlign: 'right' }}>
+            {luciaData.bullets.map((b, i) => (
+              <p key={i} style={{ fontFamily: 'Quicksand, sans-serif', fontSize: '13px', color: '#EEEAD6', margin: 0, lineHeight: 1.6 }}>
+                {'• '}<strong style={{ fontWeight: 700 }}>{b.bold}</strong><span style={{ opacity: 0.85 }}>{b.plain}</span>
+              </p>
+            ))}
+          </div>
+        </motion.div>
+      </section>
+
+      {/* ── FEDERICO ── */}
+      <section
+        style={{
+          background: 'linear-gradient(to left, #c5cdb8 0%, #3a6f6b 55%, #054042 100%)',
+          padding: '72px 0 64px',
+          overflow: 'hidden',
+        }}
+      >
+        {/* Fila principal: foto separada a la izquierda + card pegada al borde derecho */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: '48px',
+            paddingLeft: '80px',
+          }}
+        >
+          {/* Foto — completamente separada a la izquierda */}
+          <CirclePhoto src={federicoData.foto} alt="Federico Ambroggio" size={500} />
+
+          {/* Card pegada al margen derecho */}
+          <div
+            style={{
+              width: '52%',
+              backgroundColor: '#cfd5c2',
+              borderRadius: '9999px 0 0 9999px',
+              padding: '80px 72px 80px 100px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '18px',
+              flexShrink: 0,
+            }}
+          >
+            <h2
+              style={{
+                fontFamily: '"Libre Baskerville", serif',
+                fontSize: '38px',
+                color: '#033D40',
+                fontWeight: 400,
+                lineHeight: 1.1,
+                margin: 0,
+                textAlign: 'right',
+              }}
+            >
+              {federicoData.nombre} {federicoData.apellido}
+            </h2>
+            <p
+              style={{
+                fontFamily: 'Quicksand, sans-serif',
+                fontSize: '14px',
+                color: '#033D40',
+                lineHeight: 1.75,
+                margin: 0,
+                textAlign: 'right',
+              }}
+            >
+              <strong style={{ fontWeight: 700 }}>{federicoData.rol}</strong>{' '}
+              {federicoData.descripcion[0]}
+            </p>
+            <p
+              style={{
+                fontFamily: 'Quicksand, sans-serif',
+                fontSize: '14px',
+                color: '#033D40',
+                lineHeight: 1.75,
+                margin: 0,
+                textAlign: 'right',
+              }}
+            >
+              {federicoData.descripcion[1]}
+            </p>
+          </div>
+        </motion.div>
+
+        {/* Fila inferior */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.25 }}
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'flex-end',
+            marginTop: '36px',
+            padding: '0 72px 0 80px',
+          }}
+        >
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
+            {federicoData.bullets.map((b, i) => (
+              <p key={i} style={{ fontFamily: 'Quicksand, sans-serif', fontSize: '13px', color: '#EEEAD6', margin: 0, lineHeight: 1.6 }}>
+                {'• '}<strong style={{ fontWeight: 700 }}>{b.bold}</strong><span style={{ opacity: 0.85 }}>{b.plain}</span>
+              </p>
+            ))}
+          </div>
+          <LinkedInButton href={federicoData.linkedin} />
+        </motion.div>
+      </section>
+
+    </div>
+  )
+}

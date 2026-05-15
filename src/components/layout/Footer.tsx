@@ -12,10 +12,10 @@ const navLinks = [
 ]
 
 const iconCircleStyle: React.CSSProperties = {
-  width: '32px',
-  height: '32px',
-  borderRadius: '50%',
-  backgroundColor: '#50c28c',
+  width: '28px',
+  height: '28px',
+  borderRadius: '6px',
+  backgroundColor: '#51c18c',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
@@ -29,9 +29,9 @@ export default function Footer() {
         position: 'relative',
         overflow: 'hidden',
         backgroundColor: '#023e41',
-        paddingTop: '60px',
-        paddingLeft: '64px',
-        paddingRight: '80px',
+        paddingTop: '36px',
+        paddingLeft: '48px',
+        paddingRight: '56px',
         paddingBottom: '0',
         display: 'flex',
         flexDirection: 'column',
@@ -42,30 +42,30 @@ export default function Footer() {
         style={{
           display: 'flex',
           alignItems: 'flex-start',
-          gap: '80px',
-          paddingBottom: '60px',
+          justifyContent: 'space-between',
+          paddingBottom: '32px',
         }}
       >
         {/* COLUMNA 1 — Logo + figura decorativa */}
         <div
           style={{
             position: 'relative',
-            width: '320px',
+            width: '280px',
             flexShrink: 0,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            minHeight: '260px',
+            minHeight: '220px',
           }}
         >
           <div
             style={{
               position: 'absolute',
-              bottom: '-60px',
+              bottom: 0,
               left: '50%',
               transform: 'translateX(-50%)',
-              width: '300px',
-              height: '280px',
+              width: '260px',
+              height: '220px',
               backgroundColor: '#065954',
               borderRadius: '9999px 9999px 0 0',
               zIndex: 1,
@@ -75,15 +75,15 @@ export default function Footer() {
             <Image
               src="/footer.png"
               alt="Motus"
-              width={260}
-              height={120}
+              width={220}
+              height={100}
               style={{ objectFit: 'contain' }}
             />
           </div>
         </div>
 
         {/* COLUMNA 2 — Navegación */}
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flex: 1 }}>
           <p
             style={{
               fontFamily: '"Barlow Condensed", sans-serif',
@@ -92,12 +92,12 @@ export default function Footer() {
               color: '#EEEAD6',
               letterSpacing: '0.15em',
               textTransform: 'uppercase',
-              marginBottom: '28px',
+              marginBottom: '24px',
             }}
           >
             NAVEGACIÓN
           </p>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', alignItems: 'center' }}>
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -105,7 +105,7 @@ export default function Footer() {
                 style={{
                   fontFamily: '"Barlow Condensed", sans-serif',
                   fontWeight: 400,
-                  fontSize: '14px',
+                  fontSize: '13px',
                   color: 'rgba(238, 234, 214, 0.70)',
                   letterSpacing: '0.12em',
                   textTransform: 'uppercase',
@@ -122,7 +122,7 @@ export default function Footer() {
         </div>
 
         {/* COLUMNA 3 — Contacto */}
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', flex: 1, paddingLeft: '40px' }}>
           <p
             style={{
               fontFamily: '"Barlow Condensed", sans-serif',
@@ -131,61 +131,61 @@ export default function Footer() {
               color: '#EEEAD6',
               letterSpacing: '0.15em',
               textTransform: 'uppercase',
-              marginBottom: '28px',
+              marginBottom: '24px',
             }}
           >
             CONTACTO
           </p>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', alignItems: 'flex-start' }}>
             {/* EMAIL */}
-            <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+            <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
               <div style={iconCircleStyle}>
-                <Mail size={15} color="white" strokeWidth={2} />
+                <Mail size={13} color="#51c18c" strokeWidth={2} />
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
-                <span style={{ fontFamily: '"Barlow Condensed", sans-serif', fontSize: '13px', color: 'rgba(238,234,214,0.8)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+                <span style={{ fontFamily: '"Barlow Condensed", sans-serif', fontSize: '12px', color: 'rgba(238,234,214,0.75)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
                   LUCIA@MOTUSCONSULTORA.COM
                 </span>
-                <span style={{ fontFamily: '"Barlow Condensed", sans-serif', fontSize: '13px', color: 'rgba(238,234,214,0.8)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+                <span style={{ fontFamily: '"Barlow Condensed", sans-serif', fontSize: '12px', color: 'rgba(238,234,214,0.75)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
                   FEDERICO@MOTUSCONSULTORA.COM
                 </span>
               </div>
             </div>
 
             {/* TELÉFONO */}
-            <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+            <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
               <div style={iconCircleStyle}>
-                <Phone size={15} color="white" strokeWidth={2} />
+                <Phone size={13} color="#51c18c" strokeWidth={2} />
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
-                <span style={{ fontFamily: '"Barlow Condensed", sans-serif', fontSize: '13px', color: 'rgba(238,234,214,0.8)', letterSpacing: '0.08em' }}>
+                <span style={{ fontFamily: '"Barlow Condensed", sans-serif', fontSize: '12px', color: 'rgba(238,234,214,0.75)', letterSpacing: '0.08em' }}>
                   +54 9 11 5717 4014
                 </span>
-                <span style={{ fontFamily: '"Barlow Condensed", sans-serif', fontSize: '13px', color: 'rgba(238,234,214,0.8)', letterSpacing: '0.08em' }}>
+                <span style={{ fontFamily: '"Barlow Condensed", sans-serif', fontSize: '12px', color: 'rgba(238,234,214,0.75)', letterSpacing: '0.08em' }}>
                   +54 9 11 5057 1318
                 </span>
               </div>
             </div>
 
             {/* UBICACIÓN */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
               <div style={iconCircleStyle}>
-                <MapPin size={15} color="white" strokeWidth={2} />
+                <MapPin size={13} color="#51c18c" strokeWidth={2} />
               </div>
-              <span style={{ fontFamily: '"Barlow Condensed", sans-serif', fontSize: '13px', color: 'rgba(238,234,214,0.8)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+              <span style={{ fontFamily: '"Barlow Condensed", sans-serif', fontSize: '12px', color: 'rgba(238,234,214,0.75)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
                 BUENOS AIRES, ARGENTINA.
               </span>
             </div>
 
             {/* LINKEDIN */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
               <a
                 href="#"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
-                  width: '32px',
-                  height: '32px',
+                  width: '30px',
+                  height: '30px',
                   borderRadius: '6px',
                   backgroundColor: '#50c28c',
                   display: 'flex',
@@ -198,7 +198,7 @@ export default function Footer() {
                 onMouseLeave={e => (e.currentTarget.style.opacity = '1')}
                 aria-label="LinkedIn"
               >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
                   <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
                   <rect x="2" y="9" width="4" height="12" />
                   <circle cx="4" cy="4" r="2" />

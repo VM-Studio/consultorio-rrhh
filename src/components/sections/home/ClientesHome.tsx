@@ -35,14 +35,14 @@ export default function ClientesHome() {
         style={{
           alignSelf: 'flex-start',
           width: '48%',
-          height: '44px',
+          height: '32px',
           background: 'linear-gradient(to right, #336061, #eae6d3)',
           borderRadius: '0 9999px 9999px 0',
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'center',
+          justifyContent: 'flex-end',
           paddingLeft: '40px',
-          paddingRight: '40px',
+          paddingRight: '28px',
           marginTop: '48px',
         }}
       >
@@ -94,7 +94,7 @@ export default function ClientesHome() {
             marginRight: '8px',
           }}
         >
-          <ChevronLeft size={28} style={{ color: '#09756C' }} strokeWidth={2.5} />
+          <ChevronLeft size={52} style={{ color: '#b7c9b8' }} strokeWidth={1.5} />
         </div>
 
         {/* Logos en fila */}

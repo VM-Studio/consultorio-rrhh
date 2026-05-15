@@ -19,7 +19,7 @@ export default function QuienesSomos() {
   return (
     <section
       className="relative overflow-hidden"
-      style={{ backgroundColor: '#E1DCCB', paddingTop: '120px', paddingBottom: '80px' }}
+      style={{ backgroundColor: '#E1DCCB', paddingTop: '90px', paddingBottom: '120px' }}
     >
       {/* BADGE — arranca desde el borde izquierdo absoluto */}
       <motion.div
@@ -31,9 +31,9 @@ export default function QuienesSomos() {
           position: 'absolute',
           left: 0,
           top: '36px',
-          width: '50%',
-          height: '44px',
-          background: 'linear-gradient(to right, #47C98C, #033D40)',
+          width: '46%',
+          height: '36px',
+          background: 'linear-gradient(to right, #83b1a7, #063f42)',
           borderRadius: '0 9999px 9999px 0',
           display: 'flex',
           alignItems: 'center',
@@ -43,8 +43,7 @@ export default function QuienesSomos() {
         }}
       >
         <span
-          className="font-heading font-bold uppercase"
-          style={{ fontSize: '13px', color: '#EEEAD6', letterSpacing: '0.15em' }}
+          style={{ fontFamily: '"Barlow Condensed", sans-serif', fontWeight: 700, fontSize: '12px', color: '#EEEAD6', letterSpacing: '0.18em', textTransform: 'uppercase' }}
         >
           QUIENES SOMOS
         </span>
@@ -64,8 +63,8 @@ export default function QuienesSomos() {
             position: 'absolute',
             left: 0,
             top: '130px',
-            width: '44%',
-            height: '520px',
+            width: '49%',
+            height: '420px',
             borderRadius: '0 9999px 9999px 0',
             overflow: 'hidden',
             outline: '2px solid #09756C',
@@ -82,10 +81,10 @@ export default function QuienesSomos() {
         </motion.div>
 
         {/* Spacer invisible en desktop para empujar el texto a la derecha */}
-        <div className="hidden lg:block flex-shrink-0" style={{ width: '44%' }} />
+        <div className="hidden lg:block flex-shrink-0" style={{ width: '49%' }} />
 
         {/* COLUMNA DERECHA — texto */}
-        <div className="w-full lg:w-[56%] flex flex-col relative z-10">
+        <div className="w-full lg:w-[56%] flex flex-col relative z-10" style={{ paddingTop: '48px' }}>
 
           {/* Título H2 */}
           <motion.h2
@@ -94,7 +93,7 @@ export default function QuienesSomos() {
             transition={{ duration: 0.7, delay: 0.2 }}
             viewport={{ once: true, margin: '-80px' }}
             style={{ color: '#033D40', lineHeight: 1.15 }}
-            className="text-4xl md:text-5xl lg:text-[52px] mb-6"
+            className="text-3xl md:text-4xl lg:text-[40px] mb-5"
           >
             <span className="font-serif font-normal">Mas de </span>
             <strong className="font-serif font-bold">20 años</strong>
@@ -115,56 +114,58 @@ export default function QuienesSomos() {
             viewport={{ once: true, margin: '-80px' }}
             className="space-y-5"
           >
-            <p
-              className="font-sans font-normal text-[15px] leading-[1.75]"
-              style={{ color: 'rgba(3,61,64,0.65)', textAlign: 'justify' }}
-            >
+            <p className="font-sans font-normal text-[13px] leading-[1.7]" style={{ color: 'rgba(3,61,64,0.65)', textAlign: 'justify' }}>
               Nacimos desde la vivencia real en el mundo corporativo y desde la convicción de que los procesos de transformación no se logran solo con metodologías, sino con presencia, escucha y trabajo conjunto.
             </p>
-            <p
-              className="font-sans font-normal text-[15px] leading-[1.75]"
-              style={{ color: 'rgba(3,61,64,0.65)', textAlign: 'justify' }}
-            >
+            <p className="font-sans font-normal text-[13px] leading-[1.7]" style={{ color: 'rgba(3,61,64,0.65)', textAlign: 'justify' }}>
               Nuestro enfoque combina conocimiento técnico, mirada estratégica y sensibilidad humana para acompañar a pequeñas y grandes empresas en momentos clave: crecimiento, reorganización, desarrollo de talento, incorporación de personas y evolución de sus equipos.
             </p>
-            <p
-              className="font-sans font-normal text-[15px] leading-[1.75]"
-              style={{ color: 'rgba(3,61,64,0.65)', textAlign: 'justify' }}
-            >
+            <p className="font-sans font-normal text-[13px] leading-[1.7]" style={{ color: 'rgba(3,61,64,0.65)', textAlign: 'justify' }}>
               Nos involucramos, nos comprometemos y caminamos al lado de cada cliente, porque entendemos que cada organización es única y cada proceso merece una solución propia.
             </p>
           </motion.div>
 
-          {/* PILLS */}
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-80px' }}
-            className="mt-14 flex flex-row flex-nowrap gap-3 justify-center w-full"
-          >
-            {['COMPROMISO', 'ACOMPAÑAMIENTO', 'ENFOQUE HUMANO'].map((label) => (
-              <motion.span
-                key={label}
-                variants={itemVariants}
-                className="font-heading font-bold uppercase cursor-default"
-                style={{
-                  border: '1.5px solid #033D40',
-                  borderRadius: '9999px',
-                  padding: '7px 18px',
-                  fontSize: '11px',
-                  color: '#033D40',
-                  letterSpacing: '0.10em',
-                  whiteSpace: 'nowrap',
-                }}
-              >
-                {label}
-              </motion.span>
-            ))}
-          </motion.div>
-
         </div>
       </div>
+
+      {/* PILLS — fuera del flex row, centradas en toda la sección */}
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-80px' }}
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'center',
+          gap: '24px',
+          marginTop: '80px',
+          paddingBottom: '16px',
+        }}
+      >
+        {['COMPROMISO', 'ACOMPAÑAMIENTO', 'ENFOQUE HUMANO'].map((label) => (
+          <motion.span
+            key={label}
+            variants={itemVariants}
+            style={{
+              border: '1px solid #0d726a',
+              borderRadius: '9999px',
+              padding: '8px 32px',
+              fontFamily: '"Barlow Condensed", sans-serif',
+              fontWeight: 400,
+              fontSize: '11px',
+              color: '#0d726a',
+              letterSpacing: '0.12em',
+              textTransform: 'uppercase',
+              whiteSpace: 'nowrap',
+              cursor: 'default',
+            }}
+          >
+            {label}
+          </motion.span>
+        ))}
+      </motion.div>
+
     </section>
   )
 }

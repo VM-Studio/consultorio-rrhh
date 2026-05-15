@@ -31,8 +31,8 @@ function LogoImage() {
   return (
     <Image
       src="/motuslogo.png"
-      width={140}
-      height={60}
+      width={160}
+      height={64}
       alt="Motus"
       className="object-contain"
       onError={() => setImgError(true)}
@@ -48,7 +48,7 @@ export default function Navbar() {
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50 bg-fondo-claro">
-        <div className="max-w-screen-xl mx-auto px-8 md:px-16 lg:px-24 py-2 flex items-center justify-between">
+        <div className="max-w-screen-xl mx-auto px-4 md:px-8 py-0 flex items-center justify-between">
 
           {/* Logo */}
           <Link href="/" className="flex-shrink-0" onClick={() => setMenuOpen(false)}>
@@ -63,7 +63,7 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`font-heading font-semibold text-sm uppercase tracking-widest transition-colors duration-200 ${
+                  className={`font-heading font-bold text-xs uppercase tracking-widest transition-colors duration-200 ${
                     isActive
                       ? 'text-verde-matus border-b-2 border-verde-matus pb-0.5'
                       : 'text-verde-oscuro hover:text-verde-matus'

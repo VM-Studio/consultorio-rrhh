@@ -38,8 +38,8 @@ export default function NosotrosHome() {
         position: 'relative',
         overflow: 'hidden',
         backgroundColor: '#E1DCCB',
-        paddingTop: '120px',
-        paddingBottom: '100px',
+        paddingTop: '90px',
+        paddingBottom: '70px',
       }}
     >
       {/* BLOQUE 1 — Badge "NOSOTROS" borde izquierdo */}
@@ -52,13 +52,14 @@ export default function NosotrosHome() {
           position: 'absolute',
           top: '36px',
           left: 0,
-          width: '38%',
-          height: '44px',
+          width: '50%',
+          height: '32px',
           background: 'linear-gradient(to right, #7da89e, #043f42)',
           borderRadius: '0 9999px 9999px 0',
           display: 'flex',
           alignItems: 'center',
-          paddingLeft: '40px',
+          justifyContent: 'flex-end',
+          paddingRight: '28px',
           zIndex: 10,
         }}
       >
@@ -66,7 +67,7 @@ export default function NosotrosHome() {
           style={{
             fontFamily: '"Barlow Condensed", sans-serif',
             fontWeight: 700,
-            fontSize: '13px',
+            fontSize: '12px',
             color: '#EEEAD6',
             letterSpacing: '0.15em',
             textTransform: 'uppercase',
@@ -84,7 +85,7 @@ export default function NosotrosHome() {
         viewport={{ once: true, margin: '-60px' }}
         style={{
           width: '100%',
-          height: '220px',
+          height: '290px',
           position: 'relative',
           overflow: 'hidden',
         }}
@@ -94,7 +95,7 @@ export default function NosotrosHome() {
           src="/nosotros.png"
           alt="Nosotros Motus"
           fill
-          style={{ objectFit: 'cover', objectPosition: 'center' }}
+          style={{ objectFit: 'cover', objectPosition: 'center', opacity: 1 }}
           priority
         />
 
@@ -160,17 +161,19 @@ export default function NosotrosHome() {
             <div
               style={{
                 borderRadius: '9999px',
-                padding: '12px 32px',
+                padding: '4px 16px',
                 background:
                   'linear-gradient(#E1DCCB, #E1DCCB) padding-box, linear-gradient(to right, #2d4245, #adc2b9, #2d4245) border-box',
                 border: '1.5px solid transparent',
                 marginBottom: '24px',
+                display: 'inline-flex',
+                alignItems: 'center',
               }}
             >
               <span
                 style={{
                   fontFamily: '"Libre Baskerville", serif',
-                  fontSize: '22px',
+                  fontSize: '18px',
                   color: '#033D40',
                   whiteSpace: 'nowrap',
                 }}
@@ -259,8 +262,8 @@ export default function NosotrosHome() {
             display: 'inline-flex',
             alignItems: 'center',
             justifyContent: 'center',
-            padding: '14px 48px',
-            backgroundColor: '#043f42',
+            padding: '11px 36px',
+            backgroundColor: '#0e746c',
             color: '#EEEAD6',
             borderRadius: '9999px',
             fontFamily: '"Barlow Condensed", sans-serif',

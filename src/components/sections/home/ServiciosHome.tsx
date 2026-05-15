@@ -1,7 +1,8 @@
 'use client'
 
 import Link from 'next/link'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
+import { useState } from 'react'
 
 const containerVariants = {
   hidden: {},
@@ -22,240 +23,218 @@ const figuraVariants = {
 interface Servicio {
   numero: string
   titulo: string
-  descripcion: string | null
+  descripcion: string
   color: string
   colorNumero: string
   colorTitulo: string
+  colorTexto: string
   opacidadNumero: number
   numeroOutline: boolean
-  activo: boolean
-  ancho: number
-  alto: number
-  zIndex: number
+  colorBoton: string
+  colorBotonTexto: string
 }
 
 const servicios: Servicio[] = [
   {
     numero: '01.',
     titulo: 'GESTIÓN INTEGRAL\nDE RECURSOS\nHUMANOS',
-    descripcion: null,
+    descripcion:
+      'Para empresas que necesitan ordenar y acompañar la gestión de personas sin armar una estructura interna. Nos integramos como parte del equipo, dando soporte en lo operativo y en decisiones estratégicas [...]',
     color: '#05373b',
     colorNumero: '#EEEAD6',
     colorTitulo: '#EEEAD6',
+    colorTexto: '#c5c0aa',
     opacidadNumero: 0.45,
     numeroOutline: false,
-    activo: false,
-    ancho: 240,
-    alto: 390,
-    zIndex: 10,
+    colorBoton: '#47C98C',
+    colorBotonTexto: '#033D40',
   },
   {
     numero: '02.',
     titulo: 'HEADHUNTING\nEJECUTIVO',
     descripcion:
-      'Trabajamos en búsquedas que requieren criterio, confidencialidad y acceso a perfiles que no están activamente en el mercado. Nos involucramos de manera directa, entendiendo el contexto del negocio y el tipo de liderazgo que realmente necesita la organización.',
+      'Trabajamos en búsquedas que requieren criterio, confidencialidad y acceso a perfiles que no están activamente en el mercado. Nos involucramos de manera directa, entendiendo el contexto del negocio [...]',
     color: '#105056',
     colorNumero: '#EEEAD6',
     colorTitulo: '#EEEAD6',
+    colorTexto: '#c5c0aa',
     opacidadNumero: 1,
     numeroOutline: true,
-    activo: true,
-    ancho: 280,
-    alto: 530,
-    zIndex: 20,
+    colorBoton: '#47C98C',
+    colorBotonTexto: '#033D40',
   },
   {
     numero: '03.',
     titulo: 'BÚSQUEDA Y\nSELECCIÓN DE\nTALENTO',
-    descripcion: null,
+    descripcion:
+      'Acompañamos todo el proceso de selección, desde la definición del perfil hasta el seguimiento después del ingreso. Entendemos qué necesita el negocio y cómo es el equipo que va a recibir a esa persona [...]',
     color: '#0b756a',
     colorNumero: '#EEEAD6',
     colorTitulo: '#EEEAD6',
+    colorTexto: '#d0ece7',
     opacidadNumero: 0.45,
     numeroOutline: false,
-    activo: false,
-    ancho: 240,
-    alto: 390,
-    zIndex: 10,
+    colorBoton: '#EEEAD6',
+    colorBotonTexto: '#033D40',
   },
   {
     numero: '04.',
     titulo: 'APRENDIZAJE\nAPLICADO AL\nNEGOCIO',
-    descripcion: null,
+    descripcion:
+      'Generamos espacios para trabajar situaciones reales del día a día. Nos enfocamos en liderazgo, comunicación, gestión de equipos y acompañamiento en contextos de cambio [...]',
     color: '#47ca8b',
     colorNumero: '#033D40',
     colorTitulo: '#033D40',
+    colorTexto: '#1a5a4a',
     opacidadNumero: 1,
     numeroOutline: false,
-    activo: false,
-    ancho: 240,
-    alto: 390,
-    zIndex: 10,
+    colorBoton: '#033D40',
+    colorBotonTexto: '#EEEAD6',
   },
   {
     numero: '05.',
     titulo: 'TRANSFORMACIÓN\nORGANIZACIONAL',
-    descripcion: null,
+    descripcion:
+      'Acompañamos procesos de cambio desde adentro, trabajando junto a los equipos y líderes para alinear prácticas y formas de liderazgo con los objetivos del negocio [...]',
     color: '#eeead7',
     colorNumero: '#09756C',
     colorTitulo: '#09756C',
+    colorTexto: '#3a6060',
     opacidadNumero: 1,
     numeroOutline: false,
-    activo: false,
-    ancho: 240,
-    alto: 390,
-    zIndex: 10,
+    colorBoton: '#09756C',
+    colorBotonTexto: '#EEEAD6',
   },
 ]
 
-function FiguraActiva({ servicio }: { servicio: Servicio }) {
+function Figura({ servicio, index }: { servicio: Servicio; index: number }) {
+  const [hovered, setHovered] = useState(false)
+
   return (
-    <div
+    <motion.div
+      variants={figuraVariants}
+      onHoverStart={() => setHovered(true)}
+      onHoverEnd={() => setHovered(false)}
+      animate={{ height: hovered ? 420 : 310 }}
+      transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
       style={{
-        width: '100%',
-        height: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        padding: '40px 24px 32px',
-        justifyContent: 'flex-start',
+        width: 240,
+        backgroundColor: servicio.color,
+        borderRadius: '9999px 9999px 0 0',
+        overflow: 'hidden',
+        flexShrink: 0,
+        position: 'relative',
+        zIndex: hovered ? 20 : 10,
+        marginLeft: index === 0 ? '-30px' : '-10px',
+        cursor: 'pointer',
       }}
     >
-      <span
-        style={{
-          fontFamily: '"Libre Baskerville", serif',
-          fontStyle: 'italic',
-          fontSize: '68px',
-          fontWeight: 400,
-          color: 'transparent',
-          WebkitTextStroke: '1.5px #EEEAD6',
-          lineHeight: 1,
-          marginBottom: '16px',
-          display: 'block',
-        }}
-      >
-        {servicio.numero}
-      </span>
-
-      <h3
-        style={{
-          fontFamily: '"Barlow Condensed", sans-serif',
-          fontWeight: 700,
-          fontSize: '15px',
-          color: '#EEEAD6',
-          textTransform: 'uppercase',
-          letterSpacing: '0.1em',
-          textAlign: 'center',
-          whiteSpace: 'pre-line',
-          marginBottom: '20px',
-        }}
-      >
-        {servicio.titulo}
-      </h3>
-
-      <div
-        style={{
-          width: '32px',
-          height: '1px',
-          background: 'rgba(238,234,214,0.4)',
-          marginBottom: '20px',
-          flexShrink: 0,
-        }}
-      />
-
-      <p
-        style={{
-          fontFamily: 'Quicksand, sans-serif',
-          fontSize: '13px',
-          color: '#EEEAD6',
-          opacity: 0.85,
-          lineHeight: 1.65,
-          textAlign: 'left',
-          marginBottom: '28px',
-          flexGrow: 1,
-          overflow: 'hidden',
-          display: '-webkit-box',
-          WebkitLineClamp: 8,
-          WebkitBoxOrient: 'vertical',
-        }}
-      >
-        {servicio.descripcion}
-      </p>
-
       <Link
         href="/servicios"
         style={{
-          display: 'inline-flex',
+          display: 'flex',
+          flexDirection: 'column',
           alignItems: 'center',
-          justifyContent: 'center',
-          padding: '10px 28px',
-          background: '#47ca8b',
-          color: '#033D40',
-          borderRadius: '9999px',
-          fontFamily: '"Barlow Condensed", sans-serif',
-          fontWeight: 700,
-          fontSize: '13px',
-          letterSpacing: '0.12em',
-          textTransform: 'uppercase',
+          width: '100%',
+          height: '100%',
           textDecoration: 'none',
-          marginTop: 'auto',
-          flexShrink: 0,
+          padding: '36px 20px 32px',
         }}
       >
-        VER MAS
+        {/* Número */}
+        <span
+          style={{
+            fontFamily: '"Libre Baskerville", serif',
+            fontStyle: 'italic',
+            fontSize: '52px',
+            fontWeight: 400,
+            color: servicio.numeroOutline ? 'transparent' : servicio.colorNumero,
+            WebkitTextStroke: servicio.numeroOutline ? `1.5px ${servicio.colorNumero}` : undefined,
+            opacity: servicio.opacidadNumero,
+            lineHeight: 1,
+            display: 'block',
+            textAlign: 'center',
+          }}
+        >
+          {servicio.numero}
+        </span>
+
+        {/* Título */}
+        <h3
+          style={{
+            fontFamily: '"Barlow Condensed", sans-serif',
+            fontWeight: 700,
+            fontSize: '13px',
+            color: servicio.colorTitulo,
+            textTransform: 'uppercase',
+            letterSpacing: '0.1em',
+            textAlign: 'center',
+            whiteSpace: 'pre-line',
+            marginTop: '20px',
+            lineHeight: 1.4,
+          }}
+        >
+          {servicio.titulo}
+        </h3>
+
+        {/* Contenido que aparece en hover */}
+        <AnimatePresence>
+          {hovered && (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 6 }}
+              transition={{ duration: 0.22, delay: 0.08 }}
+              style={{
+                marginTop: '18px',
+                width: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                gap: '16px',
+              }}
+            >
+              <div
+                style={{
+                  width: '36px',
+                  height: '1px',
+                  backgroundColor: servicio.colorTexto,
+                  opacity: 0.5,
+                }}
+              />
+              <p
+                style={{
+                  fontFamily: 'Quicksand, sans-serif',
+                  fontSize: '11.5px',
+                  color: servicio.colorTexto,
+                  lineHeight: 1.65,
+                  textAlign: 'center',
+                  margin: 0,
+                }}
+              >
+                {servicio.descripcion}
+              </p>
+              <span
+                style={{
+                  display: 'inline-block',
+                  backgroundColor: servicio.colorBoton,
+                  color: servicio.colorBotonTexto,
+                  fontFamily: '"Barlow Condensed", sans-serif',
+                  fontWeight: 700,
+                  fontSize: '11px',
+                  letterSpacing: '0.15em',
+                  textTransform: 'uppercase',
+                  borderRadius: '9999px',
+                  padding: '8px 28px',
+                }}
+              >
+                VER MÁS
+              </span>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </Link>
-    </div>
-  )
-}
-
-function FiguraInactiva({ servicio }: { servicio: Servicio }) {
-  return (
-    <div
-      style={{
-        width: '100%',
-        height: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'flex-end',
-        padding: '0 16px 32px',
-      }}
-    >
-      <span
-        style={{
-          fontFamily: '"Libre Baskerville", serif',
-          fontStyle: 'italic',
-          fontSize: '56px',
-          fontWeight: 400,
-          color: servicio.numeroOutline ? 'transparent' : servicio.colorNumero,
-          WebkitTextStroke: servicio.numeroOutline ? `1.5px ${servicio.colorNumero}` : undefined,
-          opacity: servicio.opacidadNumero,
-          lineHeight: 1,
-          marginBottom: 'auto',
-          marginTop: '48px',
-          display: 'block',
-          alignSelf: 'center',
-        }}
-      >
-        {servicio.numero}
-      </span>
-
-      <h3
-        style={{
-          fontFamily: '"Barlow Condensed", sans-serif',
-          fontWeight: 700,
-          fontSize: '13px',
-          color: servicio.colorTitulo,
-          textTransform: 'uppercase',
-          letterSpacing: '0.1em',
-          textAlign: 'center',
-          whiteSpace: 'pre-line',
-          marginTop: '16px',
-        }}
-      >
-        {servicio.titulo}
-      </h3>
-    </div>
+    </motion.div>
   )
 }
 
@@ -281,13 +260,13 @@ export default function ServiciosHome() {
           position: 'absolute',
           top: '60px',
           right: 0,
-          width: '38%',
-          height: '44px',
+          width: '42%',
+          height: '36px',
           background: 'linear-gradient(to left, #3f6965, #eae5d3)',
           borderRadius: '9999px 0 0 9999px',
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'center',
+          justifyContent: 'flex-start',
           paddingLeft: '32px',
           paddingRight: '32px',
           zIndex: 10,
@@ -297,7 +276,7 @@ export default function ServiciosHome() {
           style={{
             fontFamily: '"Barlow Condensed", sans-serif',
             fontWeight: 700,
-            fontSize: '13px',
+            fontSize: '12px',
             color: '#033D40',
             letterSpacing: '0.15em',
             textTransform: 'uppercase',
@@ -315,13 +294,17 @@ export default function ServiciosHome() {
         viewport={{ once: true, margin: '-80px' }}
         style={{
           fontFamily: 'Quicksand, sans-serif',
-          fontSize: '17px',
+          fontSize: '14px',
           color: '#EEEAD6',
-          lineHeight: 1.65,
-          marginTop: '80px',
-          maxWidth: '420px',
-          marginLeft: 'auto',
-          paddingRight: '96px',
+          lineHeight: 1.6,
+          marginTop: '40px',
+          maxWidth: '360px',
+          marginLeft: '58%',
+          marginRight: '0',
+          paddingRight: '32px',
+          paddingLeft: '32px',
+          width: '42%',
+          textAlign: 'left',
         }}
       >
         <strong style={{ fontWeight: 700 }}>Diseñamos soluciones</strong>
@@ -351,27 +334,7 @@ export default function ServiciosHome() {
         }}
       >
         {servicios.map((servicio, index) => (
-          <motion.div
-            key={servicio.numero}
-            variants={figuraVariants}
-            style={{
-              width: servicio.ancho,
-              height: servicio.alto,
-              backgroundColor: servicio.color,
-              borderRadius: '9999px 9999px 0 0',
-              overflow: 'hidden',
-              flexShrink: 0,
-              position: 'relative',
-              zIndex: servicio.zIndex,
-              marginLeft: index === 0 ? '-30px' : '-10px',
-            }}
-          >
-            {servicio.activo ? (
-              <FiguraActiva servicio={servicio} />
-            ) : (
-              <FiguraInactiva servicio={servicio} />
-            )}
-          </motion.div>
+          <Figura key={servicio.numero} servicio={servicio} index={index} />
         ))}
       </motion.div>
     </section>
