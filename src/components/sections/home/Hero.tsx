@@ -6,33 +6,23 @@ import { motion } from 'framer-motion'
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden pt-24 pb-16">
+    <section className="relative overflow-hidden">
 
-      {/* CAPA 1 — Imagen de fondo */}
-      <div className="absolute inset-0 z-0 bg-verde-oscuro">
-        <Image
-          src="/images/hero/hero.jpg"
-          alt=""
-          fill
-          priority
-          style={{ objectFit: 'cover', objectPosition: 'center' }}
-          className="z-0"
-          onError={() => {/* fallback: bg-verde-oscuro ya aplicado al padre */}}
-        />
-      </div>
-
-      {/* CAPA 2 — Overlay verde oscuro */}
-      <div
-        className="absolute inset-0 z-10"
-        style={{
-          background: 'linear-gradient(to right, rgba(3,61,64,0.88) 0%, rgba(3,61,64,0.88) 55%, rgba(3,61,64,0.65) 100%)',
-        }}
-        aria-hidden="true"
+      {/* Imagen — ancho completo, altura natural, sin recorte */}
+      <Image
+        src="/hero.png"
+        alt=""
+        width={0}
+        height={0}
+        sizes="100vw"
+        priority
+        style={{ width: '100%', height: 'auto', display: 'block' }}
       />
 
-      {/* CAPA 3 — Contenido */}
-      <div className="relative z-20 w-full max-w-screen-xl mx-auto px-8 md:px-16 lg:px-24">
-        <div className="max-w-2xl">
+      {/* Contenido superpuesto */}
+      <div className="absolute inset-0 z-10 flex items-center pt-16">
+        <div className="w-full max-w-screen-xl mx-auto px-8 md:px-16 lg:px-24">
+          <div className="max-w-2xl">
 
           {/* Supertítulo */}
           <motion.p
@@ -50,7 +40,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.35 }}
-            className="text-5xl md:text-6xl lg:text-7xl leading-tight text-tipo-clara mb-8"
+            className="text-3xl md:text-4xl lg:text-5xl leading-tight text-tipo-clara mb-8"
           >
             <span className="font-serif font-normal">Acompañamos a </span>
             <em className="font-serif font-normal italic">organizaciones</em>
@@ -88,6 +78,7 @@ export default function Hero() {
             </Link>
           </motion.div>
 
+        </div>
         </div>
       </div>
     </section>

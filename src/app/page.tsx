@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
 import Hero from '@/components/sections/home/Hero'
-import Nosotros from '@/components/sections/home/Nosotros'
-import Servicios from '@/components/sections/home/Servicios'
-import Equipo from '@/components/sections/home/Equipo'
-import Clientes from '@/components/sections/home/Clientes'
-import CTA from '@/components/sections/home/CTA'
+import QuienesSomos from '@/components/sections/home/QuienesSomos'
+import ServiciosHome from '@/components/sections/home/ServiciosHome'
+import NosotrosHome from '@/components/sections/home/NosotrosHome'
+import ClientesHome from '@/components/sections/home/ClientesHome'
+import CTAHome from '@/components/sections/home/CTAHome'
 
 export const metadata: Metadata = {
   title: '[Nombre Empresa] | Consultoría de Recursos Humanos en Buenos Aires',
@@ -17,11 +17,11 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <Nosotros />
-      <Servicios />
-      <Equipo />
-      <Clientes />
-      <CTA />
+      <QuienesSomos />
+      <ServiciosHome />
+      <NosotrosHome />
+      <ClientesHome />
+      <CTAHome />
     </>
   )
 }

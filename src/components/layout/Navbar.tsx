@@ -48,7 +48,7 @@ export default function Navbar() {
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50 bg-fondo-claro">
-        <div className="max-w-screen-xl mx-auto px-8 md:px-16 lg:px-24 py-4 flex items-center justify-between">
+        <div className="max-w-screen-xl mx-auto px-8 md:px-16 lg:px-24 py-2 flex items-center justify-between">
 
           {/* Logo */}
           <Link href="/" className="flex-shrink-0" onClick={() => setMenuOpen(false)}>
@@ -56,7 +56,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-10" role="navigation" aria-label="Navegación principal">
+          <nav className="hidden md:flex items-center gap-8 ml-auto mr-6" role="navigation" aria-label="Navegación principal">
             {navLinks.map((link) => {
               const isActive = pathname === link.href
               return (
