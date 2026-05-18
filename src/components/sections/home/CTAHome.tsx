@@ -17,7 +17,7 @@ export default function CTAHome() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        overflow: 'visible',
+        overflow: 'hidden',
       }}
     >
       {/* Píldora izquierda */}

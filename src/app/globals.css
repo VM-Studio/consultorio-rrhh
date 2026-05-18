@@ -49,9 +49,10 @@
 @tailwind utilities;
 
 @layer base {
-  html {
+  html, body {
     scroll-behavior: smooth;
     overflow-x: hidden;
+    max-width: 100%;
   }
   /* Placeholder blanco para el formulario de contacto */
   .contact-field::placeholder {

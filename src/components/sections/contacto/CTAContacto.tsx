@@ -16,7 +16,7 @@ export default function CTAContacto() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        overflow: 'visible',
+        overflow: 'hidden',
       }}
     >
       {/* Píldora izquierda */}
