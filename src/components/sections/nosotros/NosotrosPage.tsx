@@ -145,7 +145,7 @@ export default function NosotrosPage() {
         style={{
           position: 'relative',
           background: 'linear-gradient(to right, #c5cdb8 0%, #3a6f6b 60%, #054042 100%)',
-          paddingTop: isMobile ? '100px' : '160px',
+          paddingTop: isMobile ? '130px' : '160px',
           paddingBottom: '52px',
           display: 'flex',
           flexDirection: 'column',
@@ -158,7 +158,7 @@ export default function NosotrosPage() {
           transition={{ duration: 0.6, ease: 'easeOut' }}
           style={{
             position: 'absolute',
-            top: isMobile ? '80px' : '110px',
+            top: isMobile ? '96px' : '110px',
             left: 0,
             width: isMobile ? '72%' : '50%',
             height: '32px',

@@ -295,7 +295,7 @@ export default function ServiciosPage() {
             radial-gradient(ellipse at 20% 70%, #94a8a5 0%, transparent 35%),
             #024041
           `,
-          paddingTop: '90px',
+          paddingTop: '120px',
           paddingBottom: '60px',
         }}
       >

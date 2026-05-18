@@ -51,6 +51,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
   /* Placeholder blanco para el formulario de contacto */
   .contact-field::placeholder {

@@ -11,9 +11,9 @@ export default function CTAHome() {
       style={{
         position: 'relative',
         backgroundColor: '#eeead7',
-        minHeight: isMobile ? '300px' : '420px',
-        paddingTop: isMobile ? '40px' : '60px',
-        paddingBottom: isMobile ? '40px' : '60px',
+        minHeight: isMobile ? '360px' : '420px',
+        paddingTop: isMobile ? '60px' : '60px',
+        paddingBottom: isMobile ? '60px' : '60px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -24,11 +24,11 @@ export default function CTAHome() {
       <div
         style={{
           position: 'absolute',
-          left: '-20%',
+          left: '-10%',
           top: '53%',
           transform: 'translateY(-50%)',
-          width: '92%',
-          height: isMobile ? '160px' : '300px',
+          width: isMobile ? '105%' : '92%',
+          height: isMobile ? '200px' : '300px',
           border: '2px solid #46645e',
           borderRadius: '9999px',
           pointerEvents: 'none',
@@ -40,11 +40,11 @@ export default function CTAHome() {
       <div
         style={{
           position: 'absolute',
-          right: '-20%',
+          right: '-10%',
           top: '50%',
           transform: 'translateY(-50%)',
-          width: '92%',
-          height: isMobile ? '160px' : '300px',
+          width: isMobile ? '105%' : '92%',
+          height: isMobile ? '200px' : '300px',
           border: '2px solid #46645e',
           borderRadius: '9999px',
           pointerEvents: 'none',
