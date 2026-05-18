@@ -1,5 +1,43 @@
 import type { Metadata, Viewport } from 'next'
+import localFont from 'next/font/local'
 import './globals.css'
+
+const artegra = localFont({
+  src: [
+    {
+      path: '../../public/fonts/artegra/Fontspring-DEMO-artegra_sans-extended-400-regular.otf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/artegra/Fontspring-DEMO-artegra_sans-extended-400-regular-italic.otf',
+      weight: '400',
+      style: 'italic',
+    },
+    {
+      path: '../../public/fonts/artegra/Fontspring-DEMO-artegra_sans-extended-500-medium.otf',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/artegra/Fontspring-DEMO-artegra_sans-extended-600-semibold.otf',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/artegra/Fontspring-DEMO-artegra_sans-extended-700-bold.otf',
+      weight: '700',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/artegra/Fontspring-DEMO-artegra_sans-extended-700-bold-italic.otf',
+      weight: '700',
+      style: 'italic',
+    },
+  ],
+  variable: '--font-artegra',
+  display: 'swap',
+})
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -109,7 +147,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="es" className="h-full scroll-smooth">
+    <html lang="es" className={`h-full scroll-smooth ${artegra.variable}`}>
       <head>
         <script
           type="application/ld+json"

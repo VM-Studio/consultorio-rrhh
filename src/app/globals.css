@@ -1,20 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@300;400;500;600&family=Barlow+Condensed:wght@400;500;600;700&display=swap');
 
-/* Artegra Sans Extended — fuente local */
-@font-face {
-  font-family: 'Artegra Sans Extended';
-  src: url('/fonts/artegra/Fontspring-DEMO-artegra_sans-extended-700-bold.otf') format('opentype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Artegra Sans Extended';
-  src: url('/fonts/artegra/Fontspring-DEMO-artegra_sans-extended-700-bold-italic.otf') format('opentype');
-  font-weight: 700;
-  font-style: italic;
-  font-display: swap;
-}
+/* Artegra Sans Extended — fuente local (también cargada via next/font/local en layout.tsx) */
 @font-face {
   font-family: 'Artegra Sans Extended';
   src: url('/fonts/artegra/Fontspring-DEMO-artegra_sans-extended-400-regular.otf') format('opentype');
@@ -31,6 +17,13 @@
 }
 @font-face {
   font-family: 'Artegra Sans Extended';
+  src: url('/fonts/artegra/Fontspring-DEMO-artegra_sans-extended-500-medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Artegra Sans Extended';
   src: url('/fonts/artegra/Fontspring-DEMO-artegra_sans-extended-600-semibold.otf') format('opentype');
   font-weight: 600;
   font-style: normal;
@@ -38,9 +31,16 @@
 }
 @font-face {
   font-family: 'Artegra Sans Extended';
-  src: url('/fonts/artegra/Fontspring-DEMO-artegra_sans-extended-500-medium.otf') format('opentype');
-  font-weight: 500;
+  src: url('/fonts/artegra/Fontspring-DEMO-artegra_sans-extended-700-bold.otf') format('opentype');
+  font-weight: 700;
   font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Artegra Sans Extended';
+  src: url('/fonts/artegra/Fontspring-DEMO-artegra_sans-extended-700-bold-italic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
   font-display: swap;
 }
 
