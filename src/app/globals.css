@@ -3,42 +3,42 @@
 /* Artegra Sans Extended — fuente local (también cargada via next/font/local en layout.tsx) */
 @font-face {
   font-family: 'Artegra Sans Extended';
-  src: url('/fonts/artegra/Fontspring-DEMO-artegra_sans-extended-400-regular.otf') format('opentype');
+  src: url('/fonts/Artegra/Fontspring-DEMO-artegra_sans-extended-400-regular.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Artegra Sans Extended';
-  src: url('/fonts/artegra/Fontspring-DEMO-artegra_sans-extended-400-regular-italic.otf') format('opentype');
+  src: url('/fonts/Artegra/Fontspring-DEMO-artegra_sans-extended-400-regular-italic.otf') format('opentype');
   font-weight: 400;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
   font-family: 'Artegra Sans Extended';
-  src: url('/fonts/artegra/Fontspring-DEMO-artegra_sans-extended-500-medium.otf') format('opentype');
+  src: url('/fonts/Artegra/Fontspring-DEMO-artegra_sans-extended-500-medium.otf') format('opentype');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Artegra Sans Extended';
-  src: url('/fonts/artegra/Fontspring-DEMO-artegra_sans-extended-600-semibold.otf') format('opentype');
+  src: url('/fonts/Artegra/Fontspring-DEMO-artegra_sans-extended-600-semibold.otf') format('opentype');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Artegra Sans Extended';
-  src: url('/fonts/artegra/Fontspring-DEMO-artegra_sans-extended-700-bold.otf') format('opentype');
+  src: url('/fonts/Artegra/Fontspring-DEMO-artegra_sans-extended-700-bold.otf') format('opentype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Artegra Sans Extended';
-  src: url('/fonts/artegra/Fontspring-DEMO-artegra_sans-extended-700-bold-italic.otf') format('opentype');
+  src: url('/fonts/Artegra/Fontspring-DEMO-artegra_sans-extended-700-bold-italic.otf') format('opentype');
   font-weight: 700;
   font-style: italic;
   font-display: swap;
