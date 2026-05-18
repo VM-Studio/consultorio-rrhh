@@ -52,7 +52,7 @@ export default function ContactoPage() {
         style={{
           position: 'relative',
           backgroundColor: '#eeead7',
-          paddingTop: '100px',
+          paddingTop: '140px',
           paddingBottom: '0',
         }}
       >
@@ -76,7 +76,7 @@ export default function ContactoPage() {
         >
           <span
             style={{
-              fontFamily: '"Artegra Sans Extended", system-ui, sans-serif',
+              fontFamily: '"Libre Baskerville", Georgia, serif',
               fontWeight: 700,
               fontSize: '13px',
               color: '#EEEAD6',

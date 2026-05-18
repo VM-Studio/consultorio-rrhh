@@ -7,12 +7,14 @@ export default function CTAContacto() {
     <section
       style={{
         position: 'relative',
-        overflow: 'hidden',
         backgroundColor: '#eeead7',
-        minHeight: '320px',
+        minHeight: '420px',
+        paddingTop: '60px',
+        paddingBottom: '60px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+        overflow: 'visible',
       }}
     >
       {/* Píldora izquierda */}

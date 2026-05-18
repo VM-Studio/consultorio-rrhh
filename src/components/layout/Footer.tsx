@@ -12,10 +12,10 @@ const navLinks = [
 ]
 
 const iconCircleStyle: React.CSSProperties = {
-  width: '28px',
-  height: '28px',
-  borderRadius: '6px',
-  backgroundColor: '#51c18c',
+  width: '34px',
+  height: '34px',
+  borderRadius: '50%',
+  backgroundColor: '#47c98c',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
@@ -139,7 +139,7 @@ export default function Footer() {
             {/* EMAIL */}
             <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
               <div style={iconCircleStyle}>
-                <Mail size={13} color="#51c18c" strokeWidth={2} />
+                <Mail size={15} color="white" strokeWidth={2} />
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
                 <span style={{ fontFamily: '"Artegra Sans Extended", sans-serif', fontSize: '12px', color: 'rgba(238,234,214,0.75)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
@@ -154,7 +154,7 @@ export default function Footer() {
             {/* TELÉFONO */}
             <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
               <div style={iconCircleStyle}>
-                <Phone size={13} color="#51c18c" strokeWidth={2} />
+                <Phone size={15} color="white" strokeWidth={2} />
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
                 <span style={{ fontFamily: '"Artegra Sans Extended", sans-serif', fontSize: '12px', color: 'rgba(238,234,214,0.75)', letterSpacing: '0.08em' }}>
@@ -169,7 +169,7 @@ export default function Footer() {
             {/* UBICACIÓN */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
               <div style={iconCircleStyle}>
-                <MapPin size={13} color="#51c18c" strokeWidth={2} />
+                <MapPin size={15} color="white" strokeWidth={2} />
               </div>
               <span style={{ fontFamily: '"Artegra Sans Extended", sans-serif', fontSize: '12px', color: 'rgba(238,234,214,0.75)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
                 BUENOS AIRES, ARGENTINA.
@@ -177,27 +177,28 @@ export default function Footer() {
             </div>
 
             {/* LINKEDIN */}
-            <div style={{ display: 'flex', alignItems: 'center' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
               <a
                 href="#"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
-                  width: '30px',
-                  height: '30px',
+                  width: '34px',
+                  height: '34px',
                   borderRadius: '6px',
-                  backgroundColor: '#50c28c',
+                  backgroundColor: '#47c98c',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   textDecoration: 'none',
                   transition: 'opacity 0.2s',
+                  flexShrink: 0,
                 }}
                 onMouseEnter={e => (e.currentTarget.style.opacity = '0.8')}
                 onMouseLeave={e => (e.currentTarget.style.opacity = '1')}
                 aria-label="LinkedIn"
               >
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
                   <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
                   <rect x="2" y="9" width="4" height="12" />
                   <circle cx="4" cy="4" r="2" />

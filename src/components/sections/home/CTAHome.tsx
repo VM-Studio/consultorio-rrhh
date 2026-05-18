@@ -8,12 +8,14 @@ export default function CTAHome() {
     <section
       style={{
         position: 'relative',
-        overflow: 'hidden',
         backgroundColor: '#eeead7',
         minHeight: '420px',
+        paddingTop: '60px',
+        paddingBottom: '60px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+        overflow: 'visible',
       }}
     >
       {/* Píldora izquierda — sale desde el borde izq */}

@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { ChevronLeft } from 'lucide-react'
+import { useIsMobile } from '@/lib/useIsMobile'
 
 const logos = [
   { alt: 'Amazon' },
@@ -11,18 +12,19 @@ const logos = [
 ]
 
 export default function ClientesHome() {
+  const isMobile = useIsMobile()
   return (
     <section
       style={{
         position: 'relative',
         overflow: 'hidden',
         backgroundColor: '#023e41',
-        minHeight: '300px',
+        minHeight: isMobile ? '220px' : '300px',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
         paddingTop: '0',
-        paddingBottom: '60px',
+        paddingBottom: isMobile ? '40px' : '60px',
       }}
     >
       {/* Badge superior izquierdo */}
@@ -33,7 +35,7 @@ export default function ClientesHome() {
         viewport={{ once: true, margin: '-60px' }}
         style={{
           alignSelf: 'flex-start',
-          width: '48%',
+          width: isMobile ? '80%' : '48%',
           height: '32px',
           background: 'linear-gradient(to right, #336061, #eae6d3)',
           borderRadius: '0 9999px 9999px 0',
@@ -42,7 +44,7 @@ export default function ClientesHome() {
           justifyContent: 'flex-end',
           paddingLeft: '40px',
           paddingRight: '28px',
-          marginTop: '48px',
+          marginTop: isMobile ? '32px' : '48px',
         }}
       >
         <span
@@ -60,7 +62,7 @@ export default function ClientesHome() {
       </motion.div>
 
       {/* Espacio entre badges */}
-      <div style={{ flex: 1, minHeight: '80px' }} />
+      <div style={{ flex: 1, minHeight: isMobile ? '40px' : '80px' }} />
 
       {/* Badge inferior con logos */}
       <motion.div
@@ -70,17 +72,17 @@ export default function ClientesHome() {
         viewport={{ once: true, margin: '-60px' }}
         style={{
           alignSelf: 'flex-end',
-          width: '88%',
-          height: '115px',
+          width: isMobile ? '96%' : '88%',
+          height: isMobile ? '76px' : '115px',
           backgroundColor: '#e0dcc9',
           borderRadius: '9999px 0 0 9999px',
           display: 'flex',
           alignItems: 'center',
-          paddingLeft: '28px',
-          paddingRight: '48px',
+          paddingLeft: isMobile ? '16px' : '28px',
+          paddingRight: isMobile ? '24px' : '48px',
           marginBottom: '0',
           overflow: 'hidden',
-          gap: '64px',
+          gap: isMobile ? '28px' : '64px',
         }}
       >
         {/* Flecha izquierda */}
@@ -93,7 +95,7 @@ export default function ClientesHome() {
             marginRight: '8px',
           }}
         >
-          <ChevronLeft size={52} style={{ color: '#b7c9b8' }} strokeWidth={1.5} />
+          <ChevronLeft size={isMobile ? 32 : 52} style={{ color: '#b7c9b8' }} strokeWidth={1.5} />
         </div>
 
         {/* Logos en fila */}
@@ -111,7 +113,7 @@ export default function ClientesHome() {
               style={{
                 fontFamily: '"Artegra Sans Extended", sans-serif',
                 fontWeight: 700,
-                fontSize: '20px',
+                fontSize: isMobile ? '13px' : '20px',
                 letterSpacing: '0.08em',
                 color: '#4a5e52',
                 opacity: 0.7,

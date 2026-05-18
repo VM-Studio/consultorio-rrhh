@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { useIsMobile } from '@/lib/useIsMobile'
 
 const socios = [
   {
@@ -32,14 +33,15 @@ const socios = [
 ]
 
 export default function NosotrosHome() {
+  const isMobile = useIsMobile()
   return (
     <section
       style={{
         position: 'relative',
         overflow: 'hidden',
         backgroundColor: '#E1DCCB',
-        paddingTop: '90px',
-        paddingBottom: '70px',
+        paddingTop: isMobile ? '60px' : '90px',
+        paddingBottom: isMobile ? '48px' : '70px',
       }}
     >
       {/* BLOQUE 1 — Badge "NOSOTROS" borde izquierdo */}
@@ -52,7 +54,7 @@ export default function NosotrosHome() {
           position: 'absolute',
           top: '36px',
           left: 0,
-          width: '50%',
+          width: isMobile ? '72%' : '50%',
           height: '32px',
           background: 'linear-gradient(to right, #7da89e, #043f42)',
           borderRadius: '0 9999px 9999px 0',
@@ -134,13 +136,13 @@ export default function NosotrosHome() {
       {/* BLOQUE 3 — Dos columnas socios */}
       <div
         style={{
-          marginTop: '80px',
+          marginTop: isMobile ? '40px' : '80px',
           display: 'flex',
           justifyContent: 'center',
-          gap: '80px',
+          gap: isMobile ? '40px' : '80px',
           flexWrap: 'wrap',
-          paddingLeft: '40px',
-          paddingRight: '40px',
+          paddingLeft: isMobile ? '20px' : '40px',
+          paddingRight: isMobile ? '20px' : '40px',
         }}
       >
         {socios.map((socio, index) => (

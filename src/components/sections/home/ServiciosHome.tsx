@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
+import { useIsMobile } from '@/lib/useIsMobile'
 
 const containerVariants = {
   hidden: {},
@@ -239,13 +240,83 @@ function Figura({ servicio, index }: { servicio: Servicio; index: number }) {
 }
 
 export default function ServiciosHome() {
+  const isMobile = useIsMobile()
+
+  if (isMobile) {
+    return (
+      <section
+        style={{
+          position: 'relative',
+          width: '100%',
+          background: 'radial-gradient(ellipse at 30% 60%, #688382 0%, #456e6f 25%, #054042 70%)',
+          paddingTop: '60px',
+          paddingBottom: '40px',
+        }}
+      >
+        {/* BADGE */}
+        <div
+          style={{
+            marginLeft: 'auto',
+            width: '80%',
+            height: '36px',
+            background: 'linear-gradient(to left, #3f6965, #eae5d3)',
+            borderRadius: '9999px 0 0 9999px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'flex-start',
+            paddingLeft: '24px',
+            marginBottom: '32px',
+          }}
+        >
+          <span style={{ fontFamily: '"Libre Baskerville", Georgia, serif', fontWeight: 700, fontSize: '13px', color: '#033D40', letterSpacing: '0.15em', textTransform: 'uppercase' }}>
+            NUESTROS SERVICIOS
+          </span>
+        </div>
+
+        {/* Tarjetas verticales */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0', paddingLeft: '16px', paddingRight: '0' }}>
+          {servicios.map((servicio, index) => (
+            <motion.div
+              key={servicio.numero}
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.08 }}
+            >
+              <Link
+                href="/servicios"
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '16px',
+                  backgroundColor: servicio.color,
+                  borderRadius: '9999px 0 0 9999px',
+                  padding: '18px 28px 18px 24px',
+                  textDecoration: 'none',
+                  marginBottom: '8px',
+                }}
+              >
+                <span style={{ fontFamily: '"Libre Baskerville", serif', fontStyle: 'italic', fontSize: '32px', fontWeight: 400, color: servicio.numeroOutline ? 'transparent' : servicio.colorNumero, WebkitTextStroke: servicio.numeroOutline ? `1.5px ${servicio.colorNumero}` : undefined, opacity: servicio.opacidadNumero, lineHeight: 1, flexShrink: 0 }}>
+                  {servicio.numero}
+                </span>
+                <h3 style={{ fontFamily: '"Libre Baskerville", Georgia, serif', fontWeight: 700, fontSize: '12px', color: servicio.colorTitulo, textTransform: 'uppercase', letterSpacing: '0.1em', whiteSpace: 'pre-line', lineHeight: 1.4, margin: 0 }}>
+                  {servicio.titulo}
+                </h3>
+              </Link>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+    )
+  }
+
   return (
     <section
       style={{
         position: 'relative',
         overflow: 'hidden',
         width: '100%',
-        minHeight: '700px',
+        minHeight: '600px',
         paddingTop: '80px',
         background: 'radial-gradient(ellipse at 30% 60%, #688382 0%, #456e6f 25%, #054042 70%)',
       }}
@@ -327,7 +398,7 @@ export default function ServiciosHome() {
           bottom: 0,
           left: 0,
           right: 0,
-          height: '540px',
+          height: '460px',
           display: 'flex',
           alignItems: 'flex-end',
           justifyContent: 'center',
