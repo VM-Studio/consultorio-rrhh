@@ -29,7 +29,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            style={{ fontFamily: '"Barlow Condensed", sans-serif', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#EEEAD6', fontSize: '12px', marginBottom: '20px' }}
+            style={{ fontFamily: '"Artegra Sans Extended", sans-serif', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#EEEAD6', fontSize: '12px', marginBottom: '20px' }}
           >
             <strong style={{ fontWeight: 700 }}>CONSULTORA</strong>
             <span style={{ fontWeight: 400 }}> DE RECURSOS HUMANOS</span>
@@ -40,7 +40,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.35 }}
-            style={{ fontFamily: '"Libre Baskerville", Georgia, serif', fontSize: 'clamp(24px, 2.8vw, 40px)', lineHeight: 1.3, color: '#EEEAD6', marginBottom: '24px', whiteSpace: 'nowrap' }}
+            style={{ fontFamily: '"Libre Baskerville", Georgia, serif', fontSize: 'clamp(32px, 3.6vw, 54px)', lineHeight: 1.3, color: '#EEEAD6', marginBottom: '24px', whiteSpace: 'nowrap' }}
           >
             <span style={{ fontWeight: 400 }}>Acompañamos a</span>
             <br />
@@ -61,7 +61,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.55 }}
-            style={{ fontFamily: 'Quicksand, system-ui, sans-serif', fontWeight: 500, fontSize: '14px', color: '#EEEAD6', opacity: 0.9, maxWidth: '520px', lineHeight: 1.7, marginBottom: '32px' }}
+            style={{ fontFamily: 'Quicksand, system-ui, sans-serif', fontWeight: 500, fontSize: '17px', color: '#EEEAD6', opacity: 0.9, maxWidth: '520px', lineHeight: 1.7, marginBottom: '32px' }}
           >
             Trabajamos como socios estratégicos de nuestros clientes, entendiendo su realidad, conociendo sus problemáticas y co-creando soluciones a medida. Creemos en una forma de hacer consultoría más humana, más cercana y profundamente comprometida con cada proceso.
           </motion.p>
@@ -82,7 +82,7 @@ export default function Hero() {
                 backgroundColor: '#EEEAD6',
                 color: '#033D40',
                 borderRadius: '9999px',
-                fontFamily: '"Barlow Condensed", sans-serif',
+                fontFamily: '"Artegra Sans Extended", sans-serif',
                 fontWeight: 700,
                 fontSize: '12px',
                 letterSpacing: '0.15em',

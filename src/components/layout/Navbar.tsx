@@ -34,7 +34,6 @@ function LogoImage() {
       width={160}
       height={64}
       alt="Motus"
-      className="object-contain"
       onError={() => setImgError(true)}
       priority
     />

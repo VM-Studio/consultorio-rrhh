@@ -3,7 +3,7 @@ import './globals.css'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import WhatsAppButton from '@/components/ui/WhatsAppButton'
-import CTAHome from '@/components/sections/home/CTAHome'
+import CTAHomeWrapper from '@/components/layout/CTAHomeWrapper'
 
 const siteUrl = process.env.SITE_URL || 'https://www.tudominio.com.ar'
 
@@ -119,7 +119,7 @@ export default function RootLayout({
         </a>
         <Navbar />
         <main id="main-content" className="flex-1">{children}</main>
-        <CTAHome />
+        <CTAHomeWrapper />
         <Footer />
         <WhatsAppButton />
       </body>

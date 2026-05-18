@@ -77,7 +77,6 @@ export default function Footer() {
               alt="Motus"
               width={220}
               height={100}
-              style={{ objectFit: 'contain' }}
             />
           </div>
         </div>
@@ -86,7 +85,7 @@ export default function Footer() {
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flex: 1 }}>
           <p
             style={{
-              fontFamily: '"Barlow Condensed", sans-serif',
+              fontFamily: '"Artegra Sans Extended", sans-serif',
               fontWeight: 700,
               fontSize: '13px',
               color: '#EEEAD6',
@@ -103,7 +102,7 @@ export default function Footer() {
                 key={link.href}
                 href={link.href}
                 style={{
-                  fontFamily: '"Barlow Condensed", sans-serif',
+                  fontFamily: '"Artegra Sans Extended", sans-serif',
                   fontWeight: 400,
                   fontSize: '13px',
                   color: 'rgba(238, 234, 214, 0.70)',
@@ -125,7 +124,7 @@ export default function Footer() {
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', flex: 1, paddingLeft: '40px' }}>
           <p
             style={{
-              fontFamily: '"Barlow Condensed", sans-serif',
+              fontFamily: '"Artegra Sans Extended", sans-serif',
               fontWeight: 700,
               fontSize: '13px',
               color: '#EEEAD6',
@@ -143,10 +142,10 @@ export default function Footer() {
                 <Mail size={13} color="#51c18c" strokeWidth={2} />
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
-                <span style={{ fontFamily: '"Barlow Condensed", sans-serif', fontSize: '12px', color: 'rgba(238,234,214,0.75)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+                <span style={{ fontFamily: '"Artegra Sans Extended", sans-serif', fontSize: '12px', color: 'rgba(238,234,214,0.75)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
                   LUCIA@MOTUSCONSULTORA.COM
                 </span>
-                <span style={{ fontFamily: '"Barlow Condensed", sans-serif', fontSize: '12px', color: 'rgba(238,234,214,0.75)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+                <span style={{ fontFamily: '"Artegra Sans Extended", sans-serif', fontSize: '12px', color: 'rgba(238,234,214,0.75)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
                   FEDERICO@MOTUSCONSULTORA.COM
                 </span>
               </div>
@@ -158,10 +157,10 @@ export default function Footer() {
                 <Phone size={13} color="#51c18c" strokeWidth={2} />
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
-                <span style={{ fontFamily: '"Barlow Condensed", sans-serif', fontSize: '12px', color: 'rgba(238,234,214,0.75)', letterSpacing: '0.08em' }}>
+                <span style={{ fontFamily: '"Artegra Sans Extended", sans-serif', fontSize: '12px', color: 'rgba(238,234,214,0.75)', letterSpacing: '0.08em' }}>
                   +54 9 11 5717 4014
                 </span>
-                <span style={{ fontFamily: '"Barlow Condensed", sans-serif', fontSize: '12px', color: 'rgba(238,234,214,0.75)', letterSpacing: '0.08em' }}>
+                <span style={{ fontFamily: '"Artegra Sans Extended", sans-serif', fontSize: '12px', color: 'rgba(238,234,214,0.75)', letterSpacing: '0.08em' }}>
                   +54 9 11 5057 1318
                 </span>
               </div>
@@ -172,7 +171,7 @@ export default function Footer() {
               <div style={iconCircleStyle}>
                 <MapPin size={13} color="#51c18c" strokeWidth={2} />
               </div>
-              <span style={{ fontFamily: '"Barlow Condensed", sans-serif', fontSize: '12px', color: 'rgba(238,234,214,0.75)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+              <span style={{ fontFamily: '"Artegra Sans Extended", sans-serif', fontSize: '12px', color: 'rgba(238,234,214,0.75)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
                 BUENOS AIRES, ARGENTINA.
               </span>
             </div>
@@ -222,10 +221,10 @@ export default function Footer() {
           gap: '8px',
         }}
       >
-        <p style={{ fontFamily: '"Barlow Condensed", sans-serif', fontSize: '12px', color: 'rgba(238,234,214,0.60)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+        <p style={{ fontFamily: '"Artegra Sans Extended", sans-serif', fontSize: '12px', color: 'rgba(238,234,214,0.60)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
           © 2026 <strong style={{ fontWeight: 700 }}>MOTUS</strong>. TODOS LOS DERECHOS RESERVADOS.
         </p>
-        <p style={{ fontFamily: '"Barlow Condensed", sans-serif', fontSize: '12px', color: 'rgba(238,234,214,0.60)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+        <p style={{ fontFamily: '"Artegra Sans Extended", sans-serif', fontSize: '12px', color: 'rgba(238,234,214,0.60)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
           DISEÑO WEB X <strong style={{ fontWeight: 700, fontStyle: 'italic' }}>KOFI BRANDLAB</strong> - DESARROLLO X <strong style={{ fontWeight: 700, fontStyle: 'italic' }}>VM ESTUDIO</strong>
         </p>
       </div>

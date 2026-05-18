@@ -1,5 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@300;400;500;600&family=Barlow+Condensed:wght@400;500;600;700&display=swap');
 
+/* Artegra Sans Extended — fuente local (subir archivo a /public/fonts/) */
+@font-face {
+  font-family: 'Artegra Sans Extended';
+  src: url('/fonts/ArtegraSansExtended-Bold.woff2') format('woff2'),
+       url('/fonts/ArtegraSansExtended-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Artegra Sans Extended';
+  src: url('/fonts/ArtegraSansExtended-Regular.woff2') format('woff2'),
+       url('/fonts/ArtegraSansExtended-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,9 +26,24 @@
   html {
     scroll-behavior: smooth;
   }
+  /* Placeholder blanco para el formulario de contacto */
+  .contact-field::placeholder {
+    color: rgba(255, 255, 255, 0.75);
+  }
+  .contact-field {
+    color: #ffffff;
+  }
+  /* Evita el warning de Next.js Image: Tailwind base setea max-width:100% en img,
+     lo que modifica width sin modificar height. Esto lo neutraliza. */
+  img {
+    height: auto;
+  }
   body {
     @apply font-sans text-verde-oscuro bg-fondo-claro;
     -webkit-font-smoothing: antialiased;
+  }
+  p {
+    font-family: 'Quicksand', system-ui, sans-serif;
   }
   h1, h2, h3, h4 {
     @apply font-serif;

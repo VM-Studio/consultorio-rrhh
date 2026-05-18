@@ -162,7 +162,7 @@ function Figura({ servicio, index }: { servicio: Servicio; index: number }) {
         {/* Título */}
         <h3
           style={{
-            fontFamily: '"Barlow Condensed", sans-serif',
+            fontFamily: '"Libre Baskerville", Georgia, serif',
             fontWeight: 700,
             fontSize: '13px',
             color: servicio.colorTitulo,
@@ -219,7 +219,7 @@ function Figura({ servicio, index }: { servicio: Servicio; index: number }) {
                   display: 'inline-block',
                   backgroundColor: servicio.colorBoton,
                   color: servicio.colorBotonTexto,
-                  fontFamily: '"Barlow Condensed", sans-serif',
+                  fontFamily: '"Artegra Sans Extended", sans-serif',
                   fontWeight: 700,
                   fontSize: '11px',
                   letterSpacing: '0.15em',
@@ -274,9 +274,9 @@ export default function ServiciosHome() {
       >
         <span
           style={{
-            fontFamily: '"Barlow Condensed", sans-serif',
+            fontFamily: '"Libre Baskerville", Georgia, serif',
             fontWeight: 700,
-            fontSize: '12px',
+            fontSize: '15px',
             color: '#033D40',
             letterSpacing: '0.15em',
             textTransform: 'uppercase',

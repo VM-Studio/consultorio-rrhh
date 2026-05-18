@@ -46,21 +46,21 @@ function LinkedInButton({ href }: { href: string }) {
         display: 'inline-flex',
         alignItems: 'center',
         gap: '10px',
-        backgroundColor: 'transparent',
-        borderRadius: '6px',
+        backgroundColor: '#c9ddc8',
+        borderRadius: '4px',
         padding: '9px 22px',
         textDecoration: 'none',
         position: 'relative',
       }}
     >
-      {/* Gradient border */}
+      {/* Gradient border — esquinas blancas, centro oscuro */}
       <span
         style={{
           position: 'absolute',
           inset: 0,
-          borderRadius: '6px',
+          borderRadius: '4px',
           padding: '1.5px',
-          background: 'linear-gradient(to right, #0a403e, #eae9db)',
+          background: 'linear-gradient(135deg, #ffffff 0%, #3a6f6b 40%, #3a6f6b 60%, #ffffff 100%)',
           WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
           WebkitMaskComposite: 'xor',
           maskComposite: 'exclude',
@@ -74,7 +74,7 @@ function LinkedInButton({ href }: { href: string }) {
       </svg>
       <span
         style={{
-          fontFamily: '"Barlow Condensed", sans-serif',
+          fontFamily: '"Artegra Sans Extended", sans-serif',
           fontWeight: 600,
           fontSize: '12px',
           color: '#033D40',
@@ -164,14 +164,15 @@ export default function NosotrosPage() {
             borderRadius: '0 9999px 9999px 0',
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center',
+            justifyContent: 'flex-end',
+            paddingRight: '32px',
           }}
         >
           <span
             style={{
-              fontFamily: '"Barlow Condensed", sans-serif',
+              fontFamily: '"Libre Baskerville", Georgia, serif',
               fontWeight: 700,
-              fontSize: '11px',
+              fontSize: '15px',
               color: '#EEEAD6',
               letterSpacing: '0.2em',
               textTransform: 'uppercase',
@@ -190,7 +191,7 @@ export default function NosotrosPage() {
           <p
             style={{
               fontFamily: 'Quicksand, sans-serif',
-              fontSize: '16px',
+              fontSize: '21px',
               color: '#e8e5d8',
               lineHeight: 1.8,
               margin: 0,
@@ -299,11 +300,15 @@ export default function NosotrosPage() {
           }}
         >
           <LinkedInButton href={luciaData.linkedin} />
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', textAlign: 'right' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '18px 1fr', gap: '4px 8px' }}>
             {luciaData.bullets.map((b, i) => (
-              <p key={i} style={{ fontFamily: 'Quicksand, sans-serif', fontSize: '13px', color: '#EEEAD6', margin: 0, lineHeight: 1.6 }}>
-                {'• '}<strong style={{ fontWeight: 700 }}>{b.bold}</strong><span style={{ opacity: 0.85 }}>{b.plain}</span>
-              </p>
+              <div key={i} style={{ display: 'contents' }}>
+                <div style={{ color: '#EEEAD6', fontSize: '18px', lineHeight: 1.6 }}>•</div>
+                <div style={{ fontFamily: 'Quicksand, sans-serif', fontSize: '13px', color: '#EEEAD6', margin: 0, lineHeight: 1.6 }}>
+                  <strong style={{ fontWeight: 700 }}>{b.bold}</strong>
+                  <span style={{ opacity: 0.85 }}>{b.plain}</span>
+                </div>
+              </div>
             ))}
           </div>
         </motion.div>
@@ -402,11 +407,15 @@ export default function NosotrosPage() {
             padding: '0 72px 0 80px',
           }}
         >
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '18px 1fr', gap: '6px' }}>
             {federicoData.bullets.map((b, i) => (
-              <p key={i} style={{ fontFamily: 'Quicksand, sans-serif', fontSize: '13px', color: '#EEEAD6', margin: 0, lineHeight: 1.6 }}>
-                {'• '}<strong style={{ fontWeight: 700 }}>{b.bold}</strong><span style={{ opacity: 0.85 }}>{b.plain}</span>
-              </p>
+              <div key={i} style={{ display: 'contents' }}>
+                <div style={{ color: '#EEEAD6', fontSize: '18px', lineHeight: 1.6 }}>•</div>
+                <div style={{ fontFamily: 'Quicksand, sans-serif', fontSize: '13px', color: '#EEEAD6', margin: 0, lineHeight: 1.6 }}>
+                  <strong style={{ fontWeight: 700 }}>{b.bold}</strong>
+                  <span style={{ opacity: 0.85 }}>{b.plain}</span>
+                </div>
+              </div>
             ))}
           </div>
           <LinkedInButton href={federicoData.linkedin} />

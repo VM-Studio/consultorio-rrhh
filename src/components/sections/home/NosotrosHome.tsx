@@ -65,9 +65,9 @@ export default function NosotrosHome() {
       >
         <span
           style={{
-            fontFamily: '"Barlow Condensed", sans-serif',
+            fontFamily: '"Libre Baskerville", Georgia, serif',
             fontWeight: 700,
-            fontSize: '12px',
+            fontSize: '15px',
             color: '#EEEAD6',
             letterSpacing: '0.15em',
             textTransform: 'uppercase',
@@ -266,7 +266,7 @@ export default function NosotrosHome() {
             backgroundColor: '#0e746c',
             color: '#EEEAD6',
             borderRadius: '9999px',
-            fontFamily: '"Barlow Condensed", sans-serif',
+            fontFamily: '"Artegra Sans Extended", sans-serif',
             fontWeight: 700,
             fontSize: '13px',
             letterSpacing: '0.15em',

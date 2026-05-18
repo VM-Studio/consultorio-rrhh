@@ -43,7 +43,7 @@ export default function QuienesSomos() {
         }}
       >
         <span
-          style={{ fontFamily: '"Barlow Condensed", sans-serif', fontWeight: 700, fontSize: '12px', color: '#EEEAD6', letterSpacing: '0.18em', textTransform: 'uppercase' }}
+          style={{ fontFamily: '"Libre Baskerville", Georgia, serif', fontWeight: 700, fontSize: '15px', color: '#EEEAD6', letterSpacing: '0.18em', textTransform: 'uppercase' }}
         >
           QUIENES SOMOS
         </span>
@@ -76,6 +76,7 @@ export default function QuienesSomos() {
             src="/quienessomos.png"
             alt="Equipo Motus"
             fill
+            sizes="(max-width: 1024px) 100vw, 49vw"
             style={{ objectFit: 'cover', objectPosition: 'center 15%' }}
           />
         </motion.div>
@@ -151,7 +152,7 @@ export default function QuienesSomos() {
               border: '1px solid #0d726a',
               borderRadius: '9999px',
               padding: '8px 32px',
-              fontFamily: '"Barlow Condensed", sans-serif',
+              fontFamily: '"Artegra Sans Extended", sans-serif',
               fontWeight: 400,
               fontSize: '11px',
               color: '#0d726a',

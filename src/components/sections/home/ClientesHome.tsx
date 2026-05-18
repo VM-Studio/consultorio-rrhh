@@ -1,14 +1,13 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 import { ChevronLeft } from 'lucide-react'
 
 const logos = [
-  { src: '/images/clientes/amazon.png', alt: 'Amazon' },
-  { src: '/images/clientes/tiktok.png', alt: 'TikTok' },
-  { src: '/images/clientes/reddit.png', alt: 'Reddit' },
-  { src: '/images/clientes/tiktok.png', alt: 'TikTok' },
+  { alt: 'Amazon' },
+  { alt: 'TikTok' },
+  { alt: 'Reddit' },
+  { alt: 'Mercado Libre' },
 ]
 
 export default function ClientesHome() {
@@ -48,9 +47,9 @@ export default function ClientesHome() {
       >
         <span
           style={{
-            fontFamily: '"Barlow Condensed", sans-serif',
+            fontFamily: '"Libre Baskerville", Georgia, serif',
             fontWeight: 700,
-            fontSize: '13px',
+            fontSize: '15px',
             color: '#033D40',
             letterSpacing: '0.15em',
             textTransform: 'uppercase',
@@ -104,23 +103,24 @@ export default function ClientesHome() {
             style={{
               flexShrink: 0,
               height: '34px',
-              position: 'relative',
               display: 'flex',
               alignItems: 'center',
             }}
           >
-            <Image
-              src={logo.src}
-              alt={logo.alt}
-              height={34}
-              width={120}
+            <span
               style={{
-                objectFit: 'contain',
-                filter: 'grayscale(30%) opacity(0.65)',
-                height: '34px',
-                width: 'auto',
+                fontFamily: '"Artegra Sans Extended", sans-serif',
+                fontWeight: 700,
+                fontSize: '20px',
+                letterSpacing: '0.08em',
+                color: '#4a5e52',
+                opacity: 0.7,
+                textTransform: 'uppercase',
+                whiteSpace: 'nowrap',
               }}
-            />
+            >
+              {logo.alt}
+            </span>
           </div>
         ))}
       </motion.div>

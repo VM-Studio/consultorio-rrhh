@@ -167,7 +167,7 @@ function FiguraLateral({ servicio, index }: { servicio: Servicio; index: number 
             </span>
             <h3
               style={{
-                fontFamily: '"Barlow Condensed", sans-serif',
+                fontFamily: '"Libre Baskerville", Georgia, serif',
                 fontWeight: 700,
                 fontSize: '15px',
                 color: servicio.colorTitulo,
@@ -220,7 +220,7 @@ function FiguraLateral({ servicio, index }: { servicio: Servicio; index: number 
                     marginTop: '8px',
                     backgroundColor: servicio.colorBoton,
                     color: servicio.colorBotonTexto,
-                    fontFamily: '"Barlow Condensed", sans-serif',
+                    fontFamily: '"Artegra Sans Extended", sans-serif',
                     fontWeight: 700,
                     fontSize: '18px',
                     letterSpacing: '0.15em',
@@ -280,9 +280,9 @@ export default function ServiciosPage() {
       >
         <span
           style={{
-            fontFamily: '"Barlow Condensed", sans-serif',
+            fontFamily: '"Libre Baskerville", Georgia, serif',
             fontWeight: 700,
-            fontSize: '12px',
+            fontSize: '15px',
             color: '#EEEAD6',
             letterSpacing: '0.15em',
             textTransform: 'uppercase',

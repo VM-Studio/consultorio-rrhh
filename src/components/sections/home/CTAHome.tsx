@@ -10,22 +10,38 @@ export default function CTAHome() {
         position: 'relative',
         overflow: 'hidden',
         backgroundColor: '#eeead7',
-        minHeight: '340px',
+        minHeight: '420px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
       }}
     >
-      {/* Pill con líneas abiertas */}
+      {/* Píldora izquierda — sale desde el borde izq */}
       <div
         style={{
           position: 'absolute',
-          left: '50%',
+          left: '-20%',
+          top: '53%',
+          transform: 'translateY(-50%)',
+          width: '92%',
+          height: '300px',
+          border: '2px solid #46645e',
+          borderRadius: '9999px',
+          pointerEvents: 'none',
+          zIndex: 1,
+        }}
+      />
+
+      {/* Píldora derecha — sale desde el borde der */}
+      <div
+        style={{
+          position: 'absolute',
+          right: '-20%',
           top: '50%',
-          transform: 'translate(-50%, -50%)',
-          width: '1600px',
-          height: '200px',
-          border: '1.5px solid #46645e',
+          transform: 'translateY(-50%)',
+          width: '92%',
+          height: '300px',
+          border: '2px solid #46645e',
           borderRadius: '9999px',
           pointerEvents: 'none',
           zIndex: 1,
@@ -51,7 +67,7 @@ export default function CTAHome() {
       >
         <h2
           style={{
-            fontFamily: '"Barlow Condensed", sans-serif',
+            fontFamily: '"Artegra Sans Extended", sans-serif',
             fontSize: '26px',
             lineHeight: 1.15,
             color: '#033D40',
@@ -79,7 +95,7 @@ export default function CTAHome() {
             backgroundColor: '#105257',
             color: '#EEEAD6',
             borderRadius: '9999px',
-            fontFamily: '"Barlow Condensed", sans-serif',
+            fontFamily: '"Artegra Sans Extended", sans-serif',
             fontWeight: 700,
             fontSize: '13px',
             letterSpacing: '0.15em',
@@ -100,19 +116,6 @@ export default function CTAHome() {
           CONTACTANOS
         </Link>
       </motion.div>
-
-      {/* Franja inferior degradé */}
-      <div
-        style={{
-          position: 'absolute',
-          bottom: 0,
-          left: 0,
-          right: 0,
-          height: '18px',
-          background: 'linear-gradient(to right, #105257, #205152)',
-          zIndex: 3,
-        }}
-      />
     </section>
   )
 }

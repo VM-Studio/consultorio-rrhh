@@ -26,7 +26,7 @@ const config: Config = {
       fontFamily: {
         serif: ['"Libre Baskerville"', 'Georgia', 'serif'],
         sans: ['Quicksand', 'system-ui', 'sans-serif'],
-        heading: ['"Barlow Condensed"', 'system-ui', 'sans-serif'],
+        heading: ['"Artegra Sans Extended"', 'system-ui', 'sans-serif'],
       },
       backgroundImage: {
         'gradient-hero': 'linear-gradient(to right, rgba(3,61,64,0.88) 0%, rgba(3,61,64,0.88) 55%, rgba(3,61,64,0.65) 100%)',
