@@ -142,7 +142,7 @@ export default function Navbar() {
                     <Link
                       href={link.href}
                       onClick={() => setMenuOpen(false)}
-                      className={`font-heading font-semibold text-3xl uppercase tracking-widest transition-colors duration-200 ${
+                      className={`font-heading font-semibold text-lg uppercase tracking-widest transition-colors duration-200 ${
                         isActive ? 'text-verde-matus' : 'text-verde-oscuro hover:text-verde-matus'
                       }`}
                     >
@@ -160,7 +160,12 @@ export default function Navbar() {
               transition={{ delay: 0.35 }}
               className="flex justify-center pb-12"
             >
-              <Link href="/contacto" className="btn-pill-dark" onClick={() => setMenuOpen(false)}>
+              <Link
+                href="/contacto"
+                className="btn-pill-dark"
+                onClick={() => setMenuOpen(false)}
+                style={{ padding: '14px 48px', fontSize: '13px' }}
+              >
                 CONTACTO
               </Link>
             </motion.div>

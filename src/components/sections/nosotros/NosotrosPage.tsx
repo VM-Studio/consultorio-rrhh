@@ -158,7 +158,7 @@ export default function NosotrosPage() {
           transition={{ duration: 0.6, ease: 'easeOut' }}
           style={{
             position: 'absolute',
-            top: isMobile ? '60px' : '110px',
+            top: isMobile ? '80px' : '110px',
             left: 0,
             width: isMobile ? '72%' : '50%',
             height: '32px',
@@ -174,7 +174,7 @@ export default function NosotrosPage() {
             style={{
               fontFamily: '"Libre Baskerville", Georgia, serif',
               fontWeight: 700,
-              fontSize: '15px',
+              fontSize: isMobile ? '12px' : '15px',
               color: '#EEEAD6',
               letterSpacing: '0.2em',
               textTransform: 'uppercase',
