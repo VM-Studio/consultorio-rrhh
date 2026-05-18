@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { Mail, Phone, MapPin } from 'lucide-react'
+import { useIsMobile } from '@/lib/useIsMobile'
 
 const navLinks = [
   { href: '/', label: 'INICIO' },
@@ -23,6 +24,7 @@ const iconCircleStyle: React.CSSProperties = {
 }
 
 export default function Footer() {
+  const isMobile = useIsMobile()
   return (
     <footer
       style={{
@@ -30,19 +32,21 @@ export default function Footer() {
         overflow: 'hidden',
         backgroundColor: '#023e41',
         paddingTop: '36px',
-        paddingLeft: '48px',
-        paddingRight: '56px',
+        paddingLeft: isMobile ? '24px' : '48px',
+        paddingRight: isMobile ? '24px' : '56px',
         paddingBottom: '0',
         display: 'flex',
         flexDirection: 'column',
       }}
     >
-      {/* Fila principal — tres columnas */}
+      {/* Fila principal — tres columnas (desktop) / apiladas (mobile) */}
       <div
         style={{
           display: 'flex',
-          alignItems: 'flex-start',
-          justifyContent: 'space-between',
+          flexDirection: isMobile ? 'column' : 'row',
+          alignItems: isMobile ? 'flex-start' : 'flex-start',
+          justifyContent: isMobile ? 'flex-start' : 'space-between',
+          gap: isMobile ? '40px' : '0',
           paddingBottom: '32px',
         }}
       >
@@ -50,33 +54,35 @@ export default function Footer() {
         <div
           style={{
             position: 'relative',
-            width: '280px',
+            width: isMobile ? '100%' : '280px',
             flexShrink: 0,
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center',
-            minHeight: '220px',
+            justifyContent: isMobile ? 'flex-start' : 'center',
+            minHeight: isMobile ? 'auto' : '220px',
           }}
         >
-          <div
-            style={{
-              position: 'absolute',
-              bottom: 0,
-              left: '50%',
-              transform: 'translateX(-50%)',
-              width: '260px',
-              height: '220px',
-              backgroundColor: '#065954',
-              borderRadius: '9999px 9999px 0 0',
-              zIndex: 1,
-            }}
-          />
+          {!isMobile && (
+            <div
+              style={{
+                position: 'absolute',
+                bottom: 0,
+                left: '50%',
+                transform: 'translateX(-50%)',
+                width: '260px',
+                height: '220px',
+                backgroundColor: '#065954',
+                borderRadius: '9999px 9999px 0 0',
+                zIndex: 1,
+              }}
+            />
+          )}
           <div style={{ position: 'relative', zIndex: 2 }}>
             <Image
               src="/footer.png"
               alt="Motus"
-              width={220}
-              height={100}
+              width={isMobile ? 160 : 220}
+              height={isMobile ? 72 : 100}
             />
           </div>
         </div>
@@ -121,7 +127,7 @@ export default function Footer() {
         </div>
 
         {/* COLUMNA 3 — Contacto */}
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', flex: 1, paddingLeft: '40px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', flex: 1, paddingLeft: isMobile ? '0' : '40px' }}>
           <p
             style={{
               fontFamily: '"Artegra Sans Extended", sans-serif',
@@ -216,8 +222,9 @@ export default function Footer() {
           paddingTop: '20px',
           paddingBottom: '20px',
           display: 'flex',
+          flexDirection: isMobile ? 'column' : 'row',
           justifyContent: 'space-between',
-          alignItems: 'center',
+          alignItems: isMobile ? 'flex-start' : 'center',
           flexWrap: 'wrap',
           gap: '8px',
         }}

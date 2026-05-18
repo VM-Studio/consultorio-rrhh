@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import { useIsMobile } from '@/lib/useIsMobile'
 
 const luciaData = {
   nombre: 'Lucía',
@@ -135,6 +136,7 @@ function CirclePhoto({ src, alt, size = 420 }: { src: string; alt: string; size?
 }
 
 export default function NosotrosPage() {
+  const isMobile = useIsMobile()
   return (
     <div style={{ width: '100%' }}>
 
@@ -143,7 +145,7 @@ export default function NosotrosPage() {
         style={{
           position: 'relative',
           background: 'linear-gradient(to right, #c5cdb8 0%, #3a6f6b 60%, #054042 100%)',
-          paddingTop: '160px',
+          paddingTop: isMobile ? '100px' : '160px',
           paddingBottom: '52px',
           display: 'flex',
           flexDirection: 'column',
@@ -156,9 +158,9 @@ export default function NosotrosPage() {
           transition={{ duration: 0.6, ease: 'easeOut' }}
           style={{
             position: 'absolute',
-            top: '110px',
+            top: isMobile ? '60px' : '110px',
             left: 0,
-            width: '50%',
+            width: isMobile ? '72%' : '50%',
             height: '32px',
             background: 'linear-gradient(to right, #3a6f6b, #054042)',
             borderRadius: '0 9999px 9999px 0',
@@ -213,11 +215,11 @@ export default function NosotrosPage() {
       <section
         style={{
           background: 'linear-gradient(to right, #c5cdb8 0%, #3a6f6b 55%, #054042 100%)',
-          padding: '72px 0 64px',
+          padding: isMobile ? '48px 0 40px' : '72px 0 64px',
           overflow: 'hidden',
         }}
       >
-        {/* Fila principal: card pegada al borde izq + foto separada a la derecha */}
+        {/* Fila principal */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -225,19 +227,20 @@ export default function NosotrosPage() {
           transition={{ duration: 0.7 }}
           style={{
             display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: '48px',
-            paddingRight: '80px',
+            flexDirection: isMobile ? 'column' : 'row',
+            alignItems: isMobile ? 'center' : 'center',
+            justifyContent: isMobile ? 'flex-start' : 'space-between',
+            gap: isMobile ? '32px' : '48px',
+            paddingRight: isMobile ? '0' : '80px',
           }}
         >
-          {/* Card pegada al margen izquierdo */}
+          {/* Card */}
           <div
             style={{
-              width: '52%',
+              width: isMobile ? '100%' : '52%',
               backgroundColor: '#cfd5c2',
-              borderRadius: '0 9999px 9999px 0',
-              padding: '80px 100px 80px 72px',
+              borderRadius: isMobile ? '0' : '0 9999px 9999px 0',
+              padding: isMobile ? '32px 24px' : '80px 100px 80px 72px',
               display: 'flex',
               flexDirection: 'column',
               gap: '18px',
@@ -281,8 +284,8 @@ export default function NosotrosPage() {
             </p>
           </div>
 
-          {/* Foto — completamente separada */}
-          <CirclePhoto src={luciaData.foto} alt="Lucía Carrera" size={500} />
+          {/* Foto */}
+          <CirclePhoto src={luciaData.foto} alt="Lucía Carrera" size={isMobile ? 240 : 500} />
         </motion.div>
 
         {/* Fila inferior */}
@@ -293,10 +296,12 @@ export default function NosotrosPage() {
           transition={{ duration: 0.6, delay: 0.25 }}
           style={{
             display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'flex-end',
+            flexDirection: isMobile ? 'column' : 'row',
+            justifyContent: isMobile ? 'flex-start' : 'space-between',
+            alignItems: isMobile ? 'flex-start' : 'flex-end',
+            gap: isMobile ? '20px' : '0',
             marginTop: '36px',
-            padding: '0 80px 0 72px',
+            padding: isMobile ? '0 24px' : '0 80px 0 72px',
           }}
         >
           <LinkedInButton href={luciaData.linkedin} />
@@ -318,11 +323,11 @@ export default function NosotrosPage() {
       <section
         style={{
           background: 'linear-gradient(to left, #c5cdb8 0%, #3a6f6b 55%, #054042 100%)',
-          padding: '72px 0 64px',
+          padding: isMobile ? '48px 0 40px' : '72px 0 64px',
           overflow: 'hidden',
         }}
       >
-        {/* Fila principal: foto separada a la izquierda + card pegada al borde derecho */}
+        {/* Fila principal */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -330,22 +335,23 @@ export default function NosotrosPage() {
           transition={{ duration: 0.7 }}
           style={{
             display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: '48px',
-            paddingLeft: '80px',
+            flexDirection: isMobile ? 'column' : 'row',
+            alignItems: isMobile ? 'center' : 'center',
+            justifyContent: isMobile ? 'flex-start' : 'space-between',
+            gap: isMobile ? '32px' : '48px',
+            paddingLeft: isMobile ? '0' : '80px',
           }}
         >
-          {/* Foto — completamente separada a la izquierda */}
-          <CirclePhoto src={federicoData.foto} alt="Federico Ambroggio" size={500} />
+          {/* En mobile: foto arriba; en desktop: foto a la izquierda */}
+          <CirclePhoto src={federicoData.foto} alt="Federico Ambroggio" size={isMobile ? 240 : 500} />
 
-          {/* Card pegada al margen derecho */}
+          {/* Card */}
           <div
             style={{
-              width: '52%',
+              width: isMobile ? '100%' : '52%',
               backgroundColor: '#cfd5c2',
-              borderRadius: '9999px 0 0 9999px',
-              padding: '80px 72px 80px 100px',
+              borderRadius: isMobile ? '0' : '9999px 0 0 9999px',
+              padding: isMobile ? '32px 24px' : '80px 72px 80px 100px',
               display: 'flex',
               flexDirection: 'column',
               gap: '18px',
@@ -372,7 +378,7 @@ export default function NosotrosPage() {
                 color: '#033D40',
                 lineHeight: 1.75,
                 margin: 0,
-                textAlign: 'right',
+                textAlign: isMobile ? 'left' : 'right',
               }}
             >
               <strong style={{ fontWeight: 700 }}>{federicoData.rol}</strong>{' '}
@@ -385,7 +391,7 @@ export default function NosotrosPage() {
                 color: '#033D40',
                 lineHeight: 1.75,
                 margin: 0,
-                textAlign: 'right',
+                textAlign: isMobile ? 'left' : 'right',
               }}
             >
               {federicoData.descripcion[1]}
@@ -401,10 +407,12 @@ export default function NosotrosPage() {
           transition={{ duration: 0.6, delay: 0.25 }}
           style={{
             display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'flex-end',
+            flexDirection: isMobile ? 'column' : 'row',
+            justifyContent: isMobile ? 'flex-start' : 'space-between',
+            alignItems: isMobile ? 'flex-start' : 'flex-end',
+            gap: isMobile ? '20px' : '0',
             marginTop: '36px',
-            padding: '0 72px 0 80px',
+            padding: isMobile ? '0 24px' : '0 72px 0 80px',
           }}
         >
           <div style={{ display: 'grid', gridTemplateColumns: '18px 1fr', gap: '6px' }}>

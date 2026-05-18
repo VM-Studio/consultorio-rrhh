@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
+import { useIsMobile } from '@/lib/useIsMobile'
 
 interface Servicio {
   numero: string
@@ -241,6 +242,85 @@ function FiguraLateral({ servicio, index }: { servicio: Servicio; index: number 
 }
 
 export default function ServiciosPage() {
+  const isMobile = useIsMobile()
+
+  if (isMobile) {
+    return (
+      <section
+        style={{
+          position: 'relative',
+          width: '100%',
+          minHeight: '100vh',
+          background: `
+            radial-gradient(ellipse at 80% 20%, #94a8a5 0%, transparent 45%),
+            radial-gradient(ellipse at 20% 70%, #94a8a5 0%, transparent 35%),
+            #024041
+          `,
+          paddingTop: '90px',
+          paddingBottom: '60px',
+        }}
+      >
+        {/* BADGE */}
+        <div
+          style={{
+            marginLeft: 'auto',
+            width: '80%',
+            height: '36px',
+            background: 'linear-gradient(to left, #033d40, #033d40)',
+            borderRadius: '9999px 0 0 9999px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'flex-start',
+            paddingLeft: '24px',
+            marginBottom: '40px',
+          }}
+        >
+          <span style={{ fontFamily: '"Libre Baskerville", Georgia, serif', fontWeight: 700, fontSize: '13px', color: '#EEEAD6', letterSpacing: '0.15em', textTransform: 'uppercase' }}>
+            NUESTROS SERVICIOS
+          </span>
+        </div>
+
+        {/* Tarjetas */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', padding: '0 16px' }}>
+          {servicios.map((servicio, index) => (
+            <motion.div
+              key={servicio.numero}
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.08 }}
+            >
+              <Link
+                href="/contacto"
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  backgroundColor: servicio.color,
+                  borderRadius: '16px',
+                  padding: '24px 20px',
+                  textDecoration: 'none',
+                  gap: '12px',
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'flex-end', gap: '12px' }}>
+                  <span style={{ fontFamily: '"Libre Baskerville", serif', fontStyle: 'italic', fontSize: '36px', fontWeight: 400, color: servicio.numeroOutline ? 'transparent' : servicio.colorNumero, WebkitTextStroke: servicio.numeroOutline ? `1.5px ${servicio.colorNumero}` : undefined, opacity: servicio.opacidadNumero, lineHeight: 1 }}>
+                    {servicio.numero}
+                  </span>
+                  <h3 style={{ fontFamily: '"Libre Baskerville", Georgia, serif', fontWeight: 700, fontSize: '13px', color: servicio.colorTitulo, textTransform: 'uppercase', letterSpacing: '0.1em', whiteSpace: 'pre-line', lineHeight: 1.4, margin: 0 }}>
+                    {servicio.titulo}
+                  </h3>
+                </div>
+                <p style={{ fontFamily: 'Quicksand, sans-serif', fontSize: '13px', color: servicio.colorTexto, lineHeight: 1.65, margin: 0 }}>
+                  {servicio.descripcion[0]}
+                </p>
+              </Link>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+    )
+  }
+
   return (
     <section
       style={{

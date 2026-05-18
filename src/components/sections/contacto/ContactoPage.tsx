@@ -4,8 +4,10 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import CTAContacto from './CTAContacto'
+import { useIsMobile } from '@/lib/useIsMobile'
 
 export default function ContactoPage() {
+  const isMobile = useIsMobile()
   const [formData, setFormData] = useState({
     nombre: '', apellido: '', empresa: '',
     provincia: '', tel: '', mail: '', mensaje: '',
@@ -52,7 +54,7 @@ export default function ContactoPage() {
         style={{
           position: 'relative',
           backgroundColor: '#eeead7',
-          paddingTop: '140px',
+          paddingTop: isMobile ? '100px' : '140px',
           paddingBottom: '0',
         }}
       >
@@ -65,7 +67,7 @@ export default function ContactoPage() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'flex-end',
-            width: '50%',
+            width: isMobile ? '72%' : '50%',
             height: '32px',
             paddingLeft: '40px',
             paddingRight: '36px',
@@ -147,7 +149,7 @@ export default function ContactoPage() {
         </div>
 
         {/* Contenido sobre imagen */}
-        <div style={{ position: 'relative', zIndex: 1, padding: '60px 60px 80px' }}>
+        <div style={{ position: 'relative', zIndex: 1, padding: isMobile ? '40px 20px 60px' : '60px 60px 80px' }}>
 
           {/* Título alineado con el formulario */}
           <motion.p
@@ -211,19 +213,19 @@ export default function ContactoPage() {
               }}
             >
               {/* Fila 1: Nombre + Provincia */}
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0 40px', marginBottom: '24px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? '0' : '0 40px', marginBottom: '24px' }}>
                 <Field label="Nombre" name="nombre" value={formData.nombre} onChange={handleChange} />
                 <Field label="Provincia" name="provincia" value={formData.provincia} onChange={handleChange} />
               </div>
 
               {/* Fila 2: Apellido + Tel */}
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0 40px', marginBottom: '24px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? '0' : '0 40px', marginBottom: '24px' }}>
                 <Field label="Apellido" name="apellido" value={formData.apellido} onChange={handleChange} />
                 <Field label="Tel" name="tel" value={formData.tel} onChange={handleChange} type="tel" />
               </div>
 
               {/* Fila 3: Empresa + Mail */}
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0 40px', marginBottom: '24px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? '0' : '0 40px', marginBottom: '24px' }}>
                 <Field label="Empresa" name="empresa" value={formData.empresa} onChange={handleChange} />
                 <Field label="Mail" name="mail" value={formData.mail} onChange={handleChange} type="email" required />
               </div>
