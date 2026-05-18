@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import { useIsMobile } from '@/lib/useIsMobile'
 
 const containerVariants = {
   hidden: {},
@@ -16,12 +17,13 @@ const itemVariants = {
 }
 
 export default function QuienesSomos() {
+  const isMobile = useIsMobile()
   return (
     <section
       className="relative overflow-hidden"
-      style={{ backgroundColor: '#E1DCCB', paddingTop: '90px', paddingBottom: '120px' }}
+      style={{ backgroundColor: '#E1DCCB', paddingTop: isMobile ? '70px' : '90px', paddingBottom: '120px' }}
     >
-      {/* BADGE — arranca desde el borde izquierdo absoluto */}
+      {/* BADGE */}
       <motion.div
         initial={{ opacity: 0, x: -40 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -31,7 +33,7 @@ export default function QuienesSomos() {
           position: 'absolute',
           left: 0,
           top: '36px',
-          width: '46%',
+          width: isMobile ? '78%' : '46%',
           height: '36px',
           background: 'linear-gradient(to right, #83b1a7, #063f42)',
           borderRadius: '0 9999px 9999px 0',
@@ -43,7 +45,7 @@ export default function QuienesSomos() {
         }}
       >
         <span
-          style={{ fontFamily: '"Libre Baskerville", Georgia, serif', fontWeight: 700, fontSize: '15px', color: '#EEEAD6', letterSpacing: '0.18em', textTransform: 'uppercase' }}
+          style={{ fontFamily: '"Libre Baskerville", Georgia, serif', fontWeight: 700, fontSize: isMobile ? '12px' : '15px', color: '#EEEAD6', letterSpacing: '0.18em', textTransform: 'uppercase' }}
         >
           QUIENES SOMOS
         </span>
@@ -129,7 +131,7 @@ export default function QuienesSomos() {
         </div>
       </div>
 
-      {/* PILLS — fuera del flex row, centradas en toda la sección */}
+      {/* PILLS */}
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -139,9 +141,11 @@ export default function QuienesSomos() {
           display: 'flex',
           flexDirection: 'row',
           justifyContent: 'center',
-          gap: '24px',
+          gap: isMobile ? '8px' : '24px',
           marginTop: '80px',
           paddingBottom: '16px',
+          paddingLeft: isMobile ? '12px' : '0',
+          paddingRight: isMobile ? '12px' : '0',
         }}
       >
         {['COMPROMISO', 'ACOMPAÑAMIENTO', 'ENFOQUE HUMANO'].map((label) => (
@@ -151,12 +155,12 @@ export default function QuienesSomos() {
             style={{
               border: '1px solid #0d726a',
               borderRadius: '9999px',
-              padding: '8px 32px',
+              padding: isMobile ? '6px 12px' : '8px 32px',
               fontFamily: '"Artegra Sans Extended", sans-serif',
               fontWeight: 400,
-              fontSize: '11px',
+              fontSize: isMobile ? '8px' : '11px',
               color: '#0d726a',
-              letterSpacing: '0.12em',
+              letterSpacing: isMobile ? '0.06em' : '0.12em',
               textTransform: 'uppercase',
               whiteSpace: 'nowrap',
               cursor: 'default',

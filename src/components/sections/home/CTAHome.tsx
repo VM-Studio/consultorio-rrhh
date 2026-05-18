@@ -2,23 +2,25 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { useIsMobile } from '@/lib/useIsMobile'
 
 export default function CTAHome() {
+  const isMobile = useIsMobile()
   return (
     <section
       style={{
         position: 'relative',
         backgroundColor: '#eeead7',
-        minHeight: '420px',
-        paddingTop: '60px',
-        paddingBottom: '60px',
+        minHeight: isMobile ? '300px' : '420px',
+        paddingTop: isMobile ? '40px' : '60px',
+        paddingBottom: isMobile ? '40px' : '60px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         overflow: 'visible',
       }}
     >
-      {/* Píldora izquierda — sale desde el borde izq */}
+      {/* Píldora izquierda */}
       <div
         style={{
           position: 'absolute',
@@ -26,7 +28,7 @@ export default function CTAHome() {
           top: '53%',
           transform: 'translateY(-50%)',
           width: '92%',
-          height: '300px',
+          height: isMobile ? '160px' : '300px',
           border: '2px solid #46645e',
           borderRadius: '9999px',
           pointerEvents: 'none',
@@ -34,7 +36,7 @@ export default function CTAHome() {
         }}
       />
 
-      {/* Píldora derecha — sale desde el borde der */}
+      {/* Píldora derecha */}
       <div
         style={{
           position: 'absolute',
@@ -42,7 +44,7 @@ export default function CTAHome() {
           top: '50%',
           transform: 'translateY(-50%)',
           width: '92%',
-          height: '300px',
+          height: isMobile ? '160px' : '300px',
           border: '2px solid #46645e',
           borderRadius: '9999px',
           pointerEvents: 'none',
@@ -64,19 +66,19 @@ export default function CTAHome() {
           alignItems: 'center',
           justifyContent: 'center',
           textAlign: 'center',
-          padding: '0 40px',
+          padding: isMobile ? '0 24px' : '0 40px',
         }}
       >
         <h2
           style={{
             fontFamily: '"Artegra Sans Extended", sans-serif',
-            fontSize: '26px',
-            lineHeight: 1.15,
+            fontSize: isMobile ? '16px' : '26px',
+            lineHeight: 1.2,
             color: '#033D40',
             textTransform: 'uppercase',
             letterSpacing: '0.05em',
-            marginBottom: '32px',
-            maxWidth: '680px',
+            marginBottom: isMobile ? '20px' : '32px',
+            maxWidth: isMobile ? '300px' : '680px',
           }}
         >
           <span style={{ fontStyle: 'italic', fontWeight: 400 }}>¿PENSANDO</span>
@@ -93,17 +95,17 @@ export default function CTAHome() {
             display: 'inline-flex',
             alignItems: 'center',
             justifyContent: 'center',
-            padding: '14px 80px',
+            padding: isMobile ? '12px 40px' : '14px 80px',
             backgroundColor: '#105257',
             color: '#EEEAD6',
             borderRadius: '9999px',
             fontFamily: '"Artegra Sans Extended", sans-serif',
             fontWeight: 700,
-            fontSize: '13px',
+            fontSize: isMobile ? '11px' : '13px',
             letterSpacing: '0.15em',
             textTransform: 'uppercase',
             textDecoration: 'none',
-            minWidth: '380px',
+            minWidth: isMobile ? 'unset' : '380px',
             transition: 'opacity 0.2s, transform 0.2s',
           }}
           onMouseEnter={e => {

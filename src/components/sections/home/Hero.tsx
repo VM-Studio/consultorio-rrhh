@@ -18,11 +18,11 @@ export default function Hero() {
         height={0}
         sizes="100vw"
         priority
-        style={{ width: '100%', height: 'auto', display: 'block', minHeight: isMobile ? '420px' : undefined, objectFit: isMobile ? 'cover' : undefined }}
+        style={{ width: '100%', height: 'auto', display: 'block', minHeight: isMobile ? '580px' : undefined, objectFit: isMobile ? 'cover' : undefined }}
       />
 
       {/* Contenido superpuesto */}
-      <div className="absolute inset-0 z-10 flex items-center pt-10">
+      <div className="absolute inset-0 z-10 flex items-center" style={{ paddingTop: isMobile ? '80px' : '40px' }}>
         <div className={`w-full max-w-screen-xl mx-auto ${isMobile ? 'px-5' : 'px-8 md:px-12 lg:px-16'}`}>
           <div style={{ maxWidth: isMobile ? '100%' : '700px' }}>
 

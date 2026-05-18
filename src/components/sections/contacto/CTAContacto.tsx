@@ -1,16 +1,18 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useIsMobile } from '@/lib/useIsMobile'
 
 export default function CTAContacto() {
+  const isMobile = useIsMobile()
   return (
     <section
       style={{
         position: 'relative',
         backgroundColor: '#eeead7',
-        minHeight: '420px',
-        paddingTop: '60px',
-        paddingBottom: '60px',
+        minHeight: isMobile ? '300px' : '420px',
+        paddingTop: isMobile ? '40px' : '60px',
+        paddingBottom: isMobile ? '40px' : '60px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -25,7 +27,7 @@ export default function CTAContacto() {
           top: '55%',
           transform: 'translateY(-50%)',
           width: '92%',
-          height: '300px',
+          height: isMobile ? '160px' : '300px',
           border: '2px solid #0e746c',
           borderRadius: '9999px',
           pointerEvents: 'none',
@@ -41,7 +43,7 @@ export default function CTAContacto() {
           top: '50%',
           transform: 'translateY(-50%)',
           width: '92%',
-          height: '300px',
+          height: isMobile ? '160px' : '300px',
           border: '2px solid #0e746c',
           borderRadius: '9999px',
           pointerEvents: 'none',
@@ -62,19 +64,19 @@ export default function CTAContacto() {
           alignItems: 'center',
           justifyContent: 'center',
           textAlign: 'center',
-          padding: '0 40px',
+          padding: isMobile ? '0 24px' : '0 40px',
         }}
       >
         <h2
           style={{
             fontFamily: '"Artegra Sans Extended", sans-serif',
-            fontSize: '26px',
+            fontSize: isMobile ? '16px' : '26px',
             lineHeight: 1.2,
             color: '#033D40',
             textTransform: 'uppercase',
             letterSpacing: '0.05em',
             fontWeight: 700,
-            maxWidth: '680px',
+            maxWidth: isMobile ? '300px' : '680px',
           }}
         >
           ¿CUÁL DESAFÍO TE GUSTARÍA<br />ACTIVAR EN TU EMPRESA HOY?

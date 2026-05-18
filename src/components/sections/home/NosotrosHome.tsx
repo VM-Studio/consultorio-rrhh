@@ -40,7 +40,7 @@ export default function NosotrosHome() {
         position: 'relative',
         overflow: 'hidden',
         backgroundColor: '#E1DCCB',
-        paddingTop: isMobile ? '60px' : '90px',
+        paddingTop: isMobile ? '90px' : '90px',
         paddingBottom: isMobile ? '48px' : '70px',
       }}
     >
@@ -69,7 +69,7 @@ export default function NosotrosHome() {
           style={{
             fontFamily: '"Libre Baskerville", Georgia, serif',
             fontWeight: 700,
-            fontSize: '15px',
+            fontSize: isMobile ? '12px' : '15px',
             color: '#EEEAD6',
             letterSpacing: '0.15em',
             textTransform: 'uppercase',
