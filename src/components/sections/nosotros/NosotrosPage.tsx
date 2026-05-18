@@ -145,7 +145,7 @@ export default function NosotrosPage() {
         style={{
           position: 'relative',
           background: 'linear-gradient(to right, #c5cdb8 0%, #3a6f6b 60%, #054042 100%)',
-          paddingTop: isMobile ? '130px' : '160px',
+          paddingTop: isMobile ? '160px' : '160px',
           paddingBottom: '52px',
           display: 'flex',
           flexDirection: 'column',
@@ -158,7 +158,7 @@ export default function NosotrosPage() {
           transition={{ duration: 0.6, ease: 'easeOut' }}
           style={{
             position: 'absolute',
-            top: isMobile ? '96px' : '110px',
+            top: isMobile ? '122px' : '110px',
             left: 0,
             width: isMobile ? '72%' : '50%',
             height: '32px',
@@ -285,7 +285,7 @@ export default function NosotrosPage() {
           </div>
 
           {/* Foto */}
-          <CirclePhoto src={luciaData.foto} alt="Lucía Carrera" size={isMobile ? 240 : 500} />
+          <CirclePhoto src={luciaData.foto} alt="Lucía Carrera" size={isMobile ? 300 : 500} />
         </motion.div>
 
         {/* Fila inferior */}
@@ -343,7 +343,7 @@ export default function NosotrosPage() {
           }}
         >
           {/* En mobile: foto arriba; en desktop: foto a la izquierda */}
-          <CirclePhoto src={federicoData.foto} alt="Federico Ambroggio" size={isMobile ? 240 : 500} />
+          <CirclePhoto src={federicoData.foto} alt="Federico Ambroggio" size={isMobile ? 300 : 500} />
 
           {/* Card */}
           <div

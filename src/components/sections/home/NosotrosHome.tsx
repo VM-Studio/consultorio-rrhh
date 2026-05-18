@@ -119,7 +119,7 @@ export default function NosotrosHome() {
             viewport={{ once: true, margin: '-80px' }}
             style={{
               fontFamily: '"Artegra Sans Extended", sans-serif',
-              fontSize: isMobile ? '28px' : '40px',
+              fontSize: isMobile ? '22px' : '40px',
               lineHeight: 1.2,
               color: '#EEEAD6',
               textAlign: 'center',
