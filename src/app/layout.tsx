@@ -5,32 +5,32 @@ import './globals.css'
 const artegra = localFont({
   src: [
     {
-      path: '../../public/fonts/artegra/Fontspring-DEMO-artegra_sans-extended-400-regular.otf',
+      path: '../fonts/Fontspring-DEMO-artegra_sans-extended-400-regular.otf',
       weight: '400',
       style: 'normal',
     },
     {
-      path: '../../public/fonts/artegra/Fontspring-DEMO-artegra_sans-extended-400-regular-italic.otf',
+      path: '../fonts/Fontspring-DEMO-artegra_sans-extended-400-regular-italic.otf',
       weight: '400',
       style: 'italic',
     },
     {
-      path: '../../public/fonts/artegra/Fontspring-DEMO-artegra_sans-extended-500-medium.otf',
+      path: '../fonts/Fontspring-DEMO-artegra_sans-extended-500-medium.otf',
       weight: '500',
       style: 'normal',
     },
     {
-      path: '../../public/fonts/artegra/Fontspring-DEMO-artegra_sans-extended-600-semibold.otf',
+      path: '../fonts/Fontspring-DEMO-artegra_sans-extended-600-semibold.otf',
       weight: '600',
       style: 'normal',
     },
     {
-      path: '../../public/fonts/artegra/Fontspring-DEMO-artegra_sans-extended-700-bold.otf',
+      path: '../fonts/Fontspring-DEMO-artegra_sans-extended-700-bold.otf',
       weight: '700',
       style: 'normal',
     },
     {
-      path: '../../public/fonts/artegra/Fontspring-DEMO-artegra_sans-extended-700-bold-italic.otf',
+      path: '../fonts/Fontspring-DEMO-artegra_sans-extended-700-bold-italic.otf',
       weight: '700',
       style: 'italic',
     },
