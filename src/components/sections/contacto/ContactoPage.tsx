@@ -78,7 +78,7 @@ export default function ContactoPage() {
         >
           <span
             style={{
-              fontFamily: '"Libre Baskerville", Georgia, serif',
+              fontFamily: '"Artegra Sans Extended", sans-serif',
               fontWeight: 700,
               fontSize: '13px',
               color: '#EEEAD6',
@@ -98,8 +98,8 @@ export default function ContactoPage() {
       <section
         style={{
           background: 'linear-gradient(to right, #79938a, #104649)',
-          padding: '48px 40px',
-          marginTop: '48px',
+          padding: isMobile ? '36px 24px' : '48px 40px',
+          marginTop: '0',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -113,14 +113,14 @@ export default function ContactoPage() {
           viewport={{ once: true, margin: '-60px' }}
           style={{
             fontFamily: '"Libre Baskerville", Georgia, serif',
-            fontSize: 'clamp(20px, 2.2vw, 30px)',
-            lineHeight: 1.55,
+            fontSize: isMobile ? '18px' : 'clamp(20px, 2.2vw, 30px)',
+            lineHeight: 1.6,
             color: '#EEEAD6',
             maxWidth: '680px',
           }}
         >
-          Queremos <em>escucharte</em>,{' '}
-          <strong>juntos</strong> podemos idear un <strong>plan</strong>{' '}
+          Queremos <em>escucharte</em>,<br />
+          <strong>juntos</strong> podemos idear un <strong>plan</strong><br />
           <em>pensado</em> para <strong>vos</strong> y <strong>tu equipo</strong>.
         </motion.p>
       </section>
@@ -290,6 +290,16 @@ export default function ContactoPage() {
           )}
         </div>
       </section>
+
+      {/* ─── Línea degradé entre formulario y footer ─── */}
+      <div
+        style={{
+          width: '100%',
+          height: '2px',
+          background: 'linear-gradient(to right, transparent 0%, #EEEAD6 30%, #EEEAD6 70%, transparent 100%)',
+          opacity: 0.6,
+        }}
+      />
     </>
   )
 }

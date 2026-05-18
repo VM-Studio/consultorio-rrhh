@@ -67,7 +67,7 @@ export default function NosotrosHome() {
       >
         <span
           style={{
-            fontFamily: '"Libre Baskerville", Georgia, serif',
+            fontFamily: '"Artegra Sans Extended", sans-serif',
             fontWeight: 700,
             fontSize: isMobile ? '12px' : '15px',
             color: '#EEEAD6',
@@ -118,8 +118,8 @@ export default function NosotrosHome() {
             transition={{ duration: 0.7, delay: 0.1 }}
             viewport={{ once: true, margin: '-80px' }}
             style={{
-              fontFamily: '"Libre Baskerville", serif',
-              fontSize: '40px',
+              fontFamily: '"Artegra Sans Extended", sans-serif',
+              fontSize: isMobile ? '28px' : '40px',
               lineHeight: 1.2,
               color: '#EEEAD6',
               textAlign: 'center',
@@ -209,25 +209,12 @@ export default function NosotrosHome() {
                   </span>
                 )
               )}
+              {socio.aclaracion && (
+                <span style={{ fontWeight: 400, fontSize: '12px', opacity: 0.6, fontStyle: 'italic', whiteSpace: 'nowrap', display: 'block' }}>
+                  {' '}{socio.aclaracion}
+                </span>
+              )}
             </p>
-
-            {/* Aclaración */}
-            {socio.aclaracion && (
-              <p
-                style={{
-                  fontFamily: 'Quicksand, sans-serif',
-                  fontSize: '12px',
-                  color: '#033D40',
-                  opacity: 0.6,
-                  textAlign: 'center',
-                  fontStyle: 'italic',
-                  marginBottom: '12px',
-                  maxWidth: '240px',
-                }}
-              >
-                {socio.aclaracion}
-              </p>
-            )}
 
             {/* Autor */}
             <p

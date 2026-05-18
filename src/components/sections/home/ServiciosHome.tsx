@@ -59,8 +59,8 @@ const servicios: Servicio[] = [
     colorNumero: '#EEEAD6',
     colorTitulo: '#EEEAD6',
     colorTexto: '#c5c0aa',
-    opacidadNumero: 1,
-    numeroOutline: true,
+    opacidadNumero: 0.45,
+    numeroOutline: false,
     colorBoton: '#47C98C',
     colorBotonTexto: '#033D40',
   },
@@ -149,12 +149,13 @@ function Figura({ servicio, index }: { servicio: Servicio; index: number }) {
             fontStyle: 'italic',
             fontSize: '52px',
             fontWeight: 400,
-            color: servicio.numeroOutline ? 'transparent' : servicio.colorNumero,
-            WebkitTextStroke: servicio.numeroOutline ? `1.5px ${servicio.colorNumero}` : undefined,
+            color: hovered ? 'transparent' : servicio.colorNumero,
+            WebkitTextStroke: hovered ? `1.5px ${servicio.colorNumero}` : undefined,
             opacity: servicio.opacidadNumero,
             lineHeight: 1,
             display: 'block',
             textAlign: 'center',
+            transition: 'color 0.25s',
           }}
         >
           {servicio.numero}
@@ -268,7 +269,7 @@ export default function ServiciosHome() {
             marginBottom: '32px',
           }}
         >
-          <span style={{ fontFamily: '"Libre Baskerville", Georgia, serif', fontWeight: 700, fontSize: '13px', color: '#033D40', letterSpacing: '0.15em', textTransform: 'uppercase' }}>
+          <span style={{ fontFamily: '"Artegra Sans Extended", sans-serif', fontWeight: 700, fontSize: '13px', color: '#033D40', letterSpacing: '0.15em', textTransform: 'uppercase' }}>
             NUESTROS SERVICIOS
           </span>
         </div>
@@ -345,7 +346,7 @@ export default function ServiciosHome() {
       >
         <span
           style={{
-            fontFamily: '"Libre Baskerville", Georgia, serif',
+            fontFamily: '"Artegra Sans Extended", sans-serif',
             fontWeight: 700,
             fontSize: '15px',
             color: '#033D40',

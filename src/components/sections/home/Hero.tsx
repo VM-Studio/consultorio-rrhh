@@ -42,20 +42,23 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.35 }}
-            style={{ fontFamily: '"Libre Baskerville", Georgia, serif', fontSize: isMobile ? 'clamp(22px, 7vw, 32px)' : 'clamp(32px, 3.6vw, 54px)', lineHeight: 1.3, color: '#EEEAD6', marginBottom: isMobile ? '14px' : '24px' }}
+            style={{ fontFamily: '"Libre Baskerville", Georgia, serif', fontSize: isMobile ? 'clamp(20px, 6vw, 28px)' : 'clamp(28px, 3vw, 46px)', lineHeight: isMobile ? 1.15 : 1.1, color: '#EEEAD6', marginBottom: isMobile ? '10px' : '14px' }}
           >
-            <span style={{ fontWeight: 400 }}>Acompañamos a</span>
-            <br />
-            <em style={{ fontWeight: 400, fontStyle: 'italic' }}>organizaciones</em>
-            <span style={{ fontWeight: 400 }}> en sus procesos</span>
-            <br />
-            <span style={{ fontWeight: 400 }}>de </span>
-            <strong style={{ fontWeight: 700 }}>transformación</strong>
-            <span style={{ fontWeight: 400 }}>, poniendo</span>
-            <br />
-            <span style={{ fontWeight: 400 }}>a las </span>
-            <em style={{ fontWeight: 400, fontStyle: 'italic' }}>personas</em>
-            <span style={{ fontWeight: 400 }}> en el centro.</span>
+            <span style={{ display: 'block', whiteSpace: 'nowrap', fontWeight: 400 }}>Acompañamos a</span>
+            <span style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              <em style={{ fontWeight: 400, fontStyle: 'italic' }}>organizaciones</em>
+              <span style={{ fontWeight: 400 }}> en sus procesos</span>
+            </span>
+            <span style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              <span style={{ fontWeight: 400 }}>de </span>
+              <strong style={{ fontWeight: 700 }}>transformación</strong>
+              <span style={{ fontWeight: 400 }}>, poniendo</span>
+            </span>
+            <span style={{ display: 'block', whiteSpace: 'nowrap' }}>
+              <span style={{ fontWeight: 400 }}>a las </span>
+              <em style={{ fontWeight: 400, fontStyle: 'italic' }}>personas</em>
+              <span style={{ fontWeight: 400 }}> en el centro.</span>
+            </span>
           </motion.h1>
 
           {/* Párrafo descriptivo */}
@@ -64,7 +67,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.55 }}
-              style={{ fontFamily: 'Quicksand, system-ui, sans-serif', fontWeight: 500, fontSize: '17px', color: '#EEEAD6', opacity: 0.9, maxWidth: '520px', lineHeight: 1.7, marginBottom: '32px' }}
+              style={{ fontFamily: 'Quicksand, system-ui, sans-serif', fontWeight: 500, fontSize: '17px', color: '#EEEAD6', opacity: 0.9, maxWidth: '520px', lineHeight: 1.5, marginBottom: '22px' }}
             >
               Trabajamos como socios estratégicos de nuestros clientes, entendiendo su realidad, conociendo sus problemáticas y co-creando soluciones a medida. Creemos en una forma de hacer consultoría más humana, más cercana y profundamente comprometida con cada proceso.
             </motion.p>

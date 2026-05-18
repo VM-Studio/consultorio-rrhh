@@ -108,16 +108,16 @@ function CirclePhoto({ src, alt, size = 420 }: { src: string; alt: string; size?
         <circle
           cx={size / 2}
           cy={size / 2}
-          r={size / 2 - 5}
+          r={size / 2 - 7}
           fill="none"
           stroke={`url(#${gradId})`}
-          strokeWidth="5"
+          strokeWidth="14"
         />
       </svg>
       <div
         style={{
           position: 'absolute',
-          inset: '10px',
+          inset: '14px',
           borderRadius: '50%',
           overflow: 'hidden',
           zIndex: 1,
@@ -172,7 +172,7 @@ export default function NosotrosPage() {
         >
           <span
             style={{
-              fontFamily: '"Libre Baskerville", Georgia, serif',
+              fontFamily: '"Artegra Sans Extended", sans-serif',
               fontWeight: 700,
               fontSize: isMobile ? '12px' : '15px',
               color: '#EEEAD6',
@@ -193,18 +193,18 @@ export default function NosotrosPage() {
           <p
             style={{
               fontFamily: 'Quicksand, sans-serif',
-              fontSize: '21px',
-              color: '#e8e5d8',
-              lineHeight: 1.8,
+              fontSize: isMobile ? '16px' : '21px',
+              color: '#EEEAD6',
+              lineHeight: 1.7,
               margin: 0,
             }}
           >
             Profesionales con{' '}
-            <strong style={{ fontWeight: 700, color: '#fff' }}>trayectoria sólida,</strong>
+            <strong style={{ fontWeight: 700, color: '#EEEAD6' }}>trayectoria sólida,</strong>
             <br />
-            <strong style={{ fontWeight: 700, color: '#fff' }}>vocación de servicio</strong>{' '}
+            <strong style={{ fontWeight: 700, color: '#EEEAD6' }}>vocación de servicio</strong>{' '}
             y la{' '}
-            <strong style={{ fontWeight: 700, color: '#fff' }}>pasión de conectar</strong>
+            <strong style={{ fontWeight: 700, color: '#EEEAD6' }}>pasión de conectar</strong>
             <br />
             personas con oportunidades.
           </p>
@@ -250,7 +250,7 @@ export default function NosotrosPage() {
             <h2
               style={{
                 fontFamily: '"Libre Baskerville", serif',
-                fontSize: '38px',
+                fontSize: isMobile ? '26px' : '38px',
                 color: '#033D40',
                 fontWeight: 400,
                 lineHeight: 1.1,
@@ -262,7 +262,7 @@ export default function NosotrosPage() {
             <p
               style={{
                 fontFamily: 'Quicksand, sans-serif',
-                fontSize: '14px',
+                fontSize: isMobile ? '13px' : '14px',
                 color: '#033D40',
                 lineHeight: 1.75,
                 margin: 0,
@@ -274,7 +274,7 @@ export default function NosotrosPage() {
             <p
               style={{
                 fontFamily: 'Quicksand, sans-serif',
-                fontSize: '14px',
+                fontSize: isMobile ? '13px' : '14px',
                 color: '#033D40',
                 lineHeight: 1.75,
                 margin: 0,
@@ -305,7 +305,7 @@ export default function NosotrosPage() {
           }}
         >
           <LinkedInButton href={luciaData.linkedin} />
-          <div style={{ display: 'grid', gridTemplateColumns: '18px 1fr', gap: '4px 8px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '18px 1fr', gap: '6px 8px' }}>
             {luciaData.bullets.map((b, i) => (
               <div key={i} style={{ display: 'contents' }}>
                 <div style={{ color: '#EEEAD6', fontSize: '18px', lineHeight: 1.6 }}>•</div>
@@ -361,12 +361,12 @@ export default function NosotrosPage() {
             <h2
               style={{
                 fontFamily: '"Libre Baskerville", serif',
-                fontSize: '38px',
+                fontSize: isMobile ? '26px' : '38px',
                 color: '#033D40',
                 fontWeight: 400,
                 lineHeight: 1.1,
                 margin: 0,
-                textAlign: 'right',
+                textAlign: isMobile ? 'left' : 'right',
               }}
             >
               {federicoData.nombre} {federicoData.apellido}
@@ -374,7 +374,7 @@ export default function NosotrosPage() {
             <p
               style={{
                 fontFamily: 'Quicksand, sans-serif',
-                fontSize: '14px',
+                fontSize: isMobile ? '13px' : '14px',
                 color: '#033D40',
                 lineHeight: 1.75,
                 margin: 0,
@@ -387,7 +387,7 @@ export default function NosotrosPage() {
             <p
               style={{
                 fontFamily: 'Quicksand, sans-serif',
-                fontSize: '14px',
+                fontSize: isMobile ? '13px' : '14px',
                 color: '#033D40',
                 lineHeight: 1.75,
                 margin: 0,

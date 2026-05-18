@@ -49,8 +49,8 @@ const servicios: Servicio[] = [
     colorNumero: '#EEEAD6',
     colorTitulo: '#EEEAD6',
     colorTexto: '#c5c0aa',
-    opacidadNumero: 1,
-    numeroOutline: true,
+    opacidadNumero: 0.45,
+    numeroOutline: false,
     colorBoton: '#47C98C',
     colorBotonTexto: '#033D40',
   },
@@ -107,6 +107,44 @@ const servicios: Servicio[] = [
   },
 ]
 
+function MobileCard({ servicio, index }: { servicio: Servicio; index: number }) {
+  const [expanded, setExpanded] = useState(false)
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: -40 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: index * 0.08 }}
+    >
+      <div
+        onClick={() => setExpanded(v => !v)}
+        style={{ backgroundColor: servicio.color, borderRadius: '16px', padding: '20px', cursor: 'pointer', display: 'flex', flexDirection: 'column', gap: '12px' }}
+      >
+        <div style={{ display: 'flex', alignItems: 'flex-end', gap: '12px' }}>
+          <span style={{ fontFamily: '"Libre Baskerville", serif', fontStyle: 'italic', fontSize: '36px', fontWeight: 400, color: expanded ? 'transparent' : servicio.colorNumero, WebkitTextStroke: expanded ? `1.5px ${servicio.colorNumero}` : undefined, opacity: servicio.opacidadNumero, lineHeight: 1, transition: 'color 0.25s' }}>
+            {servicio.numero}
+          </span>
+          <h3 style={{ fontFamily: '"Libre Baskerville", Georgia, serif', fontWeight: 700, fontSize: '13px', color: servicio.colorTitulo, textTransform: 'uppercase', letterSpacing: '0.1em', whiteSpace: 'pre-line', lineHeight: 1.4, margin: 0 }}>
+            {servicio.titulo}
+          </h3>
+        </div>
+        <AnimatePresence>
+          {expanded && (
+            <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} transition={{ duration: 0.25 }} style={{ overflow: 'hidden', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              {servicio.descripcion.map((p, i) => (
+                <p key={i} style={{ fontFamily: 'Quicksand, sans-serif', fontSize: '13px', color: servicio.colorTexto, lineHeight: 1.65, margin: 0 }}>{p}</p>
+              ))}
+              <Link href="/contacto" style={{ alignSelf: 'flex-start', backgroundColor: servicio.colorBoton, color: servicio.colorBotonTexto, fontFamily: '"Artegra Sans Extended", sans-serif', fontWeight: 700, fontSize: '11px', letterSpacing: '0.15em', textTransform: 'uppercase', borderRadius: '9999px', padding: '8px 22px', textDecoration: 'none' }}>
+                VER MÁS
+              </Link>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </motion.div>
+  )
+}
+
 function FiguraLateral({ servicio, index }: { servicio: Servicio; index: number }) {
   const [hovered, setHovered] = useState(false)
 
@@ -157,11 +195,12 @@ function FiguraLateral({ servicio, index }: { servicio: Servicio; index: number 
                 fontStyle: 'italic',
                 fontSize: '52px',
                 fontWeight: 400,
-                color: servicio.numeroOutline ? 'transparent' : servicio.colorNumero,
-                WebkitTextStroke: servicio.numeroOutline ? `1.5px ${servicio.colorNumero}` : undefined,
+                color: hovered ? 'transparent' : servicio.colorNumero,
+                WebkitTextStroke: hovered ? `1.5px ${servicio.colorNumero}` : undefined,
                 opacity: servicio.opacidadNumero,
                 lineHeight: 1,
                 display: 'block',
+                transition: 'color 0.25s',
               }}
             >
               {servicio.numero}
@@ -223,11 +262,11 @@ function FiguraLateral({ servicio, index }: { servicio: Servicio; index: number 
                     color: servicio.colorBotonTexto,
                     fontFamily: '"Artegra Sans Extended", sans-serif',
                     fontWeight: 700,
-                    fontSize: '18px',
+                    fontSize: '13px',
                     letterSpacing: '0.15em',
                     textTransform: 'uppercase',
                     borderRadius: '9999px',
-                    padding: '8px 28px',
+                    padding: '8px 22px',
                   }}
                 >
                   VER MÁS
@@ -275,46 +314,15 @@ export default function ServiciosPage() {
             marginBottom: '40px',
           }}
         >
-          <span style={{ fontFamily: '"Libre Baskerville", Georgia, serif', fontWeight: 700, fontSize: '13px', color: '#EEEAD6', letterSpacing: '0.15em', textTransform: 'uppercase' }}>
+          <span style={{ fontFamily: '"Artegra Sans Extended", sans-serif', fontWeight: 700, fontSize: '13px', color: '#EEEAD6', letterSpacing: '0.15em', textTransform: 'uppercase' }}>
             NUESTROS SERVICIOS
           </span>
         </div>
 
         {/* Tarjetas */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', padding: '0 16px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', padding: '0 16px' }}>
           {servicios.map((servicio, index) => (
-            <motion.div
-              key={servicio.numero}
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.08 }}
-            >
-              <Link
-                href="/contacto"
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  backgroundColor: servicio.color,
-                  borderRadius: '16px',
-                  padding: '24px 20px',
-                  textDecoration: 'none',
-                  gap: '12px',
-                }}
-              >
-                <div style={{ display: 'flex', alignItems: 'flex-end', gap: '12px' }}>
-                  <span style={{ fontFamily: '"Libre Baskerville", serif', fontStyle: 'italic', fontSize: '36px', fontWeight: 400, color: servicio.numeroOutline ? 'transparent' : servicio.colorNumero, WebkitTextStroke: servicio.numeroOutline ? `1.5px ${servicio.colorNumero}` : undefined, opacity: servicio.opacidadNumero, lineHeight: 1 }}>
-                    {servicio.numero}
-                  </span>
-                  <h3 style={{ fontFamily: '"Libre Baskerville", Georgia, serif', fontWeight: 700, fontSize: '13px', color: servicio.colorTitulo, textTransform: 'uppercase', letterSpacing: '0.1em', whiteSpace: 'pre-line', lineHeight: 1.4, margin: 0 }}>
-                    {servicio.titulo}
-                  </h3>
-                </div>
-                <p style={{ fontFamily: 'Quicksand, sans-serif', fontSize: '13px', color: servicio.colorTexto, lineHeight: 1.65, margin: 0 }}>
-                  {servicio.descripcion[0]}
-                </p>
-              </Link>
-            </motion.div>
+            <MobileCard key={servicio.numero} servicio={servicio} index={index} />
           ))}
         </div>
       </section>
@@ -360,7 +368,7 @@ export default function ServiciosPage() {
       >
         <span
           style={{
-            fontFamily: '"Libre Baskerville", Georgia, serif',
+            fontFamily: '"Artegra Sans Extended", sans-serif',
             fontWeight: 700,
             fontSize: '15px',
             color: '#EEEAD6',

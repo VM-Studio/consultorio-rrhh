@@ -1,18 +1,15 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { ChevronLeft } from 'lucide-react'
 import { useIsMobile } from '@/lib/useIsMobile'
 
-const logos = [
-  { alt: 'Amazon' },
-  { alt: 'TikTok' },
-  { alt: 'Reddit' },
-  { alt: 'Mercado Libre' },
-]
+const LOGOS = [2,3,4,5,6,7,8,9,10,11,12,13,14,15].map(n => `/logos/${n}.png`)
 
 export default function ClientesHome() {
   const isMobile = useIsMobile()
+  const logoH = isMobile ? 72 : 128
+
   return (
     <section
       style={{
@@ -49,7 +46,7 @@ export default function ClientesHome() {
       >
         <span
           style={{
-            fontFamily: '"Libre Baskerville", Georgia, serif',
+            fontFamily: '"Artegra Sans Extended", sans-serif',
             fontWeight: 700,
             fontSize: '15px',
             color: '#033D40',
@@ -64,7 +61,7 @@ export default function ClientesHome() {
       {/* Espacio entre badges */}
       <div style={{ flex: 1, minHeight: isMobile ? '40px' : '80px' }} />
 
-      {/* Badge inferior con logos */}
+      {/* Badge inferior con logos en marquee */}
       <motion.div
         initial={{ opacity: 0, x: 80 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -78,53 +75,43 @@ export default function ClientesHome() {
           borderRadius: '9999px 0 0 9999px',
           display: 'flex',
           alignItems: 'center',
-          paddingLeft: isMobile ? '16px' : '28px',
-          paddingRight: isMobile ? '24px' : '48px',
-          marginBottom: '0',
           overflow: 'hidden',
-          gap: isMobile ? '28px' : '64px',
         }}
       >
-        {/* Flecha izquierda */}
-        <div
+        {/* Track animado — duplicado para loop seamless */}
+        <motion.div
+          animate={{ x: ['0%', '-50%'] }}
+          transition={{ repeat: Infinity, duration: 28, ease: 'linear' }}
           style={{
-            flexShrink: 0,
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center',
-            marginRight: '8px',
+            gap: isMobile ? '40px' : '72px',
+            paddingLeft: isMobile ? '40px' : '72px',
+            willChange: 'transform',
+            width: 'max-content',
           }}
         >
-          <ChevronLeft size={isMobile ? 32 : 52} style={{ color: '#b7c9b8' }} strokeWidth={1.5} />
-        </div>
-
-        {/* Logos en fila */}
-        {logos.map((logo, index) => (
-          <div
-            key={index}
-            style={{
-              flexShrink: 0,
-              height: '34px',
-              display: 'flex',
-              alignItems: 'center',
-            }}
-          >
-            <span
+          {[...LOGOS, ...LOGOS].map((src, i) => (
+            <div
+              key={i}
               style={{
-                fontFamily: '"Artegra Sans Extended", sans-serif',
-                fontWeight: 700,
-                fontSize: isMobile ? '13px' : '20px',
-                letterSpacing: '0.08em',
-                color: '#4a5e52',
-                opacity: 0.7,
-                textTransform: 'uppercase',
-                whiteSpace: 'nowrap',
+                flexShrink: 0,
+                height: `${logoH}px`,
+                display: 'flex',
+                alignItems: 'center',
               }}
             >
-              {logo.alt}
-            </span>
-          </div>
-        ))}
+              <Image
+                src={src}
+                alt={`cliente-${i}`}
+                height={logoH}
+                width={logoH * 3}
+                style={{ height: `${logoH}px`, width: 'auto', maxWidth: `${logoH * 3}px`, objectFit: 'contain', opacity: 0.75 }}
+                unoptimized
+              />
+            </div>
+          ))}
+        </motion.div>
       </motion.div>
     </section>
   )
