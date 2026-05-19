@@ -215,7 +215,7 @@ export default function NosotrosPage() {
       <section
         style={{
           background: 'linear-gradient(to right, #c5cdb8 0%, #3a6f6b 55%, #054042 100%)',
-          padding: isMobile ? '48px 0 40px' : '72px 0 64px',
+          padding: isMobile ? '20px 0 40px' : '72px 0 64px',
           overflow: 'hidden',
         }}
       >
@@ -310,7 +310,7 @@ export default function NosotrosPage() {
       <section
         style={{
           background: 'linear-gradient(to left, #c5cdb8 0%, #3a6f6b 55%, #054042 100%)',
-          padding: isMobile ? '48px 0 40px' : '72px 0 64px',
+          padding: isMobile ? '20px 0 40px' : '72px 0 64px',
           overflow: 'hidden',
         }}
       >

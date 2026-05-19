@@ -70,7 +70,7 @@ export default function ClientesHome() {
         style={{
           alignSelf: 'flex-end',
           width: isMobile ? '96%' : '88%',
-          height: isMobile ? '142px' : '164px',
+          height: isMobile ? '160px' : '164px',
           backgroundColor: '#e0dcc9',
           borderRadius: '9999px 0 0 9999px',
           display: 'flex',
@@ -84,8 +84,8 @@ export default function ClientesHome() {
           style={{
             display: 'flex',
             alignItems: 'center',
-            gap: isMobile ? '40px' : '72px',
-            paddingLeft: isMobile ? '40px' : '72px',
+            gap: isMobile ? '48px' : '72px',
+            paddingLeft: isMobile ? '48px' : '72px',
             width: 'max-content',
           }}
         >
