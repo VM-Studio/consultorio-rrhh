@@ -131,7 +131,7 @@ function Figura({ servicio, index }: { servicio: Servicio; index: number }) {
       }}
     >
       <Link
-        href="/servicios"
+        href={`/servicios?open=${servicio.numero.replace('.', '')}`}
         style={{
           display: 'flex',
           flexDirection: 'column',
@@ -164,7 +164,7 @@ function Figura({ servicio, index }: { servicio: Servicio; index: number }) {
         {/* Título */}
         <h3
           style={{
-            fontFamily: '"Libre Baskerville", Georgia, serif',
+            fontFamily: '"Artegra Sans Extended", sans-serif',
             fontWeight: 700,
             fontSize: '13px',
             color: servicio.colorTitulo,
@@ -196,26 +196,6 @@ function Figura({ servicio, index }: { servicio: Servicio; index: number }) {
                 gap: '16px',
               }}
             >
-              <div
-                style={{
-                  width: '36px',
-                  height: '1px',
-                  backgroundColor: servicio.colorTexto,
-                  opacity: 0.5,
-                }}
-              />
-              <p
-                style={{
-                  fontFamily: 'Quicksand, sans-serif',
-                  fontSize: '11.5px',
-                  color: servicio.colorTexto,
-                  lineHeight: 1.65,
-                  textAlign: 'center',
-                  margin: 0,
-                }}
-              >
-                {servicio.descripcion}
-              </p>
               <span
                 style={{
                   display: 'inline-block',
@@ -285,7 +265,7 @@ export default function ServiciosHome() {
               transition={{ duration: 0.5, delay: index * 0.08 }}
             >
               <Link
-                href="/servicios"
+                href={`/servicios?open=${servicio.numero.replace('.', '')}`}
                 style={{
                   display: 'flex',
                   alignItems: 'center',
@@ -300,7 +280,7 @@ export default function ServiciosHome() {
                 <span style={{ fontFamily: '"Libre Baskerville", serif', fontStyle: 'italic', fontSize: '32px', fontWeight: 400, color: servicio.numeroOutline ? 'transparent' : servicio.colorNumero, WebkitTextStroke: servicio.numeroOutline ? `1.5px ${servicio.colorNumero}` : undefined, opacity: servicio.opacidadNumero, lineHeight: 1, flexShrink: 0 }}>
                   {servicio.numero}
                 </span>
-                <h3 style={{ fontFamily: '"Libre Baskerville", Georgia, serif', fontWeight: 700, fontSize: '12px', color: servicio.colorTitulo, textTransform: 'uppercase', letterSpacing: '0.1em', whiteSpace: 'pre-line', lineHeight: 1.4, margin: 0 }}>
+                <h3 style={{ fontFamily: '"Artegra Sans Extended", sans-serif', fontWeight: 700, fontSize: '12px', color: servicio.colorTitulo, textTransform: 'uppercase', letterSpacing: '0.1em', whiteSpace: 'pre-line', lineHeight: 1.4, margin: 0 }}>
                   {servicio.titulo}
                 </h3>
               </Link>

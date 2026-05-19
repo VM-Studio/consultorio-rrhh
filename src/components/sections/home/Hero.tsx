@@ -67,7 +67,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.55 }}
-              style={{ fontFamily: 'Quicksand, system-ui, sans-serif', fontWeight: 500, fontSize: '17px', color: '#EEEAD6', opacity: 0.9, maxWidth: '520px', lineHeight: 1.5, marginBottom: '22px' }}
+              style={{ fontFamily: 'Quicksand, system-ui, sans-serif', fontWeight: 500, fontSize: '17px', color: '#EEEAD6', opacity: 0.9, maxWidth: '520px', lineHeight: 1.5, marginTop: '32px', marginBottom: '48px' }}
             >
               Trabajamos como socios estratégicos de nuestros clientes, entendiendo su realidad, conociendo sus problemáticas y co-creando soluciones a medida. Creemos en una forma de hacer consultoría más humana, más cercana y profundamente comprometida con cada proceso.
             </motion.p>

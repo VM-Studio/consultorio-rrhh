@@ -8,6 +8,11 @@ export const metadata: Metadata = {
   alternates: { canonical: '/servicios' },
 }
 
-export default function Page() {
-  return <ServiciosPage />
+export default async function Page({
+  searchParams,
+}: {
+  searchParams: Promise<{ open?: string }>
+}) {
+  const { open } = await searchParams
+  return <ServiciosPage openParam={open ?? null} />
 }

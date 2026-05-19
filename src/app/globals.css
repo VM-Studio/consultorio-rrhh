@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@300;400;500;600&family=Barlow+Condensed:wght@400;500;600;700&display=swap');
 
-/* Artegra Sans Extended — fuente local (también cargada via next/font/local en layout.tsx) */
+/* Artegra Sans Extended — fuente local */
 @font-face {
   font-family: 'Artegra Sans Extended';
   src: url('/fonts/Artegra/Fontspring-DEMO-artegra_sans-extended-400-regular.otf') format('opentype');
@@ -41,6 +41,59 @@
   src: url('/fonts/Artegra/Fontspring-DEMO-artegra_sans-extended-700-bold-italic.otf') format('opentype');
   font-weight: 700;
   font-style: italic;
+  font-display: swap;
+}
+
+/* Libre Baskerville — fuente local */
+@font-face {
+  font-family: 'Libre Baskerville';
+  src: url('/fonts/Libre_Baskerville/static/LibreBaskerville-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Libre Baskerville';
+  src: url('/fonts/Libre_Baskerville/static/LibreBaskerville-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Libre Baskerville';
+  src: url('/fonts/Libre_Baskerville/static/LibreBaskerville-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Quicksand — fuente local */
+@font-face {
+  font-family: 'Quicksand';
+  src: url('/fonts/Quicksand/static/Quicksand-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Quicksand';
+  src: url('/fonts/Quicksand/static/Quicksand-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Quicksand';
+  src: url('/fonts/Quicksand/static/Quicksand-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Quicksand';
+  src: url('/fonts/Quicksand/static/Quicksand-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
   font-display: swap;
 }
 

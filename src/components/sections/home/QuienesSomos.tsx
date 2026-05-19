@@ -77,7 +77,7 @@ export default function QuienesSomos() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
-            style={{ color: '#033D40', lineHeight: 1.2, fontFamily: '"Artegra Sans Extended", sans-serif', fontSize: '26px', marginBottom: '16px', width: '100%' }}
+            style={{ color: '#033D40', lineHeight: 1.2, fontFamily: '"Libre Baskerville", serif', fontSize: '26px', marginBottom: '16px', width: '100%' }}
           >
             <span style={{ fontWeight: 400 }}>Mas de </span>
             <strong style={{ fontWeight: 700 }}>20 años</strong>
@@ -95,10 +95,10 @@ export default function QuienesSomos() {
             viewport={{ once: true }}
             style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}
           >
-            <p style={{ fontFamily: 'Quicksand, sans-serif', fontWeight: 400, fontSize: '13px', lineHeight: 1.7, color: 'rgba(3,61,64,0.65)' }}>
+            <p style={{ fontFamily: 'Quicksand, sans-serif', fontWeight: 400, fontSize: '15px', lineHeight: 1.7, color: 'rgba(3,61,64,0.65)' }}>
               Nacimos desde la vivencia real en el mundo corporativo y desde la convicción de que los procesos de transformación no se logran solo con metodologías, sino con presencia, escucha y trabajo conjunto.
             </p>
-            <p style={{ fontFamily: 'Quicksand, sans-serif', fontWeight: 400, fontSize: '13px', lineHeight: 1.7, color: 'rgba(3,61,64,0.65)' }}>
+            <p style={{ fontFamily: 'Quicksand, sans-serif', fontWeight: 400, fontSize: '15px', lineHeight: 1.7, color: 'rgba(3,61,64,0.65)' }}>
               Nuestro enfoque combina conocimiento técnico, mirada estratégica y sensibilidad humana para acompañar a pequeñas y grandes empresas en momentos clave.
             </p>
           </motion.div>
@@ -145,7 +145,7 @@ export default function QuienesSomos() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.2 }}
                 viewport={{ once: true, margin: '-80px' }}
-                style={{ color: '#033D40', lineHeight: 1.15, fontFamily: '"Artegra Sans Extended", sans-serif' }}
+                style={{ color: '#033D40', lineHeight: 1.15, fontFamily: '"Libre Baskerville", serif' }}
                 className="text-3xl md:text-4xl lg:text-[40px] mb-5"
               >
                 <span style={{ fontWeight: 400 }}>Mas de </span>
@@ -163,13 +163,13 @@ export default function QuienesSomos() {
                 viewport={{ once: true, margin: '-80px' }}
                 className="space-y-5"
               >
-                <p className="font-sans font-normal text-[13px] leading-[1.7]" style={{ color: 'rgba(3,61,64,0.65)', textAlign: 'justify' }}>
+                <p className="font-normal text-[15px] leading-[1.7]" style={{ fontFamily: 'Quicksand, sans-serif', color: 'rgba(3,61,64,0.65)', textAlign: 'justify' }}>
                   Nacimos desde la vivencia real en el mundo corporativo y desde la convicción de que los procesos de transformación no se logran solo con metodologías, sino con presencia, escucha y trabajo conjunto.
                 </p>
-                <p className="font-sans font-normal text-[13px] leading-[1.7]" style={{ color: 'rgba(3,61,64,0.65)', textAlign: 'justify' }}>
+                <p className="font-normal text-[15px] leading-[1.7]" style={{ fontFamily: 'Quicksand, sans-serif', color: 'rgba(3,61,64,0.65)', textAlign: 'justify' }}>
                   Nuestro enfoque combina conocimiento técnico, mirada estratégica y sensibilidad humana para acompañar a pequeñas y grandes empresas en momentos clave: crecimiento, reorganización, desarrollo de talento, incorporación de personas y evolución de sus equipos.
                 </p>
-                <p className="font-sans font-normal text-[13px] leading-[1.7]" style={{ color: 'rgba(3,61,64,0.65)', textAlign: 'justify' }}>
+                <p className="font-normal text-[15px] leading-[1.7]" style={{ fontFamily: 'Quicksand, sans-serif', color: 'rgba(3,61,64,0.65)', textAlign: 'justify' }}>
                   Nos involucramos, nos comprometemos y caminamos al lado de cada cliente, porque entendemos que cada organización es única y cada proceso merece una solución propia.
                 </p>
               </motion.div>

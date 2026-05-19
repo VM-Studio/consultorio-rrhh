@@ -4,38 +4,35 @@ import './globals.css'
 
 const artegra = localFont({
   src: [
-    {
-      path: '../fonts/Fontspring-DEMO-artegra_sans-extended-400-regular.otf',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: '../fonts/Fontspring-DEMO-artegra_sans-extended-400-regular-italic.otf',
-      weight: '400',
-      style: 'italic',
-    },
-    {
-      path: '../fonts/Fontspring-DEMO-artegra_sans-extended-500-medium.otf',
-      weight: '500',
-      style: 'normal',
-    },
-    {
-      path: '../fonts/Fontspring-DEMO-artegra_sans-extended-600-semibold.otf',
-      weight: '600',
-      style: 'normal',
-    },
-    {
-      path: '../fonts/Fontspring-DEMO-artegra_sans-extended-700-bold.otf',
-      weight: '700',
-      style: 'normal',
-    },
-    {
-      path: '../fonts/Fontspring-DEMO-artegra_sans-extended-700-bold-italic.otf',
-      weight: '700',
-      style: 'italic',
-    },
+    { path: '../fonts/Fontspring-DEMO-artegra_sans-extended-400-regular.otf', weight: '400', style: 'normal' },
+    { path: '../fonts/Fontspring-DEMO-artegra_sans-extended-400-regular-italic.otf', weight: '400', style: 'italic' },
+    { path: '../fonts/Fontspring-DEMO-artegra_sans-extended-500-medium.otf', weight: '500', style: 'normal' },
+    { path: '../fonts/Fontspring-DEMO-artegra_sans-extended-600-semibold.otf', weight: '600', style: 'normal' },
+    { path: '../fonts/Fontspring-DEMO-artegra_sans-extended-700-bold.otf', weight: '700', style: 'normal' },
+    { path: '../fonts/Fontspring-DEMO-artegra_sans-extended-700-bold-italic.otf', weight: '700', style: 'italic' },
   ],
   variable: '--font-artegra',
+  display: 'swap',
+})
+
+const libreBaskerville = localFont({
+  src: [
+    { path: '../fonts/LibreBaskerville-Regular.ttf', weight: '400', style: 'normal' },
+    { path: '../fonts/LibreBaskerville-Italic.ttf', weight: '400', style: 'italic' },
+    { path: '../fonts/LibreBaskerville-Bold.ttf', weight: '700', style: 'normal' },
+  ],
+  variable: '--font-libre-baskerville',
+  display: 'swap',
+})
+
+const quicksand = localFont({
+  src: [
+    { path: '../fonts/Quicksand-Regular.ttf', weight: '400', style: 'normal' },
+    { path: '../fonts/Quicksand-Medium.ttf', weight: '500', style: 'normal' },
+    { path: '../fonts/Quicksand-SemiBold.ttf', weight: '600', style: 'normal' },
+    { path: '../fonts/Quicksand-Bold.ttf', weight: '700', style: 'normal' },
+  ],
+  variable: '--font-quicksand',
   display: 'swap',
 })
 
@@ -147,7 +144,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="es" className={`h-full scroll-smooth ${artegra.variable}`}>
+      <html lang="es" className={`h-full scroll-smooth ${artegra.variable} ${libreBaskerville.variable} ${quicksand.variable}`}>
       <head>
         <script
           type="application/ld+json"

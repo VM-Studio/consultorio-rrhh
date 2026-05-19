@@ -158,7 +158,7 @@ export default function NosotrosPage() {
           transition={{ duration: 0.6, ease: 'easeOut' }}
           style={{
             position: 'absolute',
-            top: isMobile ? '122px' : '110px',
+            top: isMobile ? '140px' : '125px',
             left: 0,
             width: isMobile ? '72%' : '50%',
             height: '32px',
@@ -188,7 +188,7 @@ export default function NosotrosPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.15 }}
-          style={{ textAlign: 'center', maxWidth: '500px', padding: '0 24px' }}
+          style={{ textAlign: 'center', maxWidth: '500px', padding: '0 24px', marginTop: '28px' }}
         >
           <p
             style={{
@@ -219,104 +219,91 @@ export default function NosotrosPage() {
           overflow: 'hidden',
         }}
       >
-        {/* Fila principal */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          style={{
-            display: 'flex',
-            flexDirection: isMobile ? 'column' : 'row',
-            alignItems: isMobile ? 'center' : 'center',
-            justifyContent: isMobile ? 'flex-start' : 'space-between',
-            gap: isMobile ? '32px' : '48px',
-            paddingRight: isMobile ? '0' : '80px',
-          }}
-        >
-          {/* Card */}
-          <div
-            style={{
-              width: isMobile ? '100%' : '52%',
-              backgroundColor: '#cfd5c2',
-              borderRadius: isMobile ? '0' : '0 9999px 9999px 0',
-              padding: isMobile ? '32px 24px' : '80px 100px 80px 72px',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '18px',
-              flexShrink: 0,
-            }}
+        {isMobile ? (
+          /* ── MOBILE: foto → card → bullets → linkedin ── */
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0' }}
           >
-            <h2
-              style={{
-                fontFamily: '"Libre Baskerville", serif',
-                fontSize: isMobile ? '26px' : '38px',
-                color: '#033D40',
-                fontWeight: 400,
-                lineHeight: 1.1,
-                margin: 0,
-              }}
-            >
-              {luciaData.nombre} {luciaData.apellido}
-            </h2>
-            <p
-              style={{
-                fontFamily: 'Quicksand, sans-serif',
-                fontSize: isMobile ? '13px' : '14px',
-                color: '#033D40',
-                lineHeight: 1.75,
-                margin: 0,
-              }}
-            >
-              <strong style={{ fontWeight: 700 }}>{luciaData.rol}</strong>{' '}
-              {luciaData.descripcion[0]}
-            </p>
-            <p
-              style={{
-                fontFamily: 'Quicksand, sans-serif',
-                fontSize: isMobile ? '13px' : '14px',
-                color: '#033D40',
-                lineHeight: 1.75,
-                margin: 0,
-              }}
-            >
-              {luciaData.descripcion[1]}
-            </p>
-          </div>
-
-          {/* Foto */}
-          <CirclePhoto src={luciaData.foto} alt="Lucía Carrera" size={isMobile ? 300 : 500} />
-        </motion.div>
-
-        {/* Fila inferior */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.25 }}
-          style={{
-            display: 'flex',
-            flexDirection: isMobile ? 'column' : 'row',
-            justifyContent: isMobile ? 'flex-start' : 'space-between',
-            alignItems: isMobile ? 'flex-start' : 'flex-end',
-            gap: isMobile ? '20px' : '0',
-            marginTop: '36px',
-            padding: isMobile ? '0 24px' : '0 80px 0 72px',
-          }}
-        >
-          <LinkedInButton href={luciaData.linkedin} />
-          <div style={{ display: 'grid', gridTemplateColumns: '18px 1fr', gap: '6px 8px' }}>
-            {luciaData.bullets.map((b, i) => (
-              <div key={i} style={{ display: 'contents' }}>
-                <div style={{ color: '#EEEAD6', fontSize: '18px', lineHeight: 1.6 }}>•</div>
-                <div style={{ fontFamily: 'Quicksand, sans-serif', fontSize: '13px', color: '#EEEAD6', margin: 0, lineHeight: 1.6 }}>
-                  <strong style={{ fontWeight: 700 }}>{b.bold}</strong>
-                  <span style={{ opacity: 0.85 }}>{b.plain}</span>
+            {/* 1. Foto */}
+            <CirclePhoto src={luciaData.foto} alt="Lucía Carrera" size={300} />
+            {/* 2. Card bio */}
+            <div style={{ width: '100%', backgroundColor: '#cfd5c2', padding: '32px 24px', display: 'flex', flexDirection: 'column', gap: '18px' }}>
+              <h2 style={{ fontFamily: '"Libre Baskerville", serif', fontSize: '26px', color: '#033D40', fontWeight: 400, lineHeight: 1.1, margin: 0 }}>
+                {luciaData.nombre} {luciaData.apellido}
+              </h2>
+              <p style={{ fontFamily: 'Quicksand, sans-serif', fontSize: '13px', color: '#033D40', lineHeight: 1.75, margin: 0 }}>
+                <strong style={{ fontWeight: 700 }}>{luciaData.rol}</strong>{' '}{luciaData.descripcion[0]}
+              </p>
+              <p style={{ fontFamily: 'Quicksand, sans-serif', fontSize: '13px', color: '#033D40', lineHeight: 1.75, margin: 0 }}>
+                {luciaData.descripcion[1]}
+              </p>
+            </div>
+            {/* 3. Bullets */}
+            <div style={{ width: '100%', padding: '28px 24px', display: 'grid', gridTemplateColumns: '18px 1fr', gap: '6px 8px' }}>
+              {luciaData.bullets.map((b, i) => (
+                <div key={i} style={{ display: 'contents' }}>
+                  <div style={{ color: '#EEEAD6', fontSize: '18px', lineHeight: 1.6 }}>•</div>
+                  <div style={{ fontFamily: '"Artegra Sans Extended", sans-serif', fontSize: '13px', color: '#EEEAD6', margin: 0, lineHeight: 1.6 }}>
+                    <strong style={{ fontWeight: 700 }}>{b.bold}</strong>
+                    <span style={{ opacity: 0.85 }}>{b.plain}</span>
+                  </div>
                 </div>
+              ))}
+            </div>
+            {/* 4. LinkedIn */}
+            <div style={{ width: '100%', padding: '0 24px 8px' }}>
+              <LinkedInButton href={luciaData.linkedin} />
+            </div>
+          </motion.div>
+        ) : (
+          /* ── DESKTOP: layout original ── */
+          <>
+            <motion.div
+              initial={{ opacity: 0, x: -80 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, ease: 'easeOut' }}
+              style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: '48px', paddingRight: '80px' }}
+            >
+              <div style={{ width: '52%', backgroundColor: '#cfd5c2', borderRadius: '0 9999px 9999px 0', padding: '80px 100px 80px 72px', display: 'flex', flexDirection: 'column', gap: '18px', flexShrink: 0 }}>
+                <h2 style={{ fontFamily: '"Libre Baskerville", serif', fontSize: '38px', color: '#033D40', fontWeight: 400, lineHeight: 1.1, margin: 0 }}>
+                  {luciaData.nombre} {luciaData.apellido}
+                </h2>
+                <p style={{ fontFamily: 'Quicksand, sans-serif', fontSize: '14px', color: '#033D40', lineHeight: 1.75, margin: 0 }}>
+                  <strong style={{ fontWeight: 700 }}>{luciaData.rol}</strong>{' '}{luciaData.descripcion[0]}
+                </p>
+                <p style={{ fontFamily: 'Quicksand, sans-serif', fontSize: '14px', color: '#033D40', lineHeight: 1.75, margin: 0 }}>
+                  {luciaData.descripcion[1]}
+                </p>
               </div>
-            ))}
-          </div>
-        </motion.div>
+              <CirclePhoto src={luciaData.foto} alt="Lucía Carrera" size={500} />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.25 }}
+              style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-end', gap: '0', marginTop: '36px', padding: '0 80px 0 72px' }}
+            >
+              <LinkedInButton href={luciaData.linkedin} />
+              <div style={{ display: 'grid', gridTemplateColumns: '18px 1fr', gap: '6px 8px' }}>
+                {luciaData.bullets.map((b, i) => (
+                  <div key={i} style={{ display: 'contents' }}>
+                    <div style={{ color: '#EEEAD6', fontSize: '18px', lineHeight: 1.6 }}>•</div>
+                    <div style={{ fontFamily: '"Artegra Sans Extended", sans-serif', fontSize: '13px', color: '#EEEAD6', margin: 0, lineHeight: 1.6 }}>
+                      <strong style={{ fontWeight: 700 }}>{b.bold}</strong>
+                      <span style={{ opacity: 0.85 }}>{b.plain}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </>
+        )}
       </section>
 
       {/* ── FEDERICO ── */}
@@ -327,107 +314,91 @@ export default function NosotrosPage() {
           overflow: 'hidden',
         }}
       >
-        {/* Fila principal */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          style={{
-            display: 'flex',
-            flexDirection: isMobile ? 'column' : 'row',
-            alignItems: isMobile ? 'center' : 'center',
-            justifyContent: isMobile ? 'flex-start' : 'space-between',
-            gap: isMobile ? '32px' : '48px',
-            paddingLeft: isMobile ? '0' : '80px',
-          }}
-        >
-          {/* En mobile: foto arriba; en desktop: foto a la izquierda */}
-          <CirclePhoto src={federicoData.foto} alt="Federico Ambroggio" size={isMobile ? 300 : 500} />
-
-          {/* Card */}
-          <div
-            style={{
-              width: isMobile ? '100%' : '52%',
-              backgroundColor: '#cfd5c2',
-              borderRadius: isMobile ? '0' : '9999px 0 0 9999px',
-              padding: isMobile ? '32px 24px' : '80px 72px 80px 100px',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '18px',
-              flexShrink: 0,
-            }}
+        {isMobile ? (
+          /* ── MOBILE: foto → card → bullets → linkedin ── */
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0' }}
           >
-            <h2
-              style={{
-                fontFamily: '"Libre Baskerville", serif',
-                fontSize: isMobile ? '26px' : '38px',
-                color: '#033D40',
-                fontWeight: 400,
-                lineHeight: 1.1,
-                margin: 0,
-                textAlign: isMobile ? 'left' : 'right',
-              }}
-            >
-              {federicoData.nombre} {federicoData.apellido}
-            </h2>
-            <p
-              style={{
-                fontFamily: 'Quicksand, sans-serif',
-                fontSize: isMobile ? '13px' : '14px',
-                color: '#033D40',
-                lineHeight: 1.75,
-                margin: 0,
-                textAlign: isMobile ? 'left' : 'right',
-              }}
-            >
-              <strong style={{ fontWeight: 700 }}>{federicoData.rol}</strong>{' '}
-              {federicoData.descripcion[0]}
-            </p>
-            <p
-              style={{
-                fontFamily: 'Quicksand, sans-serif',
-                fontSize: isMobile ? '13px' : '14px',
-                color: '#033D40',
-                lineHeight: 1.75,
-                margin: 0,
-                textAlign: isMobile ? 'left' : 'right',
-              }}
-            >
-              {federicoData.descripcion[1]}
-            </p>
-          </div>
-        </motion.div>
-
-        {/* Fila inferior */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.25 }}
-          style={{
-            display: 'flex',
-            flexDirection: isMobile ? 'column' : 'row',
-            justifyContent: isMobile ? 'flex-start' : 'space-between',
-            alignItems: isMobile ? 'flex-start' : 'flex-end',
-            gap: isMobile ? '20px' : '0',
-            marginTop: '36px',
-            padding: isMobile ? '0 24px' : '0 72px 0 80px',
-          }}
-        >
-          <div style={{ display: 'grid', gridTemplateColumns: '18px 1fr', gap: '6px' }}>
-            {federicoData.bullets.map((b, i) => (
-              <div key={i} style={{ display: 'contents' }}>
-                <div style={{ color: '#EEEAD6', fontSize: '18px', lineHeight: 1.6 }}>•</div>
-                <div style={{ fontFamily: 'Quicksand, sans-serif', fontSize: '13px', color: '#EEEAD6', margin: 0, lineHeight: 1.6 }}>
-                  <strong style={{ fontWeight: 700 }}>{b.bold}</strong>
-                  <span style={{ opacity: 0.85 }}>{b.plain}</span>
+            {/* 1. Foto */}
+            <CirclePhoto src={federicoData.foto} alt="Federico Ambroggio" size={300} />
+            {/* 2. Card bio */}
+            <div style={{ width: '100%', backgroundColor: '#cfd5c2', padding: '32px 24px', display: 'flex', flexDirection: 'column', gap: '18px' }}>
+              <h2 style={{ fontFamily: '"Libre Baskerville", serif', fontSize: '26px', color: '#033D40', fontWeight: 400, lineHeight: 1.1, margin: 0 }}>
+                {federicoData.nombre} {federicoData.apellido}
+              </h2>
+              <p style={{ fontFamily: 'Quicksand, sans-serif', fontSize: '13px', color: '#033D40', lineHeight: 1.75, margin: 0 }}>
+                <strong style={{ fontWeight: 700 }}>{federicoData.rol}</strong>{' '}{federicoData.descripcion[0]}
+              </p>
+              <p style={{ fontFamily: 'Quicksand, sans-serif', fontSize: '13px', color: '#033D40', lineHeight: 1.75, margin: 0 }}>
+                {federicoData.descripcion[1]}
+              </p>
+            </div>
+            {/* 3. Bullets */}
+            <div style={{ width: '100%', padding: '28px 24px', display: 'grid', gridTemplateColumns: '18px 1fr', gap: '6px 8px' }}>
+              {federicoData.bullets.map((b, i) => (
+                <div key={i} style={{ display: 'contents' }}>
+                  <div style={{ color: '#EEEAD6', fontSize: '18px', lineHeight: 1.6 }}>•</div>
+                  <div style={{ fontFamily: '"Artegra Sans Extended", sans-serif', fontSize: '13px', color: '#EEEAD6', margin: 0, lineHeight: 1.6 }}>
+                    <strong style={{ fontWeight: 700 }}>{b.bold}</strong>
+                    <span style={{ opacity: 0.85 }}>{b.plain}</span>
+                  </div>
                 </div>
+              ))}
+            </div>
+            {/* 4. LinkedIn */}
+            <div style={{ width: '100%', padding: '0 24px 8px' }}>
+              <LinkedInButton href={federicoData.linkedin} />
+            </div>
+          </motion.div>
+        ) : (
+          /* ── DESKTOP: layout original ── */
+          <>
+            <motion.div
+              initial={{ opacity: 0, x: 80 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, ease: 'easeOut' }}
+              style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: '48px', paddingLeft: '80px' }}
+            >
+              <CirclePhoto src={federicoData.foto} alt="Federico Ambroggio" size={500} />
+              <div style={{ width: '52%', backgroundColor: '#cfd5c2', borderRadius: '9999px 0 0 9999px', padding: '80px 72px 80px 100px', display: 'flex', flexDirection: 'column', gap: '18px', flexShrink: 0 }}>
+                <h2 style={{ fontFamily: '"Libre Baskerville", serif', fontSize: '38px', color: '#033D40', fontWeight: 400, lineHeight: 1.1, margin: 0, textAlign: 'right' }}>
+                  {federicoData.nombre} {federicoData.apellido}
+                </h2>
+                <p style={{ fontFamily: 'Quicksand, sans-serif', fontSize: '14px', color: '#033D40', lineHeight: 1.75, margin: 0, textAlign: 'right' }}>
+                  <strong style={{ fontWeight: 700 }}>{federicoData.rol}</strong>{' '}{federicoData.descripcion[0]}
+                </p>
+                <p style={{ fontFamily: 'Quicksand, sans-serif', fontSize: '14px', color: '#033D40', lineHeight: 1.75, margin: 0, textAlign: 'right' }}>
+                  {federicoData.descripcion[1]}
+                </p>
               </div>
-            ))}
-          </div>
-          <LinkedInButton href={federicoData.linkedin} />
-        </motion.div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.25 }}
+              style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-end', gap: '0', marginTop: '36px', padding: '0 72px 0 80px' }}
+            >
+              <div style={{ display: 'grid', gridTemplateColumns: '18px 1fr', gap: '6px' }}>
+                {federicoData.bullets.map((b, i) => (
+                  <div key={i} style={{ display: 'contents' }}>
+                    <div style={{ color: '#EEEAD6', fontSize: '18px', lineHeight: 1.6 }}>•</div>
+                    <div style={{ fontFamily: '"Artegra Sans Extended", sans-serif', fontSize: '13px', color: '#EEEAD6', margin: 0, lineHeight: 1.6 }}>
+                      <strong style={{ fontWeight: 700 }}>{b.bold}</strong>
+                      <span style={{ opacity: 0.85 }}>{b.plain}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <LinkedInButton href={federicoData.linkedin} />
+            </motion.div>
+          </>
+        )}
       </section>
 
     </div>

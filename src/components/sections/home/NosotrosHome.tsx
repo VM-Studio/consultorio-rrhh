@@ -118,7 +118,7 @@ export default function NosotrosHome() {
             transition={{ duration: 0.7, delay: 0.1 }}
             viewport={{ once: true, margin: '-80px' }}
             style={{
-              fontFamily: '"Artegra Sans Extended", sans-serif',
+              fontFamily: '"Libre Baskerville", serif',
               fontSize: isMobile ? '22px' : '40px',
               lineHeight: 1.2,
               color: '#EEEAD6',
@@ -189,7 +189,7 @@ export default function NosotrosHome() {
             {/* Cita con tipografía mixta */}
             <p
               style={{
-                fontFamily: 'Quicksand, sans-serif',
+                fontFamily: '"Artegra Sans Extended", sans-serif',
                 fontSize: '15px',
                 color: '#033D40',
                 textAlign: 'center',
@@ -219,7 +219,7 @@ export default function NosotrosHome() {
             {/* Autor */}
             <p
               style={{
-                fontFamily: 'Quicksand, sans-serif',
+                fontFamily: '"Artegra Sans Extended", sans-serif',
                 fontSize: '14px',
                 fontWeight: 700,
                 color: '#033D40',

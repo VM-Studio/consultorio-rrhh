@@ -107,8 +107,8 @@ const servicios: Servicio[] = [
   },
 ]
 
-function MobileCard({ servicio, index }: { servicio: Servicio; index: number }) {
-  const [expanded, setExpanded] = useState(false)
+function MobileCard({ servicio, index, defaultExpanded = false }: { servicio: Servicio; index: number; defaultExpanded?: boolean }) {
+  const [expanded, setExpanded] = useState(defaultExpanded)
   return (
     <motion.div
       initial={{ opacity: 0, x: -40 }}
@@ -118,13 +118,22 @@ function MobileCard({ servicio, index }: { servicio: Servicio; index: number }) 
     >
       <div
         onClick={() => setExpanded(v => !v)}
-        style={{ backgroundColor: servicio.color, borderRadius: '16px', padding: '20px', cursor: 'pointer', display: 'flex', flexDirection: 'column', gap: '12px' }}
+        style={{
+          backgroundColor: servicio.color,
+          borderRadius: expanded ? '16px' : '9999px',
+          padding: '20px',
+          cursor: 'pointer',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '12px',
+          transition: 'border-radius 0.25s ease',
+        }}
       >
         <div style={{ display: 'flex', alignItems: 'flex-end', gap: '12px' }}>
           <span style={{ fontFamily: '"Libre Baskerville", serif', fontStyle: 'italic', fontSize: '36px', fontWeight: 400, color: expanded ? 'transparent' : servicio.colorNumero, WebkitTextStroke: expanded ? `1.5px ${servicio.colorNumero}` : undefined, opacity: servicio.opacidadNumero, lineHeight: 1, transition: 'color 0.25s' }}>
             {servicio.numero}
           </span>
-          <h3 style={{ fontFamily: '"Libre Baskerville", Georgia, serif', fontWeight: 700, fontSize: '13px', color: servicio.colorTitulo, textTransform: 'uppercase', letterSpacing: '0.1em', whiteSpace: 'pre-line', lineHeight: 1.4, margin: 0 }}>
+          <h3 style={{ fontFamily: '"Artegra Sans Extended", sans-serif', fontWeight: 700, fontSize: '13px', color: servicio.colorTitulo, textTransform: 'uppercase', letterSpacing: '0.1em', whiteSpace: 'pre-line', lineHeight: 1.4, margin: 0 }}>
             {servicio.titulo}
           </h3>
         </div>
@@ -145,8 +154,8 @@ function MobileCard({ servicio, index }: { servicio: Servicio; index: number }) 
   )
 }
 
-function FiguraLateral({ servicio, index }: { servicio: Servicio; index: number }) {
-  const [hovered, setHovered] = useState(false)
+function FiguraLateral({ servicio, index, defaultOpen = false }: { servicio: Servicio; index: number; defaultOpen?: boolean }) {
+  const [hovered, setHovered] = useState(defaultOpen)
 
   return (
     <motion.div
@@ -207,7 +216,7 @@ function FiguraLateral({ servicio, index }: { servicio: Servicio; index: number 
             </span>
             <h3
               style={{
-                fontFamily: '"Libre Baskerville", Georgia, serif',
+                fontFamily: '"Artegra Sans Extended", sans-serif',
                 fontWeight: 700,
                 fontSize: '15px',
                 color: servicio.colorTitulo,
@@ -280,8 +289,9 @@ function FiguraLateral({ servicio, index }: { servicio: Servicio; index: number 
   )
 }
 
-export default function ServiciosPage() {
+export default function ServiciosPage({ openParam = null }: { openParam?: string | null }) {
   const isMobile = useIsMobile()
+  const defaultOpen = openParam
 
   if (isMobile) {
     return (
@@ -322,7 +332,7 @@ export default function ServiciosPage() {
         {/* Tarjetas */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', padding: '0 16px' }}>
           {servicios.map((servicio, index) => (
-            <MobileCard key={servicio.numero} servicio={servicio} index={index} />
+            <MobileCard key={servicio.numero} servicio={servicio} index={index} defaultExpanded={defaultOpen === servicio.numero.replace('.', '')} />
           ))}
         </div>
       </section>
@@ -391,7 +401,7 @@ export default function ServiciosPage() {
         }}
       >
         {servicios.map((servicio, index) => (
-          <FiguraLateral key={servicio.numero} servicio={servicio} index={index} />
+          <FiguraLateral key={servicio.numero} servicio={servicio} index={index} defaultOpen={defaultOpen === servicio.numero.replace('.', '')} />
         ))}
       </div>
     </section>
