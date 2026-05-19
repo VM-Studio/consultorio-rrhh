@@ -79,15 +79,13 @@ export default function ClientesHome() {
         }}
       >
         {/* Track animado — duplicado para loop seamless */}
-        <motion.div
-          animate={{ x: ['0%', '-50%'] }}
-          transition={{ repeat: Infinity, duration: 28, ease: 'linear' }}
+        <div
+          className="marquee-track"
           style={{
             display: 'flex',
             alignItems: 'center',
             gap: isMobile ? '40px' : '72px',
             paddingLeft: isMobile ? '40px' : '72px',
-            willChange: 'transform',
             width: 'max-content',
           }}
         >
@@ -111,7 +109,7 @@ export default function ClientesHome() {
               />
             </div>
           ))}
-        </motion.div>
+        </div>
       </motion.div>
     </section>
   )

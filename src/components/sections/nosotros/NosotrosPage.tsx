@@ -229,9 +229,11 @@ export default function NosotrosPage() {
             style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0' }}
           >
             {/* 1. Foto */}
-            <CirclePhoto src={luciaData.foto} alt="Lucía Carrera" size={300} />
+            <div style={{ marginBottom: '-32px', zIndex: 2, position: 'relative' }}>
+              <CirclePhoto src={luciaData.foto} alt="Lucía Carrera" size={340} />
+            </div>
             {/* 2. Card bio */}
-            <div style={{ width: '100%', backgroundColor: '#cfd5c2', padding: '32px 24px', display: 'flex', flexDirection: 'column', gap: '18px' }}>
+            <div style={{ width: '100%', backgroundColor: '#cfd5c2', padding: '48px 24px 32px', display: 'flex', flexDirection: 'column', gap: '18px' }}>
               <h2 style={{ fontFamily: '"Libre Baskerville", serif', fontSize: '26px', color: '#033D40', fontWeight: 400, lineHeight: 1.1, margin: 0 }}>
                 {luciaData.nombre} {luciaData.apellido}
               </h2>
@@ -324,9 +326,11 @@ export default function NosotrosPage() {
             style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0' }}
           >
             {/* 1. Foto */}
-            <CirclePhoto src={federicoData.foto} alt="Federico Ambroggio" size={300} />
+            <div style={{ marginBottom: '-32px', zIndex: 2, position: 'relative' }}>
+              <CirclePhoto src={federicoData.foto} alt="Federico Ambroggio" size={340} />
+            </div>
             {/* 2. Card bio */}
-            <div style={{ width: '100%', backgroundColor: '#cfd5c2', padding: '32px 24px', display: 'flex', flexDirection: 'column', gap: '18px' }}>
+            <div style={{ width: '100%', backgroundColor: '#cfd5c2', padding: '48px 24px 32px', display: 'flex', flexDirection: 'column', gap: '18px' }}>
               <h2 style={{ fontFamily: '"Libre Baskerville", serif', fontSize: '26px', color: '#033D40', fontWeight: 400, lineHeight: 1.1, margin: 0 }}>
                 {federicoData.nombre} {federicoData.apellido}
               </h2>
