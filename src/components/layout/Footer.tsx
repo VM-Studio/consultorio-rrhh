@@ -81,8 +81,8 @@ export default function Footer() {
             <Image
               src="/footer.png"
               alt="Motus"
-              width={isMobile ? 120 : 190}
-              height={isMobile ? 54 : 86}
+              width={isMobile ? 160 : 190}
+              height={isMobile ? 72 : 86}
               style={{ width: 'auto' }}
             />
           </div>
@@ -230,10 +230,10 @@ export default function Footer() {
           gap: '8px',
         }}
       >
-        <p style={{ fontFamily: '"Artegra Sans Extended", sans-serif', fontSize: '12px', color: 'rgba(238,234,214,0.60)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+        <p style={{ fontFamily: '"Artegra Sans Extended", sans-serif', fontSize: isMobile ? '9px' : '12px', color: 'rgba(238,234,214,0.60)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
           © 2026 <strong style={{ fontWeight: 700 }}>MOTUS</strong>. TODOS LOS DERECHOS RESERVADOS.
         </p>
-        <p style={{ fontFamily: '"Artegra Sans Extended", sans-serif', fontSize: '12px', color: 'rgba(238,234,214,0.60)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+        <p style={{ fontFamily: '"Artegra Sans Extended", sans-serif', fontSize: isMobile ? '9px' : '12px', color: 'rgba(238,234,214,0.60)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
           DISEÑO WEB X <strong style={{ fontWeight: 700, fontStyle: 'italic' }}>KOFI BRANDLAB</strong> - DESARROLLO X <strong style={{ fontWeight: 700, fontStyle: 'italic' }}>VM ESTUDIO</strong>
         </p>
       </div>
