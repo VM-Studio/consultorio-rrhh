@@ -111,7 +111,7 @@
 
 @media (max-width: 767px) {
   .marquee-track {
-    animation-duration: 20s;
+    animation-duration: 35s;
   }
 }
 @tailwind components;
