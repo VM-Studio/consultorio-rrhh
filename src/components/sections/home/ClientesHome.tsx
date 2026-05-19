@@ -71,14 +71,13 @@ export default function ClientesHome() {
             }}
           >
             {[...LOGOS, ...LOGOS].map((src, i) => (
-              <div key={i} style={{ flexShrink: 0, height: '90px', display: 'flex', alignItems: 'center' }}>
+              <div key={i} style={{ flexShrink: 0, height: '90px', width: '90px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <Image
                   src={src}
                   alt={`cliente-${i}`}
                   height={90}
-                  width={270}
-                  style={{ height: '90px', width: 'auto', maxWidth: '270px', objectFit: 'contain', opacity: 1, display: 'block' }}
-                  unoptimized
+                  width={90}
+                  style={{ height: '90px', width: '90px', objectFit: 'contain', opacity: 1, display: 'block' }}
                 />
               </div>
             ))}
@@ -158,14 +157,13 @@ export default function ClientesHome() {
           }}
         >
           {[...LOGOS, ...LOGOS].map((src, i) => (
-            <div key={i} style={{ flexShrink: 0, height: '180px', display: 'flex', alignItems: 'center' }}>
+            <div key={i} style={{ flexShrink: 0, height: '180px', width: '180px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <Image
                 src={src}
                 alt={`cliente-${i}`}
                 height={180}
-                width={540}
-                style={{ height: '180px', width: 'auto', maxWidth: '540px', objectFit: 'contain', opacity: 0.75, display: 'block' }}
-                unoptimized
+                width={180}
+                style={{ height: '180px', width: '180px', objectFit: 'contain', opacity: 0.75, display: 'block' }}
               />
             </div>
           ))}
