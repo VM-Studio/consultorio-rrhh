@@ -60,7 +60,7 @@ export default function QuienesSomos() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            style={{ width: 'calc(100% + 20px)', height: '220px', borderRadius: '0 9999px 9999px 0', overflow: 'hidden', marginBottom: '32px', marginLeft: '-20px' }}
+            style={{ width: 'calc(100% + 20px)', height: '220px', borderRadius: '0 9999px 9999px 0', overflow: 'hidden', marginBottom: '32px', marginLeft: '-20px', outline: '2px solid #09756C', outlineOffset: '8px' }}
           >
             <Image
               src="/quienessomos.png"

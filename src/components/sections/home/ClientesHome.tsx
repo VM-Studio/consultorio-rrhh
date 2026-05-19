@@ -44,19 +44,21 @@ export default function ClientesHome() {
           </span>
         </motion.div>
 
-        {/* Tira de logos — full width, sin pill, overflow hidden en section */}
+        {/* Tira de logos — badge pill */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true, margin: '-60px' }}
           style={{
-            width: '100%',
+            width: '92%',
             backgroundColor: '#e0dcc9',
-            height: '120px',
+            height: '130px',
+            borderRadius: '9999px 0 0 9999px',
             display: 'flex',
             alignItems: 'center',
             overflow: 'hidden',
+            alignSelf: 'flex-end',
           }}
         >
           <div
@@ -65,19 +67,18 @@ export default function ClientesHome() {
               display: 'flex',
               alignItems: 'center',
               gap: '40px',
-              paddingLeft: '24px',
-              paddingRight: '24px',
+              paddingLeft: '80px',
               width: 'max-content',
             }}
           >
             {[...LOGOS, ...LOGOS].map((src, i) => (
-              <div key={i} style={{ flexShrink: 0, height: '90px', width: '90px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <div key={i} style={{ flexShrink: 0, height: '100px', width: '100px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <Image
                   src={src}
                   alt={`cliente-${i}`}
-                  height={90}
-                  width={90}
-                  style={{ height: '90px', width: '90px', objectFit: 'contain', opacity: 1, display: 'block' }}
+                  height={100}
+                  width={100}
+                  style={{ height: '100px', width: '100px', objectFit: 'contain', opacity: 1, display: 'block' }}
                 />
               </div>
             ))}
