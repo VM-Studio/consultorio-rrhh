@@ -36,6 +36,7 @@ function LogoImage() {
       alt="Motus"
       onError={() => setImgError(true)}
       priority
+      style={{ width: 'auto' }}
     />
   )
 }

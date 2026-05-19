@@ -83,6 +83,7 @@ export default function Footer() {
               alt="Motus"
               width={isMobile ? 160 : 220}
               height={isMobile ? 72 : 100}
+              style={{ width: 'auto' }}
             />
           </div>
         </div>

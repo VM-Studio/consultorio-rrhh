@@ -106,7 +106,7 @@ export default function ClientesHome() {
                 alt={`cliente-${i}`}
                 height={logoH}
                 width={logoH * 3}
-                style={{ height: `${logoH}px`, width: 'auto', maxWidth: `${logoH * 3}px`, objectFit: 'contain', opacity: 0.75 }}
+                style={{ height: `${logoH}px`, width: 'auto', maxWidth: `${logoH * 3}px`, objectFit: 'contain', opacity: 0.75, display: 'block' }}
                 unoptimized
               />
             </div>

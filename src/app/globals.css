@@ -61,10 +61,9 @@
   .contact-field {
     color: #ffffff;
   }
-  /* Evita el warning de Next.js Image: Tailwind base setea max-width:100% en img,
-     lo que modifica width sin modificar height. Esto lo neutraliza. */
+  /* Evita que Tailwind base sobreescriba dimensiones de Next.js Image */
   img {
-    height: auto;
+    max-width: none;
   }
   body {
     @apply font-sans text-verde-oscuro bg-fondo-claro;
