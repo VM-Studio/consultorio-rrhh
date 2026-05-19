@@ -51,7 +51,7 @@ export default function ClientesHome() {
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true, margin: '-60px' }}
           style={{
-            width: '92%',
+            width: '100%',
             backgroundColor: '#e0dcc9',
             height: '130px',
             borderRadius: '9999px 0 0 9999px',
