@@ -149,11 +149,11 @@ export default function Footer() {
                 <Mail size={15} color="white" strokeWidth={2} />
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
-                <span style={{ fontFamily: '"Artegra Sans Extended", sans-serif', fontSize: '12px', color: 'rgba(238,234,214,0.75)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-                  LUCIA@MOTUSCONSULTORA.COM
+                <span style={{ fontFamily: '"Artegra Sans Extended", sans-serif', fontSize: '12px', color: 'rgba(238,234,214,0.75)', textTransform: 'lowercase' }}>
+                  lucia@motusconsultora.com
                 </span>
-                <span style={{ fontFamily: '"Artegra Sans Extended", sans-serif', fontSize: '12px', color: 'rgba(238,234,214,0.75)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-                  FEDERICO@MOTUSCONSULTORA.COM
+                <span style={{ fontFamily: '"Artegra Sans Extended", sans-serif', fontSize: '12px', color: 'rgba(238,234,214,0.75)', textTransform: 'lowercase' }}>
+                  federico@motusconsultora.com
                 </span>
               </div>
             </div>
@@ -164,11 +164,11 @@ export default function Footer() {
                 <Phone size={15} color="white" strokeWidth={2} />
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
-                <span style={{ fontFamily: '"Artegra Sans Extended", sans-serif', fontSize: '12px', color: 'rgba(238,234,214,0.75)', letterSpacing: '0.08em' }}>
-                  +54 9 11 5717 4014
+                <span style={{ fontFamily: '"Artegra Sans Extended", sans-serif', fontSize: '12px', color: 'rgba(238,234,214,0.75)' }}>
+                  +54 9 11 5717-4014
                 </span>
-                <span style={{ fontFamily: '"Artegra Sans Extended", sans-serif', fontSize: '12px', color: 'rgba(238,234,214,0.75)', letterSpacing: '0.08em' }}>
-                  +54 9 11 5057 1318
+                <span style={{ fontFamily: '"Artegra Sans Extended", sans-serif', fontSize: '12px', color: 'rgba(238,234,214,0.75)' }}>
+                  +54 9 11 5057-1318
                 </span>
               </div>
             </div>
