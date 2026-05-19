@@ -53,12 +53,12 @@ export default function ClientesHome() {
           style={{
             width: '100%',
             backgroundColor: '#e0dcc9',
-            height: '130px',
+            height: '150px',
             borderRadius: '9999px 0 0 9999px',
             display: 'flex',
             alignItems: 'center',
             overflow: 'hidden',
-            alignSelf: 'flex-end',
+            position: 'relative',
           }}
         >
           <div
@@ -66,19 +66,23 @@ export default function ClientesHome() {
             style={{
               display: 'flex',
               alignItems: 'center',
-              gap: '40px',
-              paddingLeft: '80px',
+              gap: '48px',
+              paddingLeft: '90px',
               width: 'max-content',
+              position: 'absolute',
+              left: 0,
+              top: '50%',
+              transform: 'translateY(-50%)',
             }}
           >
             {[...LOGOS, ...LOGOS].map((src, i) => (
-              <div key={i} style={{ flexShrink: 0, height: '100px', width: '100px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <div key={i} style={{ flexShrink: 0, height: '115px', width: '115px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <Image
                   src={src}
                   alt={`cliente-${i}`}
-                  height={100}
-                  width={100}
-                  style={{ height: '100px', width: '100px', objectFit: 'contain', opacity: 1, display: 'block' }}
+                  height={115}
+                  width={115}
+                  style={{ height: '115px', width: '115px', objectFit: 'contain', opacity: 1, display: 'block' }}
                 />
               </div>
             ))}
