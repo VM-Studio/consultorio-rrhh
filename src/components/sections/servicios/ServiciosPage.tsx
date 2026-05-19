@@ -144,7 +144,7 @@ function MobileCard({ servicio, index, defaultExpanded = false }: { servicio: Se
                 <p key={i} style={{ fontFamily: 'Quicksand, sans-serif', fontSize: '13px', color: servicio.colorTexto, lineHeight: 1.65, margin: 0 }}>{p}</p>
               ))}
               <Link href="/contacto" style={{ alignSelf: 'flex-start', backgroundColor: servicio.colorBoton, color: servicio.colorBotonTexto, fontFamily: '"Artegra Sans Extended", sans-serif', fontWeight: 700, fontSize: '11px', letterSpacing: '0.15em', textTransform: 'uppercase', borderRadius: '9999px', padding: '8px 22px', textDecoration: 'none' }}>
-                VER MÁS
+                CONTACTANOS
               </Link>
             </motion.div>
           )}
@@ -197,7 +197,7 @@ function FiguraLateral({ servicio, index, defaultOpen = false }: { servicio: Ser
           }}
         >
           {/* Columna izquierda: número + título */}
-          <div style={{ display: 'flex', flexDirection: 'column', flexShrink: 0, minWidth: '160px', paddingTop: hovered ? '0' : '0', justifyContent: hovered ? 'flex-start' : 'center', height: hovered ? 'auto' : '140px' }}>
+          <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', flexShrink: 0, minWidth: '260px', gap: '52px', justifyContent: 'flex-start', height: hovered ? 'auto' : '140px' }}>
             <span
               style={{
                 fontFamily: '"Libre Baskerville", serif',
@@ -209,6 +209,7 @@ function FiguraLateral({ servicio, index, defaultOpen = false }: { servicio: Ser
                 opacity: servicio.opacidadNumero,
                 lineHeight: 1,
                 display: 'block',
+                flexShrink: 0,
                 transition: 'color 0.25s',
               }}
             >
@@ -224,7 +225,7 @@ function FiguraLateral({ servicio, index, defaultOpen = false }: { servicio: Ser
                 letterSpacing: '0.1em',
                 whiteSpace: 'pre-line',
                 lineHeight: 1.4,
-                marginTop: '12px',
+                margin: 0,
               }}
             >
               {servicio.titulo}
@@ -278,7 +279,7 @@ function FiguraLateral({ servicio, index, defaultOpen = false }: { servicio: Ser
                     padding: '8px 22px',
                   }}
                 >
-                  VER MÁS
+                  CONTACTANOS
                 </span>
               </motion.div>
             )}

@@ -59,7 +59,7 @@ export default function Footer() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: isMobile ? 'flex-start' : 'center',
-            minHeight: isMobile ? 'auto' : '220px',
+            minHeight: isMobile ? 'auto' : '270px',
           }}
         >
           {!isMobile && (
@@ -70,7 +70,7 @@ export default function Footer() {
                 left: '50%',
                 transform: 'translateX(-50%)',
                 width: '260px',
-                height: '220px',
+                height: '270px',
                 backgroundColor: '#065954',
                 borderRadius: '9999px 9999px 0 0',
                 zIndex: 1,
@@ -81,8 +81,8 @@ export default function Footer() {
             <Image
               src="/footer.png"
               alt="Motus"
-              width={isMobile ? 160 : 220}
-              height={isMobile ? 72 : 100}
+              width={isMobile ? 120 : 190}
+              height={isMobile ? 54 : 86}
               style={{ width: 'auto' }}
             />
           </div>
@@ -148,12 +148,12 @@ export default function Footer() {
               <div style={iconCircleStyle}>
                 <Mail size={15} color="white" strokeWidth={2} />
               </div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
-                <span style={{ fontFamily: '"Artegra Sans Extended", sans-serif', fontSize: '12px', color: 'rgba(238,234,214,0.75)', textTransform: 'lowercase' }}>
-                  lucia@motusconsultora.com
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '2px', minWidth: 0, overflow: 'hidden' }}>
+                <span style={{ fontFamily: 'Quicksand, sans-serif', fontSize: '15px', color: 'rgba(238,234,214,0.75)', overflowWrap: 'break-word', wordBreak: 'break-all' }}>
+                  lucia.carrera@motusconsultora.com
                 </span>
-                <span style={{ fontFamily: '"Artegra Sans Extended", sans-serif', fontSize: '12px', color: 'rgba(238,234,214,0.75)', textTransform: 'lowercase' }}>
-                  federico@motusconsultora.com
+                <span style={{ fontFamily: 'Quicksand, sans-serif', fontSize: '15px', color: 'rgba(238,234,214,0.75)', overflowWrap: 'break-word', wordBreak: 'break-all' }}>
+                  federico.ambroggio@motusconsultora.com
                 </span>
               </div>
             </div>
@@ -164,10 +164,10 @@ export default function Footer() {
                 <Phone size={15} color="white" strokeWidth={2} />
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
-                <span style={{ fontFamily: '"Artegra Sans Extended", sans-serif', fontSize: '12px', color: 'rgba(238,234,214,0.75)' }}>
+                <span style={{ fontFamily: 'Quicksand, sans-serif', fontSize: '15px', color: 'rgba(238,234,214,0.75)' }}>
                   +54 9 11 5717-4014
                 </span>
-                <span style={{ fontFamily: '"Artegra Sans Extended", sans-serif', fontSize: '12px', color: 'rgba(238,234,214,0.75)' }}>
+                <span style={{ fontFamily: 'Quicksand, sans-serif', fontSize: '15px', color: 'rgba(238,234,214,0.75)' }}>
                   +54 9 11 5057-1318
                 </span>
               </div>

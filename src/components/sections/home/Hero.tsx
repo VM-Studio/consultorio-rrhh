@@ -44,17 +44,17 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.35 }}
             style={{ fontFamily: '"Libre Baskerville", Georgia, serif', fontSize: isMobile ? 'clamp(20px, 6vw, 28px)' : 'clamp(28px, 3vw, 46px)', lineHeight: isMobile ? 1.15 : 1.1, color: '#EEEAD6', marginBottom: isMobile ? '10px' : '14px' }}
           >
-            <span style={{ display: 'block', whiteSpace: 'nowrap', fontWeight: 400 }}>Acompañamos a</span>
-            <span style={{ display: 'block', whiteSpace: 'nowrap' }}>
+            <span style={{ display: 'block', whiteSpace: isMobile ? 'normal' : 'nowrap', fontWeight: 400 }}>Acompañamos a</span>
+            <span style={{ display: 'block', whiteSpace: isMobile ? 'normal' : 'nowrap' }}>
               <em style={{ fontWeight: 400, fontStyle: 'italic' }}>organizaciones</em>
               <span style={{ fontWeight: 400 }}> en sus procesos</span>
             </span>
-            <span style={{ display: 'block', whiteSpace: 'nowrap' }}>
+            <span style={{ display: 'block', whiteSpace: isMobile ? 'normal' : 'nowrap' }}>
               <span style={{ fontWeight: 400 }}>de </span>
               <strong style={{ fontWeight: 700 }}>transformación</strong>
               <span style={{ fontWeight: 400 }}>, poniendo</span>
             </span>
-            <span style={{ display: 'block', whiteSpace: 'nowrap' }}>
+            <span style={{ display: 'block', whiteSpace: isMobile ? 'normal' : 'nowrap' }}>
               <span style={{ fontWeight: 400 }}>a las </span>
               <em style={{ fontWeight: 400, fontStyle: 'italic' }}>personas</em>
               <span style={{ fontWeight: 400 }}> en el centro.</span>

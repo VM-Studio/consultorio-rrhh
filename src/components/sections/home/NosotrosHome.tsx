@@ -139,7 +139,7 @@ export default function NosotrosHome() {
           marginTop: isMobile ? '40px' : '80px',
           display: 'flex',
           justifyContent: 'center',
-          gap: isMobile ? '40px' : '80px',
+          gap: isMobile ? '40px' : '140px',
           flexWrap: 'wrap',
           paddingLeft: isMobile ? '20px' : '40px',
           paddingRight: isMobile ? '20px' : '40px',
@@ -189,7 +189,7 @@ export default function NosotrosHome() {
             {/* Cita con tipografía mixta */}
             <p
               style={{
-                fontFamily: '"Artegra Sans Extended", sans-serif',
+                fontFamily: 'Quicksand, sans-serif',
                 fontSize: '15px',
                 color: '#033D40',
                 textAlign: 'center',
@@ -210,7 +210,7 @@ export default function NosotrosHome() {
                 )
               )}
               {socio.aclaracion && (
-                <span style={{ fontWeight: 400, fontSize: '12px', opacity: 0.6, fontStyle: 'italic', whiteSpace: 'nowrap', display: 'block' }}>
+                <span style={{ fontWeight: 400, fontSize: '12px', opacity: 0.6, fontStyle: 'italic', display: 'block' }}>
                   {' '}{socio.aclaracion}
                 </span>
               )}
@@ -219,7 +219,7 @@ export default function NosotrosHome() {
             {/* Autor */}
             <p
               style={{
-                fontFamily: '"Artegra Sans Extended", sans-serif',
+                fontFamily: 'Quicksand, sans-serif',
                 fontSize: '14px',
                 fontWeight: 700,
                 color: '#033D40',

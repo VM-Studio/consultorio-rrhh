@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const WA_URL =
-  'https://wa.me/5491100000000?text=Hola%2C%20me%20contacto%20desde%20su%20web'
+  'https://wa.me/5491150571318?text=Hola%2C%20me%20contacto%20desde%20su%20web'
 
 function WhatsAppIcon() {
   return (

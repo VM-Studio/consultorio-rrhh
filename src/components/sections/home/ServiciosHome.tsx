@@ -194,6 +194,7 @@ function Figura({ servicio, index }: { servicio: Servicio; index: number }) {
                 flexDirection: 'column',
                 alignItems: 'center',
                 gap: '16px',
+                paddingTop: '130px',
               }}
             >
               <span

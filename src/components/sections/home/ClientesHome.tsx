@@ -8,7 +8,7 @@ const LOGOS = [2,3,4,5,6,7,8,9,10,11,12,13,14,15].map(n => `/logos/${n}.png`)
 
 export default function ClientesHome() {
   const isMobile = useIsMobile()
-  const logoH = isMobile ? 72 : 128
+  const logoH = isMobile ? 130 : 180
 
   return (
     <section
@@ -16,7 +16,7 @@ export default function ClientesHome() {
         position: 'relative',
         overflow: 'hidden',
         backgroundColor: '#023e41',
-        minHeight: isMobile ? '220px' : '300px',
+        minHeight: isMobile ? '340px' : '380px',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
@@ -70,7 +70,7 @@ export default function ClientesHome() {
         style={{
           alignSelf: 'flex-end',
           width: isMobile ? '96%' : '88%',
-          height: isMobile ? '76px' : '115px',
+          height: isMobile ? '142px' : '164px',
           backgroundColor: '#e0dcc9',
           borderRadius: '9999px 0 0 9999px',
           display: 'flex',
