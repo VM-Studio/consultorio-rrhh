@@ -58,7 +58,6 @@ export default function ClientesHome() {
             display: 'flex',
             alignItems: 'center',
             overflow: 'hidden',
-            position: 'relative',
           }}
         >
           <div
@@ -69,10 +68,6 @@ export default function ClientesHome() {
               gap: '48px',
               paddingLeft: '90px',
               width: 'max-content',
-              position: 'absolute',
-              left: 0,
-              top: '50%',
-              transform: 'translateY(-50%)',
             }}
           >
             {[...LOGOS, ...LOGOS].map((src, i) => (
