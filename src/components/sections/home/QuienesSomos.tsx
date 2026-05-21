@@ -93,12 +93,12 @@ export default function QuienesSomos() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}
+            style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}
           >
-            <p style={{ fontFamily: 'Quicksand, sans-serif', fontWeight: 400, fontSize: '15px', lineHeight: 1.7, color: 'rgba(3,61,64,0.65)' }}>
+            <p style={{ fontFamily: 'Quicksand, sans-serif', fontWeight: 400, fontSize: '14px', lineHeight: 1.7, color: 'rgba(3,61,64,0.65)' }}>
               Nacimos desde la vivencia real en el mundo corporativo y desde la convicción de que los planes estratégicos no se logran solo con metodologías, sino con presencia, escucha y trabajo conjunto.
             </p>
-            <p style={{ fontFamily: 'Quicksand, sans-serif', fontWeight: 400, fontSize: '15px', lineHeight: 1.7, color: 'rgba(3,61,64,0.65)' }}>
+            <p style={{ fontFamily: 'Quicksand, sans-serif', fontWeight: 400, fontSize: '14px', lineHeight: 1.7, color: 'rgba(3,61,64,0.65)' }}>
               Nuestro enfoque combina conocimiento técnico, mirada estratégica y sensibilidad humana para acompañar a pequeñas y grandes empresas en momentos clave.
             </p>
           </motion.div>
