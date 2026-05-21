@@ -37,7 +37,7 @@ export default function Footer() {
         }}
       >
         {/* Logo */}
-        <Image src="/motusfooter.png" alt="Motus" width={480} height={216} style={{ width: '160px', height: 'auto', marginBottom: '36px' }} />
+        <Image src="/motusfooter.png" alt="Motus" width={960} height={432} style={{ width: '320px', height: 'auto', marginBottom: '36px' }} />
 
         {/* Navegación */}
         <p style={{ fontFamily: '"Artegra Sans Extended", sans-serif', fontWeight: 700, fontSize: '11px', color: '#EEEAD6', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '16px' }}>
