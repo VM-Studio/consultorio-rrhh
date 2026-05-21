@@ -70,7 +70,7 @@ export default function Footer() {
         </div>
 
         {/* COLUMNA 2 — Navegación */}
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flex: 1 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: isMobile ? 'flex-start' : 'center', flex: 1, width: isMobile ? '100%' : undefined }}>
           <p
             style={{
               fontFamily: '"Artegra Sans Extended", sans-serif',
@@ -84,7 +84,7 @@ export default function Footer() {
           >
             NAVEGACIÓN
           </p>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', alignItems: 'center' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', alignItems: isMobile ? 'flex-start' : 'center' }}>
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -109,7 +109,7 @@ export default function Footer() {
         </div>
 
         {/* COLUMNA 3 — Contacto */}
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', flex: 1, paddingLeft: isMobile ? '0' : '40px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', flex: 1, paddingLeft: isMobile ? '0' : '40px', width: isMobile ? '100%' : undefined, minWidth: 0, overflow: 'hidden' }}>
           <p
             style={{
               fontFamily: '"Artegra Sans Extended", sans-serif',
@@ -130,10 +130,10 @@ export default function Footer() {
                 <Mail size={15} color="white" strokeWidth={2} />
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '2px', minWidth: 0, overflow: 'hidden' }}>
-                <span style={{ fontFamily: 'Quicksand, sans-serif', fontSize: '15px', color: 'rgba(238,234,214,0.75)', overflowWrap: 'break-word', wordBreak: 'break-all' }}>
+                <span style={{ fontFamily: 'Quicksand, sans-serif', fontSize: isMobile ? '12px' : '15px', color: 'rgba(238,234,214,0.75)', overflowWrap: 'break-word', wordBreak: 'break-all' }}>
                   lucia.carrera@motusconsultora.com
                 </span>
-                <span style={{ fontFamily: 'Quicksand, sans-serif', fontSize: '15px', color: 'rgba(238,234,214,0.75)', overflowWrap: 'break-word', wordBreak: 'break-all' }}>
+                <span style={{ fontFamily: 'Quicksand, sans-serif', fontSize: isMobile ? '12px' : '15px', color: 'rgba(238,234,214,0.75)', overflowWrap: 'break-word', wordBreak: 'break-all' }}>
                   federico.ambroggio@motusconsultora.com
                 </span>
               </div>
@@ -196,7 +196,7 @@ export default function Footer() {
                 href="https://www.linkedin.com/company/lcconsultora/"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ fontFamily: 'Quicksand, sans-serif', fontSize: '15px', color: 'rgba(238,234,214,0.75)', textDecoration: 'none', transition: 'color 0.2s' }}
+                style={{ fontFamily: 'Quicksand, sans-serif', fontSize: isMobile ? '12px' : '15px', color: 'rgba(238,234,214,0.75)', textDecoration: 'none', transition: 'color 0.2s', wordBreak: 'break-all' }}
                 onMouseEnter={e => (e.currentTarget.style.color = '#47c98c')}
                 onMouseLeave={e => (e.currentTarget.style.color = 'rgba(238,234,214,0.75)')}
               >

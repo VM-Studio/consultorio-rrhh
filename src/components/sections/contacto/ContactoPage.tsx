@@ -210,7 +210,7 @@ export default function ContactoPage() {
                 backgroundColor: 'rgba(41,115,114,0.28)',
                 backdropFilter: 'blur(4px)',
                 borderRadius: '0',
-                padding: '40px 40px 36px',
+                padding: isMobile ? '28px 20px 28px' : '40px 40px 36px',
               }}
             >
               {/* Fila 1: Nombre + Provincia */}
