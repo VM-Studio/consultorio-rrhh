@@ -54,7 +54,7 @@ export default function ContactoPage() {
         style={{
           position: 'relative',
           backgroundColor: '#eeead7',
-          paddingTop: isMobile ? '100px' : '140px',
+          paddingTop: isMobile ? '140px' : '140px',
           paddingBottom: '0',
         }}
       >

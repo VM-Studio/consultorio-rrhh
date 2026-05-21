@@ -242,11 +242,11 @@ export default function ServiciosHome() {
         {/* BADGE */}
         <div
           style={{
-            marginLeft: 'auto',
+            marginRight: 'auto',
             width: '80%',
             height: '36px',
-            background: 'linear-gradient(to left, #3f6965, #eae5d3)',
-            borderRadius: '9999px 0 0 9999px',
+            background: 'linear-gradient(to right, #eae5d3, #3f6965)',
+            borderRadius: '0 9999px 9999px 0',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'flex-start',
@@ -260,7 +260,7 @@ export default function ServiciosHome() {
         </div>
 
         {/* Tarjetas verticales */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '0', paddingLeft: '16px', paddingRight: '0' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0', paddingLeft: '0', paddingRight: '16px' }}>
           {servicios.map((servicio, index) => (
             <motion.div
               key={servicio.numero}
@@ -276,7 +276,7 @@ export default function ServiciosHome() {
                   alignItems: 'center',
                   gap: '16px',
                   backgroundColor: servicio.color,
-                  borderRadius: '9999px 0 0 9999px',
+                  borderRadius: '0 9999px 9999px 0',
                   padding: '18px 28px 18px 24px',
                   textDecoration: 'none',
                   marginBottom: '8px',

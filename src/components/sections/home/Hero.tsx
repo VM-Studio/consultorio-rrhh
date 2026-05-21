@@ -50,7 +50,6 @@ export default function Hero() {
               <span style={{ fontWeight: 400 }}> en sus procesos</span>
             </span>
             <span style={{ display: 'block', whiteSpace: isMobile ? 'normal' : 'nowrap' }}>
-              <span style={{ fontWeight: 400 }}>de </span>
               <strong style={{ fontWeight: 700 }}>estratégicos</strong>
               <span style={{ fontWeight: 400 }}>, poniendo</span>
             </span>
