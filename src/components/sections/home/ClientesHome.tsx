@@ -4,7 +4,22 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { useIsMobile } from '@/lib/useIsMobile'
 
-const LOGOS = [2,3,4,5,6,7,8,9,10,11,12,13,14,15].map(n => `/logos/${n}.png`)
+const LOGOS = [
+  { src: '/logos/2.png', size: 115 },
+  { src: '/logos/3.png', size: 115 },
+  { src: '/logos/4.png', size: 115 },
+  { src: '/logos/5.png', size: 115 },
+  { src: '/logos/6.png', size: 115 },
+  { src: '/logos/8.png', size: 115 },
+  { src: '/logos/9.png', size: 115 },
+  { src: '/logos/10.png', size: 115 },
+  { src: '/logos/12.png', size: 115 },
+  { src: '/logos/14.png', size: 115 },
+  { src: '/logos/16.png', size: 155 },
+  { src: '/logos/17.png', size: 155 },
+  { src: '/logos/18.png', size: 155 },
+  { src: '/logos/19.png', size: 155 },
+]
 
 export default function ClientesHome() {
   const isMobile = useIsMobile()
@@ -70,14 +85,14 @@ export default function ClientesHome() {
               width: 'max-content',
             }}
           >
-            {[...LOGOS, ...LOGOS].map((src, i) => (
+            {[...LOGOS, ...LOGOS].map((logo, i) => (
               <div key={i} style={{ flexShrink: 0, height: '115px', width: '115px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <Image
-                  src={src}
+                  src={logo.src}
                   alt={`cliente-${i}`}
-                  height={115}
-                  width={115}
-                  style={{ height: '115px', width: '115px', objectFit: 'contain', opacity: 1, display: 'block' }}
+                  height={logo.size}
+                  width={logo.size}
+                  style={{ height: `${logo.size}px`, width: `${logo.size}px`, objectFit: 'contain', opacity: 1, display: 'block' }}
                 />
               </div>
             ))}
@@ -156,14 +171,14 @@ export default function ClientesHome() {
             width: 'max-content',
           }}
         >
-          {[...LOGOS, ...LOGOS].map((src, i) => (
+          {[...LOGOS, ...LOGOS].map((logo, i) => (
             <div key={i} style={{ flexShrink: 0, height: '180px', width: '180px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <Image
-                src={src}
+                src={logo.src}
                 alt={`cliente-${i}`}
-                height={180}
-                width={180}
-                style={{ height: '180px', width: '180px', objectFit: 'contain', opacity: 0.75, display: 'block' }}
+                height={logo.size * 1.5}
+                width={logo.size * 1.5}
+                style={{ height: `${logo.size * 1.5}px`, width: `${logo.size * 1.5}px`, objectFit: 'contain', opacity: 0.75, display: 'block' }}
               />
             </div>
           ))}
