@@ -178,7 +178,7 @@ export default function ClientesHome() {
                 alt={`cliente-${i}`}
                 height={logo.size * 1.5}
                 width={logo.size * 1.5}
-                style={{ height: `${logo.size * 1.5}px`, width: `${logo.size * 1.5}px`, objectFit: 'contain', opacity: 0.75, display: 'block' }}
+                style={{ height: `${logo.size * 1.5}px`, width: `${logo.size * 1.5}px`, objectFit: 'contain', opacity: 1, display: 'block' }}
               />
             </div>
           ))}
