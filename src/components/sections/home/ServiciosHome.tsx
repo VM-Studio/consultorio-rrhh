@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
-import { useIsMobile } from '@/lib/useIsMobile'
+import { useIsMobile, useScreenSize } from '@/lib/useIsMobile'
 
 const containerVariants = {
   hidden: {},
@@ -13,7 +13,7 @@ const containerVariants = {
 }
 
 const figuraVariants = {
-  hidden: { opacity: 0, y: 80 },
+  hidden: { opacity: 0, y: -80 },
   visible: {
     opacity: 1,
     y: 0,
@@ -108,7 +108,7 @@ const servicios: Servicio[] = [
   },
 ]
 
-function Figura({ servicio, index }: { servicio: Servicio; index: number }) {
+function Figura({ servicio, index, width = 240, heightDefault = 310, heightHover = 420 }: { servicio: Servicio; index: number; width?: number; heightDefault?: number; heightHover?: number }) {
   const [hovered, setHovered] = useState(false)
 
   return (
@@ -116,12 +116,12 @@ function Figura({ servicio, index }: { servicio: Servicio; index: number }) {
       variants={figuraVariants}
       onHoverStart={() => setHovered(true)}
       onHoverEnd={() => setHovered(false)}
-      animate={{ height: hovered ? 420 : 310 }}
+      animate={{ height: hovered ? heightHover : heightDefault }}
       transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
       style={{
-        width: 240,
+        width,
         backgroundColor: servicio.color,
-        borderRadius: '9999px 9999px 0 0',
+        borderRadius: '0 0 9999px 9999px',
         overflow: 'hidden',
         flexShrink: 0,
         position: 'relative',
@@ -223,6 +223,10 @@ function Figura({ servicio, index }: { servicio: Servicio; index: number }) {
 
 export default function ServiciosHome() {
   const isMobile = useIsMobile()
+  const screenSize = useScreenSize()
+  const figuraWidth = screenSize === 'tablet' ? 160 : 240
+  const figuraHeightDefault = screenSize === 'tablet' ? 240 : 310
+  const figuraHeightHover = screenSize === 'tablet' ? 340 : 420
 
   if (isMobile) {
     return (
@@ -298,78 +302,12 @@ export default function ServiciosHome() {
         position: 'relative',
         overflow: 'hidden',
         width: '100%',
-        minHeight: '600px',
-        paddingTop: '80px',
+        minHeight: '620px',
+        paddingBottom: '130px',
         background: 'radial-gradient(ellipse at 30% 60%, #688382 0%, #456e6f 25%, #054042 70%)',
       }}
     >
-      {/* BADGE — borde derecho */}
-      <motion.div
-        initial={{ opacity: 0, x: 60 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6, ease: 'easeOut' }}
-        viewport={{ once: true, margin: '-80px' }}
-        style={{
-          position: 'absolute',
-          top: '60px',
-          right: 0,
-          width: '42%',
-          height: '36px',
-          background: 'linear-gradient(to left, #3f6965, #eae5d3)',
-          borderRadius: '9999px 0 0 9999px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'flex-start',
-          paddingLeft: '32px',
-          paddingRight: '32px',
-          zIndex: 10,
-        }}
-      >
-        <span
-          style={{
-            fontFamily: '"Artegra Sans Extended", sans-serif',
-            fontWeight: 700,
-            fontSize: '15px',
-            color: '#033D40',
-            letterSpacing: '0.15em',
-            textTransform: 'uppercase',
-          }}
-        >
-          NUESTROS SERVICIOS
-        </span>
-      </motion.div>
-
-      {/* TEXTO INTRO — alineado a la derecha */}
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        viewport={{ once: true, margin: '-80px' }}
-        style={{
-          fontFamily: 'Quicksand, sans-serif',
-          fontSize: '14px',
-          color: '#EEEAD6',
-          lineHeight: 1.6,
-          marginTop: '40px',
-          maxWidth: '360px',
-          marginLeft: '58%',
-          marginRight: '0',
-          paddingRight: '32px',
-          paddingLeft: '32px',
-          width: '42%',
-          textAlign: 'left',
-        }}
-      >
-        <strong style={{ fontWeight: 700 }}>Diseñamos soluciones</strong>
-        {' '}a medida, adaptadas a la realidad de cada organización, combinando{' '}
-        <strong style={{ fontWeight: 700 }}>experiencia</strong>
-        {', '}
-        <strong style={{ fontWeight: 700 }}>sensibilidad</strong>
-        {' '}y foco en{' '}
-        <strong style={{ fontWeight: 700 }}>resultados</strong>.
-      </motion.p>
-
-      {/* FIGURAS — pegadas al bottom */}
+      {/* FIGURAS — colgando desde arriba */}
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -377,19 +315,89 @@ export default function ServiciosHome() {
         viewport={{ once: true, margin: '-60px' }}
         style={{
           position: 'absolute',
-          bottom: 0,
+          top: 0,
           left: 0,
           right: 0,
           height: '460px',
           display: 'flex',
-          alignItems: 'flex-end',
+          alignItems: 'flex-start',
           justifyContent: 'center',
         }}
       >
         {servicios.map((servicio, index) => (
-          <Figura key={servicio.numero} servicio={servicio} index={index} />
+          <Figura key={servicio.numero} servicio={servicio} index={index} width={figuraWidth} heightDefault={figuraHeightDefault} heightHover={figuraHeightHover} />
         ))}
       </motion.div>
+
+      {/* BADGE + TEXTO — abajo a la izquierda, en flujo */}
+      <div
+        style={{
+          position: 'absolute',
+          bottom: '40px',
+          left: 0,
+          width: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '16px',
+        }}
+      >
+        {/* BADGE */}
+        <motion.div
+          initial={{ opacity: 0, x: -60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          viewport={{ once: true, margin: '-80px' }}
+          style={{
+            width: '42%',
+            height: '36px',
+            background: 'linear-gradient(to right, #3f6965, #eae5d3)',
+            borderRadius: '0 9999px 9999px 0',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'flex-end',
+            paddingLeft: '32px',
+            paddingRight: '32px',
+            zIndex: 10,
+          }}
+        >
+          <span
+            style={{
+              fontFamily: '"Artegra Sans Extended", sans-serif',
+              fontWeight: 700,
+              fontSize: '15px',
+              color: '#033D40',
+              letterSpacing: '0.15em',
+              textTransform: 'uppercase',
+            }}
+          >
+            NUESTROS SERVICIOS
+          </span>
+        </motion.div>
+
+        {/* TEXTO INTRO */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true, margin: '-80px' }}
+          style={{
+            fontFamily: 'Quicksand, sans-serif',
+            fontSize: '18px',
+            color: '#EEEAD6',
+            lineHeight: 1.7,
+            paddingLeft: '32px',
+            paddingRight: '32px',
+            width: '42%',
+            textAlign: 'right',
+            margin: 0,
+          }}
+        >
+          <strong style={{ fontWeight: 700 }}>Diseñamos soluciones</strong>{' '}a medida,<br />
+          adaptadas a la realidad de cada<br />
+          organización, combinando <strong style={{ fontWeight: 700 }}>experiencia</strong>,<br />
+          <strong style={{ fontWeight: 700 }}>sensibilidad</strong>{' '}y foco en <strong style={{ fontWeight: 700 }}>resultados</strong>.
+        </motion.p>
+      </div>
     </section>
   )
 }

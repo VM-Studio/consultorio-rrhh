@@ -2,21 +2,21 @@
 
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { useIsMobile } from '@/lib/useIsMobile'
+import { useIsMobile, useScreenSize } from '@/lib/useIsMobile'
 
 const luciaData = {
   nombre: 'Lucía',
   apellido: 'Carrera',
   rol: 'Facilitadora estratégica',
   descripcion: [
-    'con más de 20 años de trayectoria acompañando a líderes, equipos y organizaciones en procesos de transformación, integración y desarrollo cultural.',
+    'con más de 20 años de trayectoria acompañando a líderes, equipos y organizaciones en procesos estratégicos, integración y desarrollo cultural.',
     'Combina experiencia en grandes compañías y consultoría con una mirada cercana y humana, creando espacios de trabajo donde las personas puedan desarrollar su potencial, fortalecer vínculos y generar cambios sostenibles en contextos de evolución y crecimiento.',
   ],
   bullets: [
     { bold: 'Licenciada en Relaciones Laborales', plain: ' - Universidad de Buenos Aires' },
     { bold: 'Posgrado de Coaching & PNL', plain: ' - Universidad Austral' },
   ],
-  linkedin: 'https://www.linkedin.com/in/lucia-carrera',
+  linkedin: 'https://www.linkedin.com/in/lucia-carrera-a948621b/',
   foto: '/lucia.png',
 }
 
@@ -33,7 +33,7 @@ const federicoData = {
     { bold: 'Posgrado en Conducción de Recursos Humanos', plain: ' - Universidad Católica Argentina' },
     { bold: 'Licenciado en Administración de Empresas', plain: ' - Universidad Católica Argentina' },
   ],
-  linkedin: 'https://www.linkedin.com/in/federico-ambroggio',
+  linkedin: 'https://www.linkedin.com/in/federicoambroggio/',
   foto: '/federico.png',
 }
 
@@ -137,6 +137,10 @@ function CirclePhoto({ src, alt, size = 420 }: { src: string; alt: string; size?
 
 export default function NosotrosPage() {
   const isMobile = useIsMobile()
+  const screenSize = useScreenSize()
+  const photoSize = screenSize === 'tablet' ? 360 : 500
+  const cardPadding = screenSize === 'tablet' ? '48px 48px 48px 48px' : '80px 100px 80px 72px'
+  const sectionPadding = screenSize === 'tablet' ? '0 40px 0 40px' : '0 80px 0 72px'
   return (
     <div style={{ width: '100%' }}>
 
@@ -267,9 +271,9 @@ export default function NosotrosPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, ease: 'easeOut' }}
-              style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: '48px', paddingRight: '80px' }}
+              style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: '48px', paddingRight: screenSize === 'tablet' ? '40px' : '80px' }}
             >
-              <div style={{ width: '52%', backgroundColor: '#cfd5c2', borderRadius: '0 9999px 9999px 0', padding: '80px 100px 80px 72px', display: 'flex', flexDirection: 'column', gap: '18px', flexShrink: 0 }}>
+              <div style={{ width: '52%', backgroundColor: '#cfd5c2', borderRadius: '0 9999px 9999px 0', padding: cardPadding, display: 'flex', flexDirection: 'column', gap: '18px', flexShrink: 0 }}>
                 <h2 style={{ fontFamily: '"Libre Baskerville", serif', fontSize: '38px', color: '#033D40', fontWeight: 400, lineHeight: 1.1, margin: 0 }}>
                   {luciaData.nombre} {luciaData.apellido}
                 </h2>
@@ -280,14 +284,14 @@ export default function NosotrosPage() {
                   {luciaData.descripcion[1]}
                 </p>
               </div>
-              <CirclePhoto src={luciaData.foto} alt="Lucía Carrera" size={500} />
+              <CirclePhoto src={luciaData.foto} alt="Lucía Carrera" size={photoSize} />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.25 }}
-              style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-end', gap: '0', marginTop: '36px', padding: '0 80px 0 72px' }}
+              style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-end', gap: '0', marginTop: '36px', padding: sectionPadding }}
             >
               <LinkedInButton href={luciaData.linkedin} />
               <div style={{ display: 'grid', gridTemplateColumns: '18px 1fr', gap: '6px 8px' }}>
@@ -362,10 +366,10 @@ export default function NosotrosPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, ease: 'easeOut' }}
-              style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: '48px', paddingLeft: '80px' }}
+              style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: '48px', paddingLeft: screenSize === 'tablet' ? '40px' : '80px' }}
             >
-              <CirclePhoto src={federicoData.foto} alt="Federico Ambroggio" size={500} />
-              <div style={{ width: '52%', backgroundColor: '#cfd5c2', borderRadius: '9999px 0 0 9999px', padding: '80px 72px 80px 100px', display: 'flex', flexDirection: 'column', gap: '18px', flexShrink: 0 }}>
+              <CirclePhoto src={federicoData.foto} alt="Federico Ambroggio" size={photoSize} />
+              <div style={{ width: '52%', backgroundColor: '#cfd5c2', borderRadius: '9999px 0 0 9999px', padding: cardPadding.split(' ').reverse().join(' '), display: 'flex', flexDirection: 'column', gap: '18px', flexShrink: 0 }}>
                 <h2 style={{ fontFamily: '"Libre Baskerville", serif', fontSize: '38px', color: '#033D40', fontWeight: 400, lineHeight: 1.1, margin: 0, textAlign: 'right' }}>
                   {federicoData.nombre} {federicoData.apellido}
                 </h2>
@@ -382,7 +386,7 @@ export default function NosotrosPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.25 }}
-              style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-end', gap: '0', marginTop: '36px', padding: '0 72px 0 80px' }}
+              style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-end', gap: '0', marginTop: '36px', padding: screenSize === 'tablet' ? '0 40px' : '0 72px 0 80px' }}
             >
               <div style={{ display: 'grid', gridTemplateColumns: '18px 1fr', gap: '6px' }}>
                 {federicoData.bullets.map((b, i) => (

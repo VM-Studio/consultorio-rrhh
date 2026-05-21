@@ -16,3 +16,25 @@ export function useIsMobile(breakpoint = 768): boolean {
 
   return isMobile
 }
+
+export function useScreenSize(): 'mobile' | 'tablet' | 'desktop' {
+  const [size, setSize] = useState<'mobile' | 'tablet' | 'desktop'>(() => {
+    if (typeof window === 'undefined') return 'desktop'
+    if (window.innerWidth < 768) return 'mobile'
+    if (window.innerWidth < 1100) return 'tablet'
+    return 'desktop'
+  })
+
+  useEffect(() => {
+    const check = () => {
+      if (window.innerWidth < 768) setSize('mobile')
+      else if (window.innerWidth < 1100) setSize('tablet')
+      else setSize('desktop')
+    }
+    check()
+    window.addEventListener('resize', check)
+    return () => window.removeEventListener('resize', check)
+  }, [])
+
+  return size
+}

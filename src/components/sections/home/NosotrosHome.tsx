@@ -27,7 +27,7 @@ const socios = [
       { texto: ' tiempo, es que ', bold: false },
       { texto: 'perdemos mucho"', bold: true },
     ],
-    aclaracion: '(sobre la importancia de aprovechar el tiempo para aprender)' as string | null,
+    aclaracion: null as string | null,
     autor: 'Séneca',
   },
 ]
@@ -46,22 +46,22 @@ export default function NosotrosHome() {
     >
       {/* BLOQUE 1 — Badge "NOSOTROS" borde izquierdo */}
       <motion.div
-        initial={{ opacity: 0, x: -60 }}
+        initial={{ opacity: 0, x: 60 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
         viewport={{ once: true, margin: '-80px' }}
         style={{
           position: 'absolute',
           top: '36px',
-          left: 0,
+          right: 0,
           width: isMobile ? '72%' : '50%',
           height: '32px',
-          background: 'linear-gradient(to right, #7da89e, #043f42)',
-          borderRadius: '0 9999px 9999px 0',
+          background: 'linear-gradient(to left, #7da89e, #043f42)',
+          borderRadius: '9999px 0 0 9999px',
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'flex-end',
-          paddingRight: '28px',
+          justifyContent: 'flex-start',
+          paddingLeft: '28px',
           zIndex: 10,
         }}
       >
@@ -180,7 +180,6 @@ export default function NosotrosHome() {
                   whiteSpace: 'nowrap',
                 }}
               >
-                <span style={{ fontWeight: 400 }}>{socio.titulo} </span>
                 <strong style={{ fontWeight: 700 }}>{socio.nombre}</strong>
                 <span style={{ fontWeight: 400 }}> {socio.apellido}</span>
               </span>

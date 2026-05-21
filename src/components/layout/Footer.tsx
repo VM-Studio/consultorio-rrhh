@@ -50,42 +50,23 @@ export default function Footer() {
           paddingBottom: '32px',
         }}
       >
-        {/* COLUMNA 1 — Logo + figura decorativa */}
+        {/* COLUMNA 1 — Logo */}
         <div
           style={{
-            position: 'relative',
-            width: isMobile ? '100%' : '280px',
             flexShrink: 0,
             display: 'flex',
             alignItems: 'center',
             justifyContent: isMobile ? 'flex-start' : 'center',
-            minHeight: isMobile ? 'auto' : '270px',
+            width: isMobile ? '100%' : '280px',
           }}
         >
-          {!isMobile && (
-            <div
-              style={{
-                position: 'absolute',
-                bottom: 0,
-                left: '50%',
-                transform: 'translateX(-50%)',
-                width: '260px',
-                height: '270px',
-                backgroundColor: '#065954',
-                borderRadius: '9999px 9999px 0 0',
-                zIndex: 1,
-              }}
-            />
-          )}
-          <div style={{ position: 'relative', zIndex: 2 }}>
-            <Image
-              src="/footer.png"
-              alt="Motus"
-              width={isMobile ? 160 : 190}
-              height={isMobile ? 72 : 86}
-              style={{ width: 'auto' }}
-            />
-          </div>
+          <Image
+            src="/footer.png"
+            alt="Motus"
+            width={isMobile ? 160 : 190}
+            height={isMobile ? 72 : 86}
+            style={{ width: 'auto' }}
+          />
         </div>
 
         {/* COLUMNA 2 — Navegación */}
@@ -186,7 +167,7 @@ export default function Footer() {
             {/* LINKEDIN */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
               <a
-                href="#"
+                href="https://www.linkedin.com/company/lcconsultora/"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
@@ -210,6 +191,16 @@ export default function Footer() {
                   <rect x="2" y="9" width="4" height="12" />
                   <circle cx="4" cy="4" r="2" />
                 </svg>
+              </a>
+              <a
+                href="https://www.linkedin.com/company/lcconsultora/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ fontFamily: 'Quicksand, sans-serif', fontSize: '15px', color: 'rgba(238,234,214,0.75)', textDecoration: 'none', transition: 'color 0.2s' }}
+                onMouseEnter={e => (e.currentTarget.style.color = '#47c98c')}
+                onMouseLeave={e => (e.currentTarget.style.color = 'rgba(238,234,214,0.75)')}
+              >
+                linkedin.com/company/lcconsultora
               </a>
             </div>
           </div>

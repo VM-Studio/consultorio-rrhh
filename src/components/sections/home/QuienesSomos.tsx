@@ -83,7 +83,7 @@ export default function QuienesSomos() {
             <strong style={{ fontWeight: 700 }}>20 años</strong>
             <span style={{ fontWeight: 400 }}> de</span>
             <br />
-            <span style={{ fontWeight: 400 }}>experiencia en corporaciones</span>
+            <span style={{ fontWeight: 400 }}>experiencia en organizaciones y consultorías</span>
           </motion.h2>
 
           <div style={{ width: '48px', height: '2px', backgroundColor: '#09756C', marginBottom: '20px' }} />
@@ -96,7 +96,7 @@ export default function QuienesSomos() {
             style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}
           >
             <p style={{ fontFamily: 'Quicksand, sans-serif', fontWeight: 400, fontSize: '15px', lineHeight: 1.7, color: 'rgba(3,61,64,0.65)' }}>
-              Nacimos desde la vivencia real en el mundo corporativo y desde la convicción de que los procesos de transformación no se logran solo con metodologías, sino con presencia, escucha y trabajo conjunto.
+              Nacimos desde la vivencia real en el mundo corporativo y desde la convicción de que los procesos estratégicos no se logran solo con metodologías, sino con presencia, escucha y trabajo conjunto.
             </p>
             <p style={{ fontFamily: 'Quicksand, sans-serif', fontWeight: 400, fontSize: '15px', lineHeight: 1.7, color: 'rgba(3,61,64,0.65)' }}>
               Nuestro enfoque combina conocimiento técnico, mirada estratégica y sensibilidad humana para acompañar a pequeñas y grandes empresas en momentos clave.
@@ -153,7 +153,7 @@ export default function QuienesSomos() {
                 <span style={{ fontWeight: 400 }}> de</span>
                 <br />
                 <span style={{ fontWeight: 400 }}>experiencia</span>
-                <span style={{ fontWeight: 400 }}> en corporaciones</span>
+                <span style={{ fontWeight: 400 }}> en organizaciones y consultorías</span>
               </motion.h2>
               <div style={{ width: '48px', height: '2px', backgroundColor: '#09756C', marginBottom: '28px' }} />
               <motion.div
@@ -164,7 +164,7 @@ export default function QuienesSomos() {
                 className="space-y-5"
               >
                 <p className="font-normal text-[15px] leading-[1.7]" style={{ fontFamily: 'Quicksand, sans-serif', color: 'rgba(3,61,64,0.65)', textAlign: 'justify' }}>
-                  Nacimos desde la vivencia real en el mundo corporativo y desde la convicción de que los procesos de transformación no se logran solo con metodologías, sino con presencia, escucha y trabajo conjunto.
+                  Nacimos desde la vivencia real en el mundo corporativo y desde la convicción de que los procesos estratégicos no se logran solo con metodologías, sino con presencia, escucha y trabajo conjunto.
                 </p>
                 <p className="font-normal text-[15px] leading-[1.7]" style={{ fontFamily: 'Quicksand, sans-serif', color: 'rgba(3,61,64,0.65)', textAlign: 'justify' }}>
                   Nuestro enfoque combina conocimiento técnico, mirada estratégica y sensibilidad humana para acompañar a pequeñas y grandes empresas en momentos clave: crecimiento, reorganización, desarrollo de talento, incorporación de personas y evolución de sus equipos.

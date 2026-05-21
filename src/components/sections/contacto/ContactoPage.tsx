@@ -130,6 +130,7 @@ export default function ContactoPage() {
         style={{
           position: 'relative',
           minHeight: '700px',
+          overflow: 'hidden',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'flex-start',
@@ -142,7 +143,7 @@ export default function ContactoPage() {
             alt="Equipo Motus"
             fill
             sizes="100vw"
-            style={{ objectFit: 'cover', objectPosition: 'center' }}
+            style={{ objectFit: 'cover', objectPosition: 'center', transform: 'scale(1.3)', transformOrigin: 'center' }}
           />
           {/* Overlay oscuro suave */}
           <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(4,40,42,0.45)' }} />
