@@ -11,9 +11,9 @@ export default function CTAHome() {
       style={{
         position: 'relative',
         backgroundColor: '#eeead7',
-        minHeight: isMobile ? '360px' : '420px',
-        paddingTop: isMobile ? '60px' : '60px',
-        paddingBottom: isMobile ? '60px' : '60px',
+        minHeight: isMobile ? '52vw' : '420px',
+        paddingTop: isMobile ? '4vw' : '60px',
+        paddingBottom: isMobile ? '4vw' : '60px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -24,11 +24,11 @@ export default function CTAHome() {
       <div
         style={{
           position: 'absolute',
-          left: '-10%',
+          left: isMobile ? '-15vw' : '-10%',
           top: '53%',
           transform: 'translateY(-50%)',
-          width: isMobile ? '105%' : '92%',
-          height: isMobile ? '200px' : '300px',
+          width: isMobile ? '115vw' : '92%',
+          height: isMobile ? '42vw' : '300px',
           border: '2px solid #46645e',
           borderRadius: '9999px',
           pointerEvents: 'none',
@@ -40,11 +40,11 @@ export default function CTAHome() {
       <div
         style={{
           position: 'absolute',
-          right: '-10%',
+          right: isMobile ? '-15vw' : '-10%',
           top: '50%',
           transform: 'translateY(-50%)',
-          width: isMobile ? '105%' : '92%',
-          height: isMobile ? '200px' : '300px',
+          width: isMobile ? '115vw' : '92%',
+          height: isMobile ? '42vw' : '300px',
           border: '2px solid #46645e',
           borderRadius: '9999px',
           pointerEvents: 'none',
