@@ -37,7 +37,7 @@ export default function Footer() {
         }}
       >
         {/* Logo */}
-        <Image src="/motusfooter.png" alt="Motus" width={100} height={45} style={{ width: 'auto', marginBottom: '36px' }} />
+        <Image src="/motusfooter.png" alt="Motus" width={300} height={135} style={{ width: '100px', height: 'auto', marginBottom: '36px' }} />
 
         {/* Navegación */}
         <p style={{ fontFamily: '"Artegra Sans Extended", sans-serif', fontWeight: 700, fontSize: '11px', color: '#EEEAD6', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '16px' }}>
@@ -86,7 +86,7 @@ export default function Footer() {
             </a>
             <a href="https://www.linkedin.com/company/lcconsultora/" target="_blank" rel="noopener noreferrer"
               style={{ fontFamily: 'Quicksand, sans-serif', fontSize: '12px', color: 'rgba(238,234,214,0.75)', textDecoration: 'none', wordBreak: 'break-all' }}>
-              linkedin.com/company/lcconsultora
+              Motus Consultora
             </a>
           </div>
         </div>
@@ -278,7 +278,7 @@ export default function Footer() {
                 onMouseEnter={e => (e.currentTarget.style.color = '#47c98c')}
                 onMouseLeave={e => (e.currentTarget.style.color = 'rgba(238,234,214,0.75)')}
               >
-                linkedin.com/company/lcconsultora
+                Motus Consultora
               </a>
             </div>
           </div>
